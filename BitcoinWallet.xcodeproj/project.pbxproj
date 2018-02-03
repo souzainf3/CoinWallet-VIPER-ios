@@ -16,6 +16,7 @@
 		0398C2E92026526C00D32808 /* BitcoinWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2E82026526C00D32808 /* BitcoinWalletTests.swift */; };
 		0398C2F42026526C00D32808 /* BitcoinWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2F32026526C00D32808 /* BitcoinWalletUITests.swift */; };
 		0398C30B2026570300D32808 /* Conts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C3042026570300D32808 /* Conts.swift */; };
+		0398C30F2026584D00D32808 /* AppWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C30E2026584D00D32808 /* AppWireframe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		0398C2F32026526C00D32808 /* BitcoinWalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinWalletUITests.swift; sourceTree = "<group>"; };
 		0398C2F52026526C00D32808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0398C3042026570300D32808 /* Conts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conts.swift; sourceTree = "<group>"; };
+		0398C30E2026584D00D32808 /* AppWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppWireframe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +150,8 @@
 				0398C3072026570300D32808 /* Model */,
 				0398C3082026570300D32808 /* Protocols */,
 				0398C3092026570300D32808 /* Service */,
-				0398C30A2026570300D32808 /* UI */,
+				0398C30C2026584300D32808 /* UIControls */,
+				0398C30D2026584D00D32808 /* Wireframe */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -196,11 +199,19 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		0398C30A2026570300D32808 /* UI */ = {
+		0398C30C2026584300D32808 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = UI;
+			path = UIControls;
+			sourceTree = "<group>";
+		};
+		0398C30D2026584D00D32808 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				0398C30E2026584D00D32808 /* AppWireframe.swift */,
+			);
+			path = Wireframe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0398C30F2026584D00D32808 /* AppWireframe.swift in Sources */,
 				0398C2D62026526B00D32808 /* SecondViewController.swift in Sources */,
 				0398C30B2026570300D32808 /* Conts.swift in Sources */,
 				0398C2D22026526B00D32808 /* AppDelegate.swift in Sources */,
