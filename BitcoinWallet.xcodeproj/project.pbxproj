@@ -15,6 +15,7 @@
 		0398C2DE2026526B00D32808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0398C2DC2026526B00D32808 /* LaunchScreen.storyboard */; };
 		0398C2E92026526C00D32808 /* BitcoinWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2E82026526C00D32808 /* BitcoinWalletTests.swift */; };
 		0398C2F42026526C00D32808 /* BitcoinWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2F32026526C00D32808 /* BitcoinWalletUITests.swift */; };
+		0398C30B2026570300D32808 /* Conts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C3042026570300D32808 /* Conts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0398C2EF2026526C00D32808 /* BitcoinWalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitcoinWalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0398C2F32026526C00D32808 /* BitcoinWalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinWalletUITests.swift; sourceTree = "<group>"; };
 		0398C2F52026526C00D32808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0398C3042026570300D32808 /* Conts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				0398C2D12026526B00D32808 /* AppDelegate.swift */,
+				0398C3022026570300D32808 /* Common */,
+				0398C3012026570300D32808 /* Modules */,
 				0398C2D32026526B00D32808 /* FirstViewController.swift */,
 				0398C2D52026526B00D32808 /* SecondViewController.swift */,
 				0398C2D72026526B00D32808 /* Main.storyboard */,
@@ -126,6 +130,77 @@
 				0398C2F52026526C00D32808 /* Info.plist */,
 			);
 			path = BitcoinWalletUITests;
+			sourceTree = "<group>";
+		};
+		0398C3012026570300D32808 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0398C3022026570300D32808 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0398C3032026570300D32808 /* Consts */,
+				0398C3052026570300D32808 /* Extensions */,
+				0398C3062026570300D32808 /* Helpers */,
+				0398C3072026570300D32808 /* Model */,
+				0398C3082026570300D32808 /* Protocols */,
+				0398C3092026570300D32808 /* Service */,
+				0398C30A2026570300D32808 /* UI */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0398C3032026570300D32808 /* Consts */ = {
+			isa = PBXGroup;
+			children = (
+				0398C3042026570300D32808 /* Conts.swift */,
+			);
+			path = Consts;
+			sourceTree = "<group>";
+		};
+		0398C3052026570300D32808 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0398C3062026570300D32808 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0398C3072026570300D32808 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0398C3082026570300D32808 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0398C3092026570300D32808 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0398C30A2026570300D32808 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0398C2D62026526B00D32808 /* SecondViewController.swift in Sources */,
+				0398C30B2026570300D32808 /* Conts.swift in Sources */,
 				0398C2D22026526B00D32808 /* AppDelegate.swift in Sources */,
 				0398C2D42026526B00D32808 /* FirstViewController.swift in Sources */,
 			);
