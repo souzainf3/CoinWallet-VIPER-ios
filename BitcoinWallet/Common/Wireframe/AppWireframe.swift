@@ -9,23 +9,24 @@
 import Foundation
 import UIKit
 
-
-class AppWireframe: NSObject {
+class AppWireframe {
     
     // MARK: Properties
     private(set) weak var window: UIWindow!
-    private(set) weak var tabBarController: UITabBarController?
-    
+
+    var tabBarWireframe: TabBarWireframe
+
     
     // MARK: Public
     
     init(window: UIWindow) {
-        super.init()
-        
         self.window = window
+        
+        self.tabBarWireframe = TabBarWireframe()
     }
     
     func installRootViewController() {
+        self.tabBarWireframe.installInto(window: self.window)
     }
 
 }

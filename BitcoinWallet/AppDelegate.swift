@@ -17,12 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        
-//        let appWireframe = AppWireframe(window: self.window!)
-//        appWireframe.installRootViewController()
-//        
-//        window?.makeKeyAndVisible()
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let appWireframe = AppWireframe(window: self.window!)
+        appWireframe.installRootViewController()
+        
+        window?.makeKeyAndVisible()
         
         return true
     }

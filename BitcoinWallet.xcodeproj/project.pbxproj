@@ -17,6 +17,7 @@
 		0398C2F42026526C00D32808 /* BitcoinWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2F32026526C00D32808 /* BitcoinWalletUITests.swift */; };
 		0398C30B2026570300D32808 /* Conts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C3042026570300D32808 /* Conts.swift */; };
 		0398C30F2026584D00D32808 /* AppWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C30E2026584D00D32808 /* AppWireframe.swift */; };
+		03C43ABE2026638D00C53429 /* TabBarWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43ABD2026638D00C53429 /* TabBarWireframe.swift */; };
 		4CD0EA439FEADCCB19D16986 /* Pods_BitcoinWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B798D79EF3DF2142C982BDE5 /* Pods_BitcoinWallet.framework */; };
 		51A3F3DE92AF3CF30F1CA567 /* Pods_BitcoinWalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BF90BD25E668A6E384D359 /* Pods_BitcoinWalletTests.framework */; };
 		E2EB0DAB6987362CC0659F13 /* Pods_BitcoinWalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630A8E6D74CB74CC6FC022C6 /* Pods_BitcoinWalletUITests.framework */; };
@@ -56,6 +57,7 @@
 		0398C2F52026526C00D32808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0398C3042026570300D32808 /* Conts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conts.swift; sourceTree = "<group>"; };
 		0398C30E2026584D00D32808 /* AppWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppWireframe.swift; sourceTree = "<group>"; };
+		03C43ABD2026638D00C53429 /* TabBarWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarWireframe.swift; sourceTree = "<group>"; };
 		246C7DC415F5270055E67EC0 /* Pods-BitcoinWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitcoinWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitcoinWallet/Pods-BitcoinWallet.release.xcconfig"; sourceTree = "<group>"; };
 		630A8E6D74CB74CC6FC022C6 /* Pods_BitcoinWalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitcoinWalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73BF90BD25E668A6E384D359 /* Pods_BitcoinWalletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitcoinWalletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				0398C30E2026584D00D32808 /* AppWireframe.swift */,
+				03C43ABD2026638D00C53429 /* TabBarWireframe.swift */,
 			);
 			path = Wireframe;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C43ABE2026638D00C53429 /* TabBarWireframe.swift in Sources */,
 				0398C30F2026584D00D32808 /* AppWireframe.swift in Sources */,
 				0398C2D62026526B00D32808 /* SecondViewController.swift in Sources */,
 				0398C30B2026570300D32808 /* Conts.swift in Sources */,
