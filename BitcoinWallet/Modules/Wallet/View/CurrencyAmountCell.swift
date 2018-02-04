@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import Letters
 
 class CurrencyAmountCell: UITableViewCell {
-    @IBOutlet weak var currencyImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var symbolLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
 }
 
@@ -19,7 +18,8 @@ extension CurrencyAmountCell {
     func configure(with item: WalletItem) {
         self.titleLabel.text = item.title
         self.amountLabel.text = item.amountValue
-        self.currencyImageView.setImage(string: item.icon.symbol, color: item.icon.color, circular: true)
+        self.symbolLabel.text = item.tag.currency
+        self.symbolLabel.backgroundColor = item.tag.color
     }
 }
 

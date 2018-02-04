@@ -9,5 +9,5 @@ struct WalletViewModel {
 struct WalletItem {
     let title: String
     let amountValue: String
-    let icon: (symbol: String, color: UIColor)
+    let tag: (currency: String, color: UIColor)
 }
