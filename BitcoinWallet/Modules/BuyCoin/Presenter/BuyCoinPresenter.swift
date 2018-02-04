@@ -5,6 +5,10 @@ import Foundation
 
 // presenter ---->> view
 protocol BuyCoinPresenterOutput: class {
+    func setSelectedCoin(_ coin: Currency)
+    
+    func showUnselectedWallet()
+    func showSelectedWallet(_ wallet: Wallet)
 }
 
 // view ---->> presenter
@@ -30,6 +34,15 @@ class BuyCoinPresenter: BuyCoinPresenterInput {
     // MARK: Input
     
     func viewDidLoad() {
+        // Coin to buy
+        self.output?.setSelectedCoin(self.interactor.selectedCoin)
+        
+        // Wallet to pay
+        if let wallet = self.interactor.selectedWallet {
+            self.output?.showSelectedWallet(wallet)
+        } else {
+            self.output?.showUnselectedWallet()
+        }
     }
     
     

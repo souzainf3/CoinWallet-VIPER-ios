@@ -1,4 +1,4 @@
-//
+
 //  WalletViewController.swift
 //  BitcoinWallet
 //
@@ -10,6 +10,10 @@ import UIKit
 
 class BuyCoinViewController: UITableViewController {
 
+    @IBOutlet private weak var coinView: BuyCoinAmountCell!
+    @IBOutlet private weak var walletView: WalletToPayCell!
+
+    
     var presenter: BuyCoinPresenterInput?
     
     // MARK: - Life cycle
@@ -43,6 +47,10 @@ class BuyCoinViewController: UITableViewController {
 //
 //        return cell
 //    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
 }
 
@@ -50,6 +58,19 @@ class BuyCoinViewController: UITableViewController {
 // MARK: - BuyCoinPresenterOutput
 
 extension BuyCoinViewController: BuyCoinPresenterOutput {
+    
+    func setSelectedCoin(_ coin: Currency) {
+        self.coinView.configure(with: coin)
+    }
+    
+    func showUnselectedWallet() {
+        self.walletView.setEmpty()
+    }
+    
+    func showSelectedWallet(_ wallet: Wallet) {
+        self.walletView.configure(with: wallet)
+    }
+    
 }
 
 

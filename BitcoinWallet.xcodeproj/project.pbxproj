@@ -17,6 +17,7 @@
 		0398C2F42026526C00D32808 /* BitcoinWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2F32026526C00D32808 /* BitcoinWalletUITests.swift */; };
 		0398C30B2026570300D32808 /* Conts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C3042026570300D32808 /* Conts.swift */; };
 		0398C30F2026584D00D32808 /* AppWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C30E2026584D00D32808 /* AppWireframe.swift */; };
+		03B46BF42027A7140049635F /* BuyCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B46BF32027A7140049635F /* BuyCells.swift */; };
 		03C43ABE2026638D00C53429 /* TabBarWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43ABD2026638D00C53429 /* TabBarWireframe.swift */; };
 		03C43AC7202666B100C53429 /* WalletWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AC6202666B100C53429 /* WalletWireframe.swift */; };
 		03C43AC920266C6300C53429 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AC820266C6300C53429 /* Reusable.swift */; };
@@ -75,6 +76,7 @@
 		0398C2F52026526C00D32808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0398C3042026570300D32808 /* Conts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conts.swift; sourceTree = "<group>"; };
 		0398C30E2026584D00D32808 /* AppWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppWireframe.swift; sourceTree = "<group>"; };
+		03B46BF32027A7140049635F /* BuyCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCells.swift; sourceTree = "<group>"; };
 		03C43ABD2026638D00C53429 /* TabBarWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarWireframe.swift; sourceTree = "<group>"; };
 		03C43AC6202666B100C53429 /* WalletWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletWireframe.swift; sourceTree = "<group>"; };
 		03C43AC820266C6300C53429 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 			children = (
 				03C43AEA2027440B00C53429 /* BuyCoin.storyboard */,
 				03C43AEB2027440B00C53429 /* BuyCoinViewController.swift */,
+				03B46BF32027A7140049635F /* BuyCells.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -667,11 +670,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BitcoinWallet/Pods-BitcoinWallet-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Letters/Letters.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Letters.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -726,6 +729,7 @@
 				03C43AD12026741A00C53429 /* WalletPresenter.swift in Sources */,
 				03C43ACB20266C8800C53429 /* Protocols.swift in Sources */,
 				0398C2D62026526B00D32808 /* SecondViewController.swift in Sources */,
+				03B46BF42027A7140049635F /* BuyCells.swift in Sources */,
 				03C43AF32027440C00C53429 /* BuyCoinViewController.swift in Sources */,
 				03C43AC920266C6300C53429 /* Reusable.swift in Sources */,
 				03C43AD920268F2900C53429 /* Wallet.swift in Sources */,

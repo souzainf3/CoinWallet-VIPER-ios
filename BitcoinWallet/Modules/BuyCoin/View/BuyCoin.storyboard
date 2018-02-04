@@ -14,7 +14,7 @@
         <scene sceneID="CDd-5D-tLH">
             <objects>
                 <tableViewController storyboardIdentifier="BuyCoinViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NDx-54-OXI" customClass="BuyCoinViewController" customModule="BitcoinWallet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="jmJ-78-IVu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="jmJ-78-IVu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -54,7 +54,7 @@
                         <sections>
                             <tableViewSection headerTitle="Quantia" id="2nw-VH-2DH">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CurrencyAmountCell" rowHeight="62" id="L8Z-Yh-o3Z" customClass="CurrencyAmountCell" customModule="BitcoinWallet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CurrencyAmountCell" rowHeight="62" id="L8Z-Yh-o3Z" customClass="BuyCoinAmountCell" customModule="BitcoinWallet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L8Z-Yh-o3Z" id="xiY-Jo-UoZ">
@@ -108,14 +108,16 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <connections>
-                                            <outlet property="titleLabel" destination="Wzd-lm-mSp" id="vdQ-Xk-KbG"/>
+                                            <outlet property="amountTextField" destination="j2K-EJ-2Z4" id="t5F-XW-h1c"/>
+                                            <outlet property="coinButton" destination="qL1-Wr-1Vy" id="JGe-Fg-GjQ"/>
+                                            <outlet property="symbolCoinLabel" destination="Wzd-lm-mSp" id="odb-1C-VrI"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Pagar com:" footerTitle="* escolha a carteira onde serão debitados os valores." id="iZk-dm-fc7">
+                            <tableViewSection headerTitle="Pagar com:" footerTitle="Os valores serão debitados da carteira escolhida." id="iZk-dm-fc7">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CurrencyAmountCell" rowHeight="55" id="p9a-jw-oar" customClass="CurrencyAmountCell" customModule="BitcoinWallet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CurrencyAmountCell" rowHeight="55" id="p9a-jw-oar" customClass="WalletToPayCell" customModule="BitcoinWallet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="181" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p9a-jw-oar" id="d9q-39-NCe">
@@ -137,12 +139,23 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="฿ 100.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9k5-hJ-xKp">
-                                                    <rect key="frame" x="142" y="11" width="191" height="33"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BuI-ir-EWY">
+                                                    <rect key="frame" x="141" y="14" width="192" height="27"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SALDO" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCM-Tv-TbU">
+                                                            <rect key="frame" x="0.0" y="0.0" width="192" height="10"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="฿ 100.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9k5-hJ-xKp">
+                                                            <rect key="frame" x="0.0" y="10" width="192" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDX-y9-4Hs">
                                                     <rect key="frame" x="64" y="11" width="69" height="33"/>
                                                     <constraints>
@@ -154,23 +167,24 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="9k5-hJ-xKp" firstAttribute="trailing" secondItem="d9q-39-NCe" secondAttribute="trailingMargin" id="0if-Hi-GDE"/>
-                                                <constraint firstItem="9k5-hJ-xKp" firstAttribute="bottom" secondItem="d9q-39-NCe" secondAttribute="bottomMargin" id="2Nn-iM-vps"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="BuI-ir-EWY" secondAttribute="trailing" id="1g9-bM-zjs"/>
                                                 <constraint firstItem="zDX-y9-4Hs" firstAttribute="leading" secondItem="bMr-cc-EEq" secondAttribute="trailing" constant="8" id="99o-gp-LpD"/>
                                                 <constraint firstItem="bMr-cc-EEq" firstAttribute="leading" secondItem="d9q-39-NCe" secondAttribute="leadingMargin" id="BEt-p3-06Y"/>
+                                                <constraint firstItem="BuI-ir-EWY" firstAttribute="top" secondItem="d9q-39-NCe" secondAttribute="topMargin" constant="3" id="IpW-B6-OPv"/>
                                                 <constraint firstItem="bMr-cc-EEq" firstAttribute="top" secondItem="d9q-39-NCe" secondAttribute="top" constant="10" id="QaT-qN-XJ3"/>
-                                                <constraint firstItem="9k5-hJ-xKp" firstAttribute="top" secondItem="d9q-39-NCe" secondAttribute="topMargin" id="R5E-qu-1wt"/>
                                                 <constraint firstItem="zDX-y9-4Hs" firstAttribute="bottom" secondItem="d9q-39-NCe" secondAttribute="bottomMargin" id="U1P-ex-dW8"/>
                                                 <constraint firstAttribute="bottom" secondItem="bMr-cc-EEq" secondAttribute="bottom" constant="10" id="Xlb-Mf-TIp"/>
                                                 <constraint firstItem="zDX-y9-4Hs" firstAttribute="top" secondItem="d9q-39-NCe" secondAttribute="topMargin" id="ZRl-nI-FJR"/>
-                                                <constraint firstItem="9k5-hJ-xKp" firstAttribute="leading" secondItem="zDX-y9-4Hs" secondAttribute="trailing" constant="9" id="jh6-xc-OaK"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="BuI-ir-EWY" secondAttribute="bottom" constant="3" id="fdc-gq-76V"/>
+                                                <constraint firstItem="BuI-ir-EWY" firstAttribute="leading" secondItem="zDX-y9-4Hs" secondAttribute="trailing" constant="8" id="vp4-iP-SDX"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <connections>
-                                            <outlet property="amountLabel" destination="9k5-hJ-xKp" id="zEp-DE-Pjq"/>
-                                            <outlet property="symbolLabel" destination="bMr-cc-EEq" id="Nfi-x4-9xx"/>
-                                            <outlet property="titleLabel" destination="zDX-y9-4Hs" id="KlF-XH-EHy"/>
+                                            <outlet property="amountLabel" destination="9k5-hJ-xKp" id="F2X-Ws-nkk"/>
+                                            <outlet property="balanceLabel" destination="vCM-Tv-TbU" id="14s-on-PgI"/>
+                                            <outlet property="currencyLabel" destination="bMr-cc-EEq" id="hmU-DI-ize"/>
+                                            <outlet property="titleLabel" destination="zDX-y9-4Hs" id="PJo-ld-zmB"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -181,6 +195,10 @@
                             <outlet property="delegate" destination="NDx-54-OXI" id="gZw-xn-0tz"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="coinView" destination="L8Z-Yh-o3Z" id="0m2-sw-tGI"/>
+                        <outlet property="walletView" destination="p9a-jw-oar" id="ySR-mX-G7r"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6iJ-Jo-9rB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

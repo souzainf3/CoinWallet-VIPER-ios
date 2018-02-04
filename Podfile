@@ -5,6 +5,7 @@ target 'BitcoinWallet' do
   use_frameworks!
 
   # Pods for BitcoinWallet
+  pod 'IQKeyboardManager', '~> 5.0.7'
 
   target 'BitcoinWalletTests' do
     inherit! :search_paths
