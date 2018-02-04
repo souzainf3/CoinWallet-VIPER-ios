@@ -21,6 +21,18 @@ class WalletWireframe: TabBarInterface, StoryboardInstanciate {
         return navigationController
     }
     
+    
+    func showScreenToBuyCoins() {
+        
+    }
+    
+    func showScreenToSellCoins() {
+        
+    }
+    
+    
+    // MARK: - Private
+    
     private func newWalletViewController() -> UIViewController {
         
         let walletViewController = viewControllerFromStoryboard(withIdentifier: "WalletViewController") as! WalletViewController

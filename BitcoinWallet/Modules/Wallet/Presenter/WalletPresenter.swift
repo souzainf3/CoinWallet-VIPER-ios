@@ -11,6 +11,8 @@ protocol WalletPresenterOutput: class {
 // view ---->> presenter
 protocol WalletPresenterInput {
     func viewDidLoad()
+    func didPressedBuyButton()
+    func didPressedSellButton()
 }
 
 class WalletPresenter: WalletPresenterInput {
@@ -34,6 +36,13 @@ class WalletPresenter: WalletPresenterInput {
         self.showUserWallet()
     }
     
+    func didPressedBuyButton() {
+        self.wireframe?.showScreenToBuyCoins()
+    }
+    
+    func didPressedSellButton() {
+        self.wireframe?.showScreenToSellCoins()
+    }
     
     // MARK: - Private
     

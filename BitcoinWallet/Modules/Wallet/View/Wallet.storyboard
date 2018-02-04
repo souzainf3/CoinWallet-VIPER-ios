@@ -18,6 +18,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="hdW-nK-pqM">
+                            <rect key="frame" x="0.0" y="128.5" width="375" height="132"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="nQx-JY-0uB">
+                                    <rect key="frame" x="24" y="43.5" width="327" height="45"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6H-gA-DxT">
+                                            <rect key="frame" x="0.0" y="0.0" width="156.5" height="45"/>
+                                            <color key="backgroundColor" red="0.14901960784313725" green="0.45882352941176469" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="sJT-7F-xeE"/>
+                                            </constraints>
+                                            <state key="normal" title="Comprar">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="pressedBuyButton" destination="NDx-54-OXI" eventType="touchUpInside" id="KeM-9X-9kt"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0S-Pc-ohN">
+                                            <rect key="frame" x="170.5" y="0.0" width="156.5" height="45"/>
+                                            <color key="backgroundColor" red="0.35983604192733765" green="0.68068289756774902" blue="0.44415909051895142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="Vender">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="pressedSellButton" destination="NDx-54-OXI" eventType="touchUpInside" id="hEI-Kn-uOc"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="t0S-Pc-ohN" firstAttribute="height" secondItem="i6H-gA-DxT" secondAttribute="height" id="IXN-t1-15T"/>
+                                        <constraint firstItem="t0S-Pc-ohN" firstAttribute="width" secondItem="i6H-gA-DxT" secondAttribute="width" id="P9Y-PB-aFN"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="nQx-JY-0uB" secondAttribute="trailing" constant="24" id="1pH-fx-2g4"/>
+                                <constraint firstItem="nQx-JY-0uB" firstAttribute="leading" secondItem="hdW-nK-pqM" secondAttribute="leading" constant="24" id="eJK-4o-zQA"/>
+                                <constraint firstItem="nQx-JY-0uB" firstAttribute="centerY" secondItem="hdW-nK-pqM" secondAttribute="centerY" id="lMs-8v-uEV"/>
+                                <constraint firstItem="nQx-JY-0uB" firstAttribute="centerX" secondItem="hdW-nK-pqM" secondAttribute="centerX" id="nGe-0X-wfP"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrencyAmountCell" rowHeight="55" id="L8Z-Yh-o3Z" customClass="CurrencyAmountCell" customModule="BitcoinWallet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="55"/>
@@ -37,7 +92,7 @@
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="2"/>
+                                                    <integer key="value" value="3"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </label>

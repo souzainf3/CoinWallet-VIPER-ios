@@ -28,6 +28,16 @@ class WalletViewController: UITableViewController {
         self.presenter?.viewDidLoad()
     }
 
+    
+    // MARK: - Targets/Actions
+    
+    @IBAction func pressedBuyButton() {
+        self.presenter?.didPressedBuyButton()
+    }
+    
+    @IBAction func pressedSellButton() {
+        self.presenter?.didPressedSellButton()
+    }
 
 
     // MARK: - Table view data source
