@@ -14,7 +14,7 @@ class AppWireframe {
     // MARK: Properties
     private(set) weak var window: UIWindow!
 
-    var tabBarWireframe: TabBarWireframe
+    let tabBarWireframe: TabBarWireframe
 
     
     // MARK: Public
@@ -22,8 +22,7 @@ class AppWireframe {
     init(window: UIWindow) {
         self.window = window
         
-        let walletWireframe = WalletWireframe()
-        
+        let walletWireframe = WalletWireframe(buyCoinWireframe: BuyCoinWireframe())
         self.tabBarWireframe = TabBarWireframe(walletWireframe)
     }
     

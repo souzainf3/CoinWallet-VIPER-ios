@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        let appWireframe = AppWireframe(window: self.window!)
-        appWireframe.installRootViewController()
+        self.appWireframe = AppWireframe(window: self.window!)
+        self.appWireframe.installRootViewController()
         
         window?.makeKeyAndVisible()
         

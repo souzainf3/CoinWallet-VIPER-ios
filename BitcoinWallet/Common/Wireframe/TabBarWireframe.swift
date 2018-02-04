@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 
-protocol TabBarInterface {
+protocol TabBarInterface: class {
     func configuredViewController() -> UIViewController
 }
 

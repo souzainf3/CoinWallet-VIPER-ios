@@ -30,6 +30,12 @@
 		03C43ADB202691A800C53429 /* WalletDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43ADA202691A700C53429 /* WalletDataManager.swift */; };
 		03C43ADD202696FA00C53429 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43ADC202696FA00C53429 /* WalletViewModel.swift */; };
 		03C43AE120269D0800C53429 /* CurrencyAmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AE020269D0800C53429 /* CurrencyAmountCell.swift */; };
+		03C43AEF2027440C00C53429 /* BuyCoinDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AE42027440B00C53429 /* BuyCoinDataManager.swift */; };
+		03C43AF02027440C00C53429 /* BuyCoinInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AE62027440B00C53429 /* BuyCoinInteractor.swift */; };
+		03C43AF12027440C00C53429 /* BuyCoinPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AE82027440B00C53429 /* BuyCoinPresenter.swift */; };
+		03C43AF22027440C00C53429 /* BuyCoin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C43AEA2027440B00C53429 /* BuyCoin.storyboard */; };
+		03C43AF32027440C00C53429 /* BuyCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AEB2027440B00C53429 /* BuyCoinViewController.swift */; };
+		03C43AF42027440C00C53429 /* BuyCoinWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AEE2027440C00C53429 /* BuyCoinWireframe.swift */; };
 		4CD0EA439FEADCCB19D16986 /* Pods_BitcoinWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B798D79EF3DF2142C982BDE5 /* Pods_BitcoinWallet.framework */; };
 		51A3F3DE92AF3CF30F1CA567 /* Pods_BitcoinWalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BF90BD25E668A6E384D359 /* Pods_BitcoinWalletTests.framework */; };
 		E2EB0DAB6987362CC0659F13 /* Pods_BitcoinWalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630A8E6D74CB74CC6FC022C6 /* Pods_BitcoinWalletUITests.framework */; };
@@ -82,6 +88,12 @@
 		03C43ADA202691A700C53429 /* WalletDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletDataManager.swift; sourceTree = "<group>"; };
 		03C43ADC202696FA00C53429 /* WalletViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
 		03C43AE020269D0800C53429 /* CurrencyAmountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyAmountCell.swift; sourceTree = "<group>"; };
+		03C43AE42027440B00C53429 /* BuyCoinDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCoinDataManager.swift; sourceTree = "<group>"; };
+		03C43AE62027440B00C53429 /* BuyCoinInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCoinInteractor.swift; sourceTree = "<group>"; };
+		03C43AE82027440B00C53429 /* BuyCoinPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCoinPresenter.swift; sourceTree = "<group>"; };
+		03C43AEA2027440B00C53429 /* BuyCoin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BuyCoin.storyboard; sourceTree = "<group>"; };
+		03C43AEB2027440B00C53429 /* BuyCoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCoinViewController.swift; sourceTree = "<group>"; };
+		03C43AEE2027440C00C53429 /* BuyCoinWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCoinWireframe.swift; sourceTree = "<group>"; };
 		246C7DC415F5270055E67EC0 /* Pods-BitcoinWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitcoinWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitcoinWallet/Pods-BitcoinWallet.release.xcconfig"; sourceTree = "<group>"; };
 		630A8E6D74CB74CC6FC022C6 /* Pods_BitcoinWalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitcoinWalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73BF90BD25E668A6E384D359 /* Pods_BitcoinWalletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitcoinWalletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				03C43ABF202666B100C53429 /* Wallet */,
+				03C43AE22027440B00C53429 /* BuyCoin */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -322,6 +335,67 @@
 			isa = PBXGroup;
 			children = (
 				03C43AC6202666B100C53429 /* WalletWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		03C43AE22027440B00C53429 /* BuyCoin */ = {
+			isa = PBXGroup;
+			children = (
+				03C43AE32027440B00C53429 /* DataManager */,
+				03C43AE52027440B00C53429 /* Interactor */,
+				03C43AE72027440B00C53429 /* Presenter */,
+				03C43AE92027440B00C53429 /* View */,
+				03C43AEC2027440C00C53429 /* ViewModel */,
+				03C43AED2027440C00C53429 /* Wireframe */,
+			);
+			path = BuyCoin;
+			sourceTree = "<group>";
+		};
+		03C43AE32027440B00C53429 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				03C43AE42027440B00C53429 /* BuyCoinDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		03C43AE52027440B00C53429 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				03C43AE62027440B00C53429 /* BuyCoinInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		03C43AE72027440B00C53429 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				03C43AE82027440B00C53429 /* BuyCoinPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		03C43AE92027440B00C53429 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				03C43AEA2027440B00C53429 /* BuyCoin.storyboard */,
+				03C43AEB2027440B00C53429 /* BuyCoinViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		03C43AEC2027440C00C53429 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		03C43AED2027440C00C53429 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				03C43AEE2027440C00C53429 /* BuyCoinWireframe.swift */,
 			);
 			path = Wireframe;
 			sourceTree = "<group>";
@@ -469,6 +543,7 @@
 				03C43ACD2026738900C53429 /* Wallet.storyboard in Resources */,
 				0398C2DB2026526B00D32808 /* Assets.xcassets in Resources */,
 				0398C2D92026526B00D32808 /* Main.storyboard in Resources */,
+				03C43AF22027440C00C53429 /* BuyCoin.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,15 +726,20 @@
 				03C43AD12026741A00C53429 /* WalletPresenter.swift in Sources */,
 				03C43ACB20266C8800C53429 /* Protocols.swift in Sources */,
 				0398C2D62026526B00D32808 /* SecondViewController.swift in Sources */,
+				03C43AF32027440C00C53429 /* BuyCoinViewController.swift in Sources */,
 				03C43AC920266C6300C53429 /* Reusable.swift in Sources */,
 				03C43AD920268F2900C53429 /* Wallet.swift in Sources */,
 				03C43AD7202687F000C53429 /* Currency.swift in Sources */,
 				0398C30B2026570300D32808 /* Conts.swift in Sources */,
 				0398C2D22026526B00D32808 /* AppDelegate.swift in Sources */,
+				03C43AF42027440C00C53429 /* BuyCoinWireframe.swift in Sources */,
+				03C43AF02027440C00C53429 /* BuyCoinInteractor.swift in Sources */,
+				03C43AF12027440C00C53429 /* BuyCoinPresenter.swift in Sources */,
 				0398C2D42026526B00D32808 /* FirstViewController.swift in Sources */,
 				03C43ACF202673C900C53429 /* WalletViewController.swift in Sources */,
 				03C43ADD202696FA00C53429 /* WalletViewModel.swift in Sources */,
 				03C43ADB202691A800C53429 /* WalletDataManager.swift in Sources */,
+				03C43AEF2027440C00C53429 /* BuyCoinDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
