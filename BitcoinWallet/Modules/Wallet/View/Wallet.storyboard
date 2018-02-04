@@ -14,7 +14,7 @@
         <scene sceneID="CDd-5D-tLH">
             <objects>
                 <tableViewController storyboardIdentifier="WalletViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NDx-54-OXI" customClass="WalletViewController" customModule="BitcoinWallet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="jmJ-78-IVu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="jmJ-78-IVu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -27,7 +27,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eR-V2-HQM">
-                                            <rect key="frame" x="16" y="5" width="40" height="44.5"/>
+                                            <rect key="frame" x="16" y="10" width="40" height="34.5"/>
                                             <color key="backgroundColor" red="0.93065404890000003" green="0.46095091100000002" blue="0.20254039760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="3v7-y0-UR3"/>
@@ -43,7 +43,7 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="฿ 100.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcA-64-6Qp">
                                             <rect key="frame" x="142" y="11" width="217" height="33"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -61,12 +61,12 @@
                                         <constraint firstItem="Wzd-lm-mSp" firstAttribute="top" secondItem="xiY-Jo-UoZ" secondAttribute="topMargin" id="Bg4-ck-Mka"/>
                                         <constraint firstItem="zcA-64-6Qp" firstAttribute="top" secondItem="xiY-Jo-UoZ" secondAttribute="topMargin" id="BnM-4D-rEt"/>
                                         <constraint firstItem="Wzd-lm-mSp" firstAttribute="leading" secondItem="7eR-V2-HQM" secondAttribute="trailing" constant="8" id="KJN-ea-Kgg"/>
-                                        <constraint firstAttribute="bottom" secondItem="7eR-V2-HQM" secondAttribute="bottom" constant="5" id="QXn-4g-qwV"/>
+                                        <constraint firstAttribute="bottom" secondItem="7eR-V2-HQM" secondAttribute="bottom" constant="10" id="QXn-4g-qwV"/>
                                         <constraint firstItem="zcA-64-6Qp" firstAttribute="leading" secondItem="Wzd-lm-mSp" secondAttribute="trailing" constant="9" id="Tgo-tq-0OD"/>
                                         <constraint firstItem="7eR-V2-HQM" firstAttribute="leading" secondItem="xiY-Jo-UoZ" secondAttribute="leadingMargin" id="ZlV-7f-7Md"/>
                                         <constraint firstItem="Wzd-lm-mSp" firstAttribute="bottom" secondItem="xiY-Jo-UoZ" secondAttribute="bottomMargin" id="hQV-U0-SAw"/>
                                         <constraint firstItem="zcA-64-6Qp" firstAttribute="trailing" secondItem="xiY-Jo-UoZ" secondAttribute="trailingMargin" id="pkL-4d-tol"/>
-                                        <constraint firstItem="7eR-V2-HQM" firstAttribute="top" secondItem="xiY-Jo-UoZ" secondAttribute="top" constant="5" id="rfD-WV-Rdk"/>
+                                        <constraint firstItem="7eR-V2-HQM" firstAttribute="top" secondItem="xiY-Jo-UoZ" secondAttribute="top" constant="10" id="rfD-WV-Rdk"/>
                                         <constraint firstItem="zcA-64-6Qp" firstAttribute="bottom" secondItem="xiY-Jo-UoZ" secondAttribute="bottomMargin" id="y5T-Qe-QjE"/>
                                     </constraints>
                                 </tableViewCellContentView>
