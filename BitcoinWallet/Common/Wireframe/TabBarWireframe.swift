@@ -1,3 +1,4 @@
+
 //
 //  TabBarWireframe.swift
 //  BitcoinWallet
@@ -16,7 +17,7 @@ protocol TabBarInterface {
 
 class TabBarWireframe {
     
-    let wireFrames:[TabBarInterface]
+    let wireFrames: [TabBarInterface]
     
     private(set) weak var tabBarController: UITabBarController?
 

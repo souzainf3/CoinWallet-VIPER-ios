@@ -22,7 +22,9 @@ class AppWireframe {
     init(window: UIWindow) {
         self.window = window
         
-        self.tabBarWireframe = TabBarWireframe()
+        let walletWireframe = WalletWireframe()
+        
+        self.tabBarWireframe = TabBarWireframe(walletWireframe)
     }
     
     func installRootViewController() {
