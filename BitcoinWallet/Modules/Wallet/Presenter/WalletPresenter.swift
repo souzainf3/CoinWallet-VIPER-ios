@@ -41,7 +41,8 @@ class WalletPresenter: WalletPresenterInput {
         let items = self.interactor.getUserWallet().map({
             WalletItem(
                 title: $0.currency.abbreviation,
-                amountValue: "\($0.currency.symbol) \($0.amount)"
+                amountValue: "\($0.currency.symbol) \($0.amount)",
+                icon: (symbol: $0.currency.symbol, color: $0.currency.color)
             )
         })
         

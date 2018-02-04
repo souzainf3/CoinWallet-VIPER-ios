@@ -1,5 +1,5 @@
 
-import Foundation
+import UIKit
 
 struct WalletViewModel {
     let title: String
@@ -9,4 +9,5 @@ struct WalletViewModel {
 struct WalletItem {
     let title: String
     let amountValue: String
+    let icon: (symbol: String, color: UIColor)
 }
