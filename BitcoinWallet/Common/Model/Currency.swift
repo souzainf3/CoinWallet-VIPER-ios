@@ -41,12 +41,9 @@ enum Currency: String {
     
     var color: UIColor {
         switch self {
-        // #329239    (50,146,57)
         case .real:     return UIColor(red: 50/255, green: 146/255, blue: 57/255, alpha: 1)
-        // #f7931a    (247,147,26)
-        case .bitcoin:  return UIColor(red: 247/255, green: 147/255, blue: 26/255, alpha: 1)
-        // #0d579b    (13,87,155)
-        case .britta:   return UIColor(red: 13/255, green: 87/255, blue: 155/255, alpha: 1)
+        case .bitcoin:  return UIColor(red: 1, green: 0.75, blue: 0, alpha: 1)
+        case .britta:   return .black
         }
     }
 }

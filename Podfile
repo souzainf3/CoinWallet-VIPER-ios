@@ -5,7 +5,6 @@ target 'BitcoinWallet' do
   use_frameworks!
 
   # Pods for BitcoinWallet
-  pod 'Letters' #2.1.1
 
   target 'BitcoinWalletTests' do
     inherit! :search_paths
