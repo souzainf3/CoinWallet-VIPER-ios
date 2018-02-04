@@ -17,7 +17,7 @@ class WalletDataManager: WalletDataManagerInput {
         // TODO: - Remove Mock
         return [
             Wallet(currency: .real, amount: 100000.0),
-            Wallet(currency: .bitcoin, amount: 1.0),
+            Wallet(currency: .bitcoin, amount: 0.002),
             Wallet(currency: .britta, amount: 0.0)
         ]
     }

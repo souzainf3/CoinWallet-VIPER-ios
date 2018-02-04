@@ -31,7 +31,7 @@ enum Currency: String {
         switch self {
         case .real:    return "R$"
         case .bitcoin: return "฿"
-        case .britta:  return "B$"
+        case .britta:  return "฿T"
         }
     }
     

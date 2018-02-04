@@ -24,7 +24,7 @@ extension Wallet {
             return "\(currency.symbol)\(realFormat(amount))"
         }
         // coins
-        return "\(currency.symbol)\(amount)"
+        return "\(currency.symbol) \(amount)"
     }
     
     private func realFormat(_ amount: Double) -> String {

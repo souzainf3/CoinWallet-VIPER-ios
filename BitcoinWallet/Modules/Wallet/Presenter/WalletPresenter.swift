@@ -44,6 +44,7 @@ class WalletPresenter: WalletPresenterInput {
         self.wireframe?.showScreenToSellCoins()
     }
     
+    
     // MARK: - Private
     
     private func showUserWallet() {
