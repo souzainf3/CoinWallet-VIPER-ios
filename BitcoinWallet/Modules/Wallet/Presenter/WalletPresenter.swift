@@ -50,13 +50,14 @@ class WalletPresenter: WalletPresenterInput {
         let items = self.interactor.getUserWallet().map({
             WalletItem(
                 title: $0.currency.name.capitalized,
-                amountValue: "\($0.currency.symbol) \($0.amount)",
+                amountValue: $0.amountFormatted,
                 tag: (currency: $0.currency.abbreviation, color: $0.currency.color)
             )
         })
         
         self.output?.reloadWallet(viewModel: WalletViewModel(title: "Saldo", items: items))
     }
+
 }
 
 // MARK: - WalletInteractorOutput
