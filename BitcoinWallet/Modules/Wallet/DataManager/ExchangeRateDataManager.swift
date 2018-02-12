@@ -69,7 +69,7 @@ class ExchangeRateDataManager: ExchangeRateDataManagerInput {
             throw ExchangeRateError.missingRate
         }
         
-        return amount / rate
+        return amount * rate
     }
     
     

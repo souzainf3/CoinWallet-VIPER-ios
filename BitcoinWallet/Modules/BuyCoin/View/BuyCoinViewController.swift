@@ -32,8 +32,17 @@ class BuyCoinViewController: UITableViewController {
         self.presenter?.coinSelectionPressed()
     }
     
+    @IBAction func buyPressed(_ sender: Any) {
+        // TODO: - Levar pro presenter em String e fazer as conversões lá
+        if let text = coinView.amountTextField.text, let amount = Double(text) {
+            self.presenter?.didPressedBuy(value: amount)
+        } else {
+            // TODO: - Mostre error de valor invládio
+        }
+    }
+
     
-    // MARK: - Table view data source
+    // MARK: - Table view dfmounturce
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: - Melhorar lógica de validação
@@ -50,6 +59,12 @@ class BuyCoinViewController: UITableViewController {
 // MARK: - BuyCoinPresenterOutput
 
 extension BuyCoinViewController: BuyCoinPresenterOutput {
+    func showLoading() {
+    }
+    
+    func hideLoading() {
+    }
+    
     func configureSelectedCoin(_ coin: Currency) {
         self.coinView.configure(with: coin)
     }

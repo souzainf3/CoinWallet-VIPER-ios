@@ -15,6 +15,16 @@ struct Wallet {
     mutating func setAmount(value: Double) {
         self.amount = value
     }
+    
+    mutating func increment(value: Double) {
+        self.amount += value
+        print(self.amount)
+    }
+    
+    mutating func decrement(value: Double) {
+        self.amount -= value
+        print(self.amount)
+    }
 }
 
 extension Wallet {

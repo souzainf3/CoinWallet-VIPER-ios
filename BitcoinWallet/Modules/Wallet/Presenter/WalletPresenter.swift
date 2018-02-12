@@ -11,6 +11,7 @@ protocol WalletPresenterOutput: class {
 // view ---->> presenter
 protocol WalletPresenterInput {
     func viewDidLoad()
+    func viewWillAppear()
     func didPressedBuyButton()
     func didPressedSellButton()
 }
@@ -33,6 +34,10 @@ class WalletPresenter: WalletPresenterInput {
     // MARK: Input
     
     func viewDidLoad() {
+//        self.showUserWallet()
+    }
+    
+    func viewWillAppear() {
         self.showUserWallet()
     }
     

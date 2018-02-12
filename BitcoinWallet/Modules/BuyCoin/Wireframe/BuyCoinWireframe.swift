@@ -14,7 +14,7 @@ class BuyCoinWireframe: StoryboardInstanciate {
         
        let viewController = viewControllerFromStoryboard(withIdentifier: "BuyCoinViewController") as! BuyCoinViewController
         
-        let interactor = BuyCoinInteractor(walletDataManager: WalletDataManager(), exchangeRateDataManager: ExchangeRateDataManager())
+        let interactor = BuyCoinInteractor(walletDataManager: WalletDataManager.shared, exchangeRateDataManager: ExchangeRateDataManager())
         
         let presenter = BuyCoinPresenter(interactor: interactor, wireframe: self)
         presenter.output = viewController
@@ -23,6 +23,10 @@ class BuyCoinWireframe: StoryboardInstanciate {
         interactor.output = presenter
 
         navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func dismissBuyScreen() {
+        self.walletViewController?.navigationController?.popViewController(animated: true)
     }
    
 }

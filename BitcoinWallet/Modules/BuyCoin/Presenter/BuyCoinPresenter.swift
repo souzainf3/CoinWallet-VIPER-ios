@@ -4,6 +4,8 @@ import Foundation
 
 // presenter ---->> view
 protocol BuyCoinPresenterOutput: class {
+    func showLoading()
+    func hideLoading()
     func configureSelectedCoin(_ coin: Currency)
     func configureWalletNotSelected()
     func configureSelectedWallet(_ wallet: Wallet)
@@ -19,6 +21,7 @@ protocol BuyCoinPresenterInput {
     func coinSelectionPressed()
     func didSelected(coin: Currency)
     func didSelected(wallet: Wallet)
+    func didPressedBuy(value: Double)
 }
 
 class BuyCoinPresenter: BuyCoinPresenterInput {
@@ -68,6 +71,11 @@ class BuyCoinPresenter: BuyCoinPresenterInput {
         self.interactor.walletSelected = wallet
         self.configureWallet()
     }
+    
+    func didPressedBuy(value: Double) {
+        self.output?.showLoading()
+        self.interactor.buy(amount: value)
+    }
 
     
     // MARK: - Private
@@ -90,6 +98,7 @@ class BuyCoinPresenter: BuyCoinPresenterInput {
 // MARK: - WalletInteractorOutput
 
 extension BuyCoinPresenter: BuyCoinInteractorOutput {
+    
     func configureSelectedCoin(_ coin: Currency) {
         self.output?.configureSelectedCoin(coin)
     }
@@ -100,6 +109,20 @@ extension BuyCoinPresenter: BuyCoinInteractorOutput {
     
     func configureUnselectedWallet() {
         self.output?.configureWalletNotSelected()
+    }
+    
+    func buyed() {
+        // TODO: - Corrigir fluxo
+        self.output?.hideLoading()
+        // 2. - Mostre alerta de sucesso de compra
+        self.wireframe?.dismissBuyScreen()
+    }
+
+    func buyFailed(with error: BuyCoinFail) {
+        // TODO: - Corrigir fluxo
+        self.output?.hideLoading()
+
+        // 2. - Mostre alerta de faha de compra
     }
 }
 

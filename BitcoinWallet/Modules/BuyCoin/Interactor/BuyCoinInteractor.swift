@@ -9,7 +9,7 @@ protocol BuyCoinInteractorInput {
     var wallets: [Wallet] { get }
     var coinsAvailable: [Currency] { get }
 
-
+    func buy(amount: Double)
 }
 
 // interactor ---->> presenter
@@ -17,6 +17,16 @@ protocol BuyCoinInteractorOutput: class {
     func configureSelectedCoin(_ coin: Currency)
     func configureSelectedWallet(_ wallet: Wallet)
     func configureUnselectedWallet()
+    
+    func buyed()
+    func buyFailed(with error: BuyCoinFail)
+}
+
+enum BuyCoinFail: Error {
+    case walletNotSelected
+    case invalidValue
+    case exchangeRateUnavailable
+    case insufficientBalance
 }
 
 class BuyCoinInteractor: BuyCoinInteractorInput {
@@ -26,8 +36,6 @@ class BuyCoinInteractor: BuyCoinInteractorInput {
     let walletDataManager: WalletDataManagerInput
     let exchangeRateDataManager: ExchangeRateDataManagerInput
     
-
-    // MARK: - Input
 
     // Coin selected. Default value is .bitcoin
     var coinSelected: Currency = .bitcoin {
@@ -45,7 +53,7 @@ class BuyCoinInteractor: BuyCoinInteractorInput {
     
     // User Wallets
     var wallets: [Wallet] {
-        return self.walletDataManager.fetchUserWallet().filter({ $0.currency != self.coinSelected })
+        return self.walletDataManager.fetchUserWallets().filter({ $0.currency != self.coinSelected })
     }
     
     // Only virtual currencies
@@ -62,7 +70,50 @@ class BuyCoinInteractor: BuyCoinInteractorInput {
     }
     
     
+    // MARK: - Input
+
+    func buy(amount: Double) {
+        guard let wallet = self.walletSelected else {
+            self.output?.buyFailed(with: .walletNotSelected)
+            return
+        }
+        
+        guard amount > 0 else {
+            self.output?.buyFailed(with: .invalidValue)
+            return
+        }
+
+        self.tryBuy(amount: amount, in: wallet)
+    }
+    
+    
     // MARK: - Private
+    
+    private func tryBuy(amount: Double, in wallet: Wallet) {
+        do {
+            let valueConverted = try self.exchangeRateDataManager.converter(amount: amount, from: self.coinSelected, to: wallet.currency)
+            
+            print("From: \(self.coinSelected.abbreviation) - Amount: \(amount)")
+            print("To: \(wallet.currency.abbreviation) - Amount: \(valueConverted)")
+            
+            guard self.hasBalanceToBuyAmount(valueConverted, in: wallet) else {
+                self.output?.buyFailed(with: .insufficientBalance)
+                return
+            }
+            
+            self.walletDataManager.incrementWallet(amount: amount, currency: self.coinSelected)
+            self.walletDataManager.decrement(amount: valueConverted, from: wallet)
+            self.output?.buyed()
+            
+        } catch let error {
+            print(error)
+            self.output?.buyFailed(with: .exchangeRateUnavailable)
+        }
+    }
+    
+    private func hasBalanceToBuyAmount(_ value: Double, in wallet: Wallet) -> Bool {
+        return wallet.amount - value >= 0
+    }
     
     private func coinValueChanged() {
         self.output?.configureSelectedCoin(self.coinSelected)
@@ -72,18 +123,6 @@ class BuyCoinInteractor: BuyCoinInteractorInput {
     private func walletValueChanged() {
         if let wallet = self.walletSelected {
             self.output?.configureSelectedWallet(wallet)
-            
-            let amount: Double = 1
-            print("From: \(self.coinSelected.abbreviation) - Amount: \(amount)")
-
-            do {
-                let value = try self.exchangeRateDataManager.converter(amount: amount, from: self.coinSelected, to: wallet.currency)
-                print("To: \(wallet.currency.abbreviation) - Amount: \(value)")
-            } catch let error {
-                print(error)
-            }
-
-            
         } else {
             self.output?.configureUnselectedWallet()
         }

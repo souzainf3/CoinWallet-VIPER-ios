@@ -27,6 +27,12 @@ class WalletViewController: UITableViewController {
         self.title = "Carteira"
         self.presenter?.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.presenter?.viewWillAppear()
+    }
 
     
     // MARK: - Targets/Actions

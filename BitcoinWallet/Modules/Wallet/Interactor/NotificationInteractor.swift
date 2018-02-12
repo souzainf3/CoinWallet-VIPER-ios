@@ -24,7 +24,7 @@ class WalletInteractor: WalletInteractorInput {
     // MARK: Input
     
     func getUserWallet() -> [Wallet] {
-        return self.dataManager.fetchUserWallet()
+        return self.dataManager.fetchUserWallets()
     }
     
 }

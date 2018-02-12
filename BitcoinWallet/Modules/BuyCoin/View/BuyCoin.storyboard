@@ -39,6 +39,9 @@
                                                     <integer key="value" value="4"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="buyPressed:" destination="NDx-54-OXI" eventType="touchUpInside" id="BX1-pW-cH3"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
