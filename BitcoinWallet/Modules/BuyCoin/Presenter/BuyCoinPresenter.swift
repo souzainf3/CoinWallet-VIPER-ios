@@ -39,10 +39,7 @@ class BuyCoinPresenter: BuyCoinPresenterInput {
     // MARK: Input
     
     func viewDidLoad() {
-        // Coin to buy
         self.configureCoin()
-        
-        // Wallet to pay
         self.configureWallet()
     }
     
@@ -89,9 +86,21 @@ class BuyCoinPresenter: BuyCoinPresenterInput {
     
 }
 
+
 // MARK: - WalletInteractorOutput
 
 extension BuyCoinPresenter: BuyCoinInteractorOutput {
+    func configureSelectedCoin(_ coin: Currency) {
+        self.output?.configureSelectedCoin(coin)
+    }
+    
+    func configureSelectedWallet(_ wallet: Wallet) {
+        self.output?.configureSelectedWallet(wallet)
+    }
+    
+    func configureUnselectedWallet() {
+        self.output?.configureWalletNotSelected()
+    }
 }
 
 
