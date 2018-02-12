@@ -9,12 +9,9 @@ protocol BuyCoinPresenterOutput: class {
     func configureSelectedCoin(_ coin: Currency)
     func configureWalletNotSelected()
     func configureSelectedWallet(_ wallet: Wallet)
-    
     func showWalletPicker(title: String, wallets: [Wallet], walletSelected: Wallet?)
     func showCoinPicker(title: String, coins: [Currency], coinSelected: Currency?)
-    
     func showAlert(title: String, message: String, buttonTitle: String, onDismiss: (()->Void)?)
-
 }
 
 // view ---->> presenter
@@ -24,7 +21,7 @@ protocol BuyCoinPresenterInput {
     func coinSelectionPressed()
     func didSelected(coin: Currency)
     func didSelected(wallet: Wallet)
-    func didPressedBuy(value: Double)
+    func didPressedBuy(rawValue: String?)
 }
 
 class BuyCoinPresenter: BuyCoinPresenterInput {
@@ -75,9 +72,13 @@ class BuyCoinPresenter: BuyCoinPresenterInput {
         self.configureWallet()
     }
     
-    func didPressedBuy(value: Double) {
-        self.output?.showLoading()
-        self.interactor.buy(amount: value)
+    func didPressedBuy(rawValue: String?) {
+        if let textValue = rawValue, let value = Double(textValue) {
+            self.output?.showLoading()
+            self.interactor.buy(amount: value)
+        } else {
+            self.output?.showAlert(title: "Atenção!", message: "O valor inserido é inválido.", buttonTitle: "OK", onDismiss: nil)
+        }
     }
 
     

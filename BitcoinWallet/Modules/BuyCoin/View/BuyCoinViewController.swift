@@ -34,12 +34,7 @@ class BuyCoinViewController: UITableViewController {
     }
     
     @IBAction func buyPressed(_ sender: Any) {
-        // TODO: - Levar pro presenter em String e fazer as conversões lá
-        if let text = coinView.amountTextField.text, let amount = Double(text) {
-            self.presenter?.didPressedBuy(value: amount)
-        } else {
-            // TODO: - Mostre error de valor invládio
-        }
+        self.presenter?.didPressedBuy(rawValue: coinView.amountTextField.text)
     }
 
     
