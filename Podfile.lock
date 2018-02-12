@@ -1,15 +1,29 @@
 PODS:
   - IQKeyboardManager (5.0.7)
+  - Realm (3.1.0):
+    - Realm/Headers (= 3.1.0)
+  - Realm/Headers (3.1.0)
+  - RealmSwift (3.1.0):
+    - Realm (= 3.1.0)
   - RNActivityView (0.0.7)
+  - RxCocoa (4.1.1):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.1)
 
 DEPENDENCIES:
   - IQKeyboardManager (~> 5.0.7)
+  - RealmSwift
   - RNActivityView (~> 0.0.7)
+  - RxCocoa
 
 SPEC CHECKSUMS:
   IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
+  Realm: 09513d7c054678d65cd02ce09871f805b0d758ac
+  RealmSwift: e868fee9b10e5490ad94b6b6ecd9027944da1824
   RNActivityView: d1bde2ec4956ad8f69da9650afe7898311221a8e
+  RxCocoa: fd0862fd2df95fa55562ad28ffd2522c25eb4a85
+  RxSwift: c6e3b1c7b325c7d121cd4327e9d98b7ed746b570
 
-PODFILE CHECKSUM: e43bc92e4094eca0922755adc74a914180d812cf
+PODFILE CHECKSUM: 55efec69704512e894844e6e5e65da427c9dff19
 
 COCOAPODS: 1.4.0
