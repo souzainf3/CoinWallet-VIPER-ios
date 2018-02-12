@@ -73,8 +73,12 @@ class BuyCoinPresenter: BuyCoinPresenterInput {
     }
     
     func didPressedBuy(amount: Double) {
-        self.output?.showLoading()
-        self.interactor.buy(amount: amount)
+        if amount > 0 {
+            self.output?.showLoading()
+            self.interactor.buy(amount: amount)
+        } else {
+            self.output?.showAlert(title: "Atenção!", message: "O valor inserido é inválido.", buttonTitle: "OK", onDismiss: nil)
+        }
     }
 
     
