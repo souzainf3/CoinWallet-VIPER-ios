@@ -31,3 +31,13 @@ extension Wallet {
         return String(format: "%.02f", amount)
     }
 }
+
+extension Wallet: Hashable {
+    static func ==(lhs: Wallet, rhs: Wallet) -> Bool {
+        return lhs.currency.abbreviation.lowercased() == rhs.currency.abbreviation.lowercased()
+    }
+    
+    var hashValue: Int {
+        return currency.abbreviation.lowercased().hashValue
+    }
+}

@@ -36,12 +36,12 @@ class BuyCoinViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
         // TODO: - Melhorar lógica de validação
         if indexPath.section == 1 {
             self.presenter?.walletSelectionPressed()
         }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }
@@ -50,36 +50,35 @@ class BuyCoinViewController: UITableViewController {
 // MARK: - BuyCoinPresenterOutput
 
 extension BuyCoinViewController: BuyCoinPresenterOutput {
-
-    func setSelectedCoin(_ coin: Currency) {
+    func configureSelectedCoin(_ coin: Currency) {
         self.coinView.configure(with: coin)
     }
     
-    func setUnselectedWallet() {
+    func configureWalletNotSelected() {
         self.walletView.setEmpty()
     }
     
-    func setSelectedWallet(_ wallet: Wallet) {
+    func configureSelectedWallet(_ wallet: Wallet) {
         self.walletView.configure(with: wallet)
     }
     
-    func showWalletPicker(title: String, wallets: [Wallet]) {
-        let pickerController = CoinPickerViewController<Wallet>(title: title, items: wallets, didSelectedItem: { wallet in
-            
-        }) { wallet -> CoinPickerDisplayItem in
+    func showWalletPicker(title: String, wallets: [Wallet], walletSelected: Wallet?) {
+        let pickerController = CoinPickerViewController<Wallet>(title: title, items: wallets, itemSelected: walletSelected, didSelectedItem: { wallet in
+            self.presenter?.didSelected(wallet: wallet)
+        }, cellLayoutAdapter: { wallet -> CoinPickerDisplayItem in
             return CoinPickerDisplayItem(
                 title: wallet.currency.name,
                 amountValue: wallet.amountFormatted,
                 currencyFlag: (abbreviation: wallet.currency.abbreviation, color: wallet.currency.color)
             )
-        }
+        })
         
         pickerController.present(in: self)
     }
     
-    func showCoinPicker(title: String, coins: [Currency]) {
-        let pickerController = CoinPickerViewController<Currency>(title: title, items: coins, didSelectedItem: { coin in
-            
+    func showCoinPicker(title: String, coins: [Currency], coinSelected: Currency?) {
+        let pickerController = CoinPickerViewController<Currency>(title: title, items: coins, itemSelected: coinSelected, didSelectedItem: { coin in
+            self.presenter?.didSelected(coin: coin)
         }, cellLayoutAdapter: { coin -> CoinPickerDisplayItem in
             return CoinPickerDisplayItem(
                 title: coin.name,

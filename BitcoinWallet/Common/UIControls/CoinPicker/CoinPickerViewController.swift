@@ -19,7 +19,7 @@ extension CoinPickerViewController {
     func present(in viewController: UIViewController) {
         
         let width = viewController.view.frame.width
-        self.preferredContentSize = CGSize(width: width, height: 350)
+        self.preferredContentSize = CGSize(width: width, height: 280)
         
         let navigation = UINavigationController(rootViewController: self)
         navigation.modalPresentationStyle = .custom
@@ -29,9 +29,10 @@ extension CoinPickerViewController {
     }
 }
 
-class CoinPickerViewController<T>: UITableViewController {
+class CoinPickerViewController<T: Hashable>: UITableViewController {
     
     private var items: [T] = []
+    private var itemSelected: T?
     private var didSelectedItem: (T) -> Void
     private var cellLayoutAdapter: (T) -> CoinPickerDisplayItem
     
@@ -40,8 +41,9 @@ class CoinPickerViewController<T>: UITableViewController {
     
     // MARK: - Initializers
     
-    init(title: String?, items: [T], didSelectedItem: @escaping (T) -> Void, cellLayoutAdapter: @escaping (T) -> CoinPickerDisplayItem) {
+    init(title: String?, items: [T], itemSelected: T?, didSelectedItem: @escaping (T) -> Void, cellLayoutAdapter: @escaping (T) -> CoinPickerDisplayItem) {
         self.items = items
+        self.itemSelected = itemSelected
         self.cellLayoutAdapter = cellLayoutAdapter
         self.didSelectedItem = didSelectedItem
         
@@ -80,9 +82,9 @@ class CoinPickerViewController<T>: UITableViewController {
         let item = self.items[indexPath.row]
         cell.configure(with: self.cellLayoutAdapter(item))
         
-        if indexPath.row == 0  {
+        if let itemSelected = self.itemSelected, item == itemSelected {
             cell.accessoryType = .checkmark
-        } else {
+       } else {
             // AccessoryType space reserved
             cell.accessoryView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: 23))
         }

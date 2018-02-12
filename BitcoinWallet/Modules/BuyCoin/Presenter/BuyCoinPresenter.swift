@@ -4,12 +4,12 @@ import Foundation
 
 // presenter ---->> view
 protocol BuyCoinPresenterOutput: class {
-    func setSelectedCoin(_ coin: Currency)
-    func setUnselectedWallet()
-    func setSelectedWallet(_ wallet: Wallet)
+    func configureSelectedCoin(_ coin: Currency)
+    func configureWalletNotSelected()
+    func configureSelectedWallet(_ wallet: Wallet)
     
-    func showWalletPicker(title: String, wallets: [Wallet])
-    func showCoinPicker(title: String, coins: [Currency])
+    func showWalletPicker(title: String, wallets: [Wallet], walletSelected: Wallet?)
+    func showCoinPicker(title: String, coins: [Currency], coinSelected: Currency?)
 }
 
 // view ---->> presenter
@@ -17,13 +17,15 @@ protocol BuyCoinPresenterInput {
     func viewDidLoad()
     func walletSelectionPressed()
     func coinSelectionPressed()
+    func didSelected(coin: Currency)
+    func didSelected(wallet: Wallet)
 }
 
 class BuyCoinPresenter: BuyCoinPresenterInput {
     
     weak var output: BuyCoinPresenterOutput?
     weak var wireframe: BuyCoinWireframe?
-    let interactor: BuyCoinInteractorInput
+    var interactor: BuyCoinInteractorInput
 
     
     // MARK: Initializes
@@ -38,27 +40,50 @@ class BuyCoinPresenter: BuyCoinPresenterInput {
     
     func viewDidLoad() {
         // Coin to buy
-        self.output?.setSelectedCoin(self.interactor.coinSelected)
+        self.configureCoin()
         
         // Wallet to pay
         self.configureWallet()
     }
     
     func walletSelectionPressed() {
-        self.output?.showWalletPicker(title: "Selecione uma carteira", wallets: self.interactor.wallets)
+        self.output?.showWalletPicker(
+            title: "Selecione uma carteira",
+            wallets: self.interactor.wallets,
+            walletSelected: self.interactor.walletSelected
+        )
     }
     
     func coinSelectionPressed() {
-        self.output?.showCoinPicker(title: "Selecione uma moeda", coins: self.interactor.coinsAvailable)
+        self.output?.showCoinPicker(
+            title: "Selecione uma moeda",
+            coins: self.interactor.coinsAvailable,
+            coinSelected: self.interactor.coinSelected
+        )
     }
+    
+    func didSelected(coin: Currency) {
+        self.interactor.coinSelected = coin
+        self.configureCoin()
+    }
+    
+    func didSelected(wallet: Wallet) {
+        self.interactor.walletSelected = wallet
+        self.configureWallet()
+    }
+
     
     // MARK: - Private
     
+    private func configureCoin() {
+        self.output?.configureSelectedCoin(self.interactor.coinSelected)
+    }
+    
     private func configureWallet() {
         if let wallet = self.interactor.walletSelected {
-            self.output?.setSelectedWallet(wallet)
+            self.output?.configureSelectedWallet(wallet)
         } else {
-            self.output?.setUnselectedWallet()
+            self.output?.configureWalletNotSelected()
         }
     }
     

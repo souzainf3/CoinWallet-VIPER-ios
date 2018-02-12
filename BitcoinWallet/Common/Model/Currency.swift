@@ -48,3 +48,9 @@ enum Currency: String {
     }
 }
 
+extension Currency: Hashable {
+    var hashValue: Int {
+        return self.abbreviation.lowercased().hashValue
+    }
+}
+
