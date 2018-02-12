@@ -23,6 +23,8 @@ class BuyCoinWireframe: StoryboardInstanciate {
         interactor.output = presenter
 
         navigationController.pushViewController(viewController, animated: true)
+        
+        self.walletViewController = viewController
     }
     
     func dismissBuyScreen() {

@@ -18,12 +18,10 @@ struct Wallet {
     
     mutating func increment(value: Double) {
         self.amount += value
-        print(self.amount)
     }
     
     mutating func decrement(value: Double) {
         self.amount -= value
-        print(self.amount)
     }
 }
 

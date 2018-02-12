@@ -110,6 +110,10 @@ extension BuyCoinViewController: BuyCoinPresenterOutput {
         })
         pickerController.present(in: self)
     }
+    
+    func showAlert(title: String, message: String, buttonTitle: String, onDismiss: (() -> Void)?) {
+        UIAlertController.show(title: title, message: message, cancelButtonTitle: buttonTitle, cancelBlock: onDismiss)
+    }
 }
 
 

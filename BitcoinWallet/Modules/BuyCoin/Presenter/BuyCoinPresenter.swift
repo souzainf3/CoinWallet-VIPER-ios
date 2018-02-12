@@ -12,6 +12,9 @@ protocol BuyCoinPresenterOutput: class {
     
     func showWalletPicker(title: String, wallets: [Wallet], walletSelected: Wallet?)
     func showCoinPicker(title: String, coins: [Currency], coinSelected: Currency?)
+    
+    func showAlert(title: String, message: String, buttonTitle: String, onDismiss: (()->Void)?)
+
 }
 
 // view ---->> presenter
@@ -112,17 +115,28 @@ extension BuyCoinPresenter: BuyCoinInteractorOutput {
     }
     
     func buyed() {
-        // TODO: - Corrigir fluxo
         self.output?.hideLoading()
-        // 2. - Mostre alerta de sucesso de compra
-        self.wireframe?.dismissBuyScreen()
+        self.output?.showAlert(title: "Compra realizada com sucesso", message: "", buttonTitle: "OK", onDismiss: {
+            self.wireframe?.dismissBuyScreen()
+        })
     }
 
     func buyFailed(with error: BuyCoinFail) {
-        // TODO: - Corrigir fluxo
         self.output?.hideLoading()
 
-        // 2. - Mostre alerta de faha de compra
+        let message: String
+        switch error {
+        case .exchangeRateUnavailable:
+            message = "Taxa de câmbio indisponivel no momento. Tente novamente mais tarte."
+        case .insufficientBalance:
+            message = "A carteira selecionada não tem saldo suficiente para essa operação."
+        case .invalidValue:
+            message = "O valor inserido é inválido."
+        case .walletNotSelected:
+            message = "Selecione uma carteira a ser debitada."
+        }
+        
+        self.output?.showAlert(title: "Atenção!", message: message, buttonTitle: "OK", onDismiss: nil)
     }
 }
 
