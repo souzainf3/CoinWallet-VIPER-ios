@@ -56,3 +56,26 @@ extension UIAlertController {
     }
 }
 
+
+// MARK: - String
+
+extension String {
+    
+    func hasOccurrencesOf(_ substring: String?) -> Bool {
+        return count(occurrencesOf: substring) > 0
+    }
+    
+    func count(occurrencesOf substring: String?) -> Int {
+        guard let substring = substring, !substring.isEmpty else { return 0 }
+
+        var searchRange: Range<String.Index>?
+        var count = 0
+        while let foundRange = range(of: substring, options: .diacriticInsensitive, range: searchRange) {
+            searchRange = Range(uncheckedBounds: (lower: foundRange.upperBound, upper: endIndex))
+            count += 1
+        }
+        return count
+    }
+}
+
+

@@ -15,6 +15,7 @@
 		0334ED8D2031F371005A06CB /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334ED8C2031F371005A06CB /* ExchangeRate.swift */; };
 		0334ED8F2031FD5D005A06CB /* ExchangeRateDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334ED8E2031FD5D005A06CB /* ExchangeRateDataManager.swift */; };
 		0334ED922032259D005A06CB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334ED912032259D005A06CB /* Extensions.swift */; };
+		0334ED9620323381005A06CB /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334ED9520323380005A06CB /* CurrencyTextField.swift */; };
 		0398C2D22026526B00D32808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D12026526B00D32808 /* AppDelegate.swift */; };
 		0398C2D42026526B00D32808 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D32026526B00D32808 /* FirstViewController.swift */; };
 		0398C2D62026526B00D32808 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D52026526B00D32808 /* SecondViewController.swift */; };
@@ -76,6 +77,7 @@
 		0334ED8C2031F371005A06CB /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		0334ED8E2031FD5D005A06CB /* ExchangeRateDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateDataManager.swift; sourceTree = "<group>"; };
 		0334ED912032259D005A06CB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0334ED9520323380005A06CB /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
 		0398C2CE2026526B00D32808 /* BitcoinWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0398C2D12026526B00D32808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0398C2D32026526B00D32808 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,14 @@
 			children = (
 			);
 			path = Local;
+			sourceTree = "<group>";
+		};
+		0334ED94203231B0005A06CB /* CurrencyTextField */ = {
+			isa = PBXGroup;
+			children = (
+				0334ED9520323380005A06CB /* CurrencyTextField.swift */,
+			);
+			path = CurrencyTextField;
 			sourceTree = "<group>";
 		};
 		0398C2C52026526B00D32808 = {
@@ -311,6 +321,7 @@
 		0398C30C2026584300D32808 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
+				0334ED94203231B0005A06CB /* CurrencyTextField */,
 				0334ED782031B00C005A06CB /* CoinPicker */,
 			);
 			path = UIControls;
@@ -799,6 +810,7 @@
 				03C43ADD202696FA00C53429 /* WalletViewModel.swift in Sources */,
 				0334ED922032259D005A06CB /* Extensions.swift in Sources */,
 				03C43ADB202691A800C53429 /* WalletDataManager.swift in Sources */,
+				0334ED9620323381005A06CB /* CurrencyTextField.swift in Sources */,
 				0334ED872031B7E7005A06CB /* SheetTransitioningDelegate.swift in Sources */,
 				03C43AEF2027440C00C53429 /* BuyCoinDataManager.swift in Sources */,
 				0334ED7B2031B09E005A06CB /* CoinPickerViewController.swift in Sources */,

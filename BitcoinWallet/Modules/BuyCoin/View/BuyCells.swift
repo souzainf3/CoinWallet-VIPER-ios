@@ -12,8 +12,7 @@ import UIKit
 // MARK: - BuyCoinAmountCell
 
 class BuyCoinAmountCell: UITableViewCell {
-    @IBOutlet weak var amountTextField: UITextField!
-    @IBOutlet weak var symbolCoinLabel: UILabel!
+    @IBOutlet weak var amountTextField: CurrencyTextField!
     @IBOutlet weak var coinButton: UIButton!
 }
 
@@ -21,7 +20,7 @@ extension BuyCoinAmountCell {
     func configure(with coin: Currency) {
         coinButton.backgroundColor = coin.color
         coinButton.setTitle(coin.abbreviation, for: .normal)
-        symbolCoinLabel.text = coin.symbol
+        amountTextField.currencySymbol = coin.symbol
     }
 }
 

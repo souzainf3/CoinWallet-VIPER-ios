@@ -19,6 +19,13 @@ struct App {
     static let name = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? ""
     
     
+    // MARK: - Currency
+    
+    struct Currency {
+        static let decimalSeparator = NSLocale.current.decimalSeparator ?? ","
+    }
+    
+   
     // MARK: - Keys
 
     struct Keys {

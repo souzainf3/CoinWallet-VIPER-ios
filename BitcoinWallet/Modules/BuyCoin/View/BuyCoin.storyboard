@@ -84,39 +84,32 @@
                                                         <action selector="selecteCoinsPressed:" destination="NDx-54-OXI" eventType="touchUpInside" id="LFQ-2g-qa9"/>
                                                     </connections>
                                                 </button>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j2K-EJ-2Z4">
-                                                    <rect key="frame" x="62" y="11" width="245" height="44"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j2K-EJ-2Z4" customClass="CurrencyTextField" customModule="BitcoinWallet" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="11" width="291" height="44"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="currencySymbol" value="R$"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="currencySymbolColor">
+                                                            <color key="value" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzd-lm-mSp">
-                                                    <rect key="frame" x="16" y="24" width="38" height="18"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="38" id="jaE-5m-gtm"/>
-                                                        <constraint firstAttribute="height" constant="18" id="sV8-WY-PDU"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                                    <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Wzd-lm-mSp" firstAttribute="leading" secondItem="xiY-Jo-UoZ" secondAttribute="leadingMargin" id="3Nj-gT-4X5"/>
+                                                <constraint firstItem="j2K-EJ-2Z4" firstAttribute="leading" secondItem="xiY-Jo-UoZ" secondAttribute="leadingMargin" id="5Z3-Xt-zNn"/>
                                                 <constraint firstItem="qL1-Wr-1Vy" firstAttribute="top" secondItem="xiY-Jo-UoZ" secondAttribute="topMargin" id="7b7-ap-t7D"/>
                                                 <constraint firstItem="qL1-Wr-1Vy" firstAttribute="trailing" secondItem="xiY-Jo-UoZ" secondAttribute="trailingMargin" id="EG5-YM-d7Y"/>
                                                 <constraint firstItem="j2K-EJ-2Z4" firstAttribute="top" secondItem="qL1-Wr-1Vy" secondAttribute="top" id="Ipx-Zb-k3S"/>
-                                                <constraint firstItem="Wzd-lm-mSp" firstAttribute="centerY" secondItem="j2K-EJ-2Z4" secondAttribute="centerY" id="cL9-CH-GSh"/>
                                                 <constraint firstItem="qL1-Wr-1Vy" firstAttribute="leading" secondItem="j2K-EJ-2Z4" secondAttribute="trailing" constant="8" id="jgl-kB-ZLn"/>
                                                 <constraint firstItem="j2K-EJ-2Z4" firstAttribute="bottom" secondItem="qL1-Wr-1Vy" secondAttribute="bottom" id="qBa-V1-WKW"/>
-                                                <constraint firstItem="j2K-EJ-2Z4" firstAttribute="leading" secondItem="Wzd-lm-mSp" secondAttribute="trailing" constant="8" id="xnp-Ti-Cgn"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <connections>
                                             <outlet property="amountTextField" destination="j2K-EJ-2Z4" id="t5F-XW-h1c"/>
                                             <outlet property="coinButton" destination="qL1-Wr-1Vy" id="JGe-Fg-GjQ"/>
-                                            <outlet property="symbolCoinLabel" destination="Wzd-lm-mSp" id="odb-1C-VrI"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
