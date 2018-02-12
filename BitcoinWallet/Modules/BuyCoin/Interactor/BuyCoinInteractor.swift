@@ -23,7 +23,8 @@ class BuyCoinInteractor: BuyCoinInteractorInput {
     
     weak var output: BuyCoinInteractorOutput?
     
-    let dataManager: WalletDataManagerInput
+    let walletDataManager: WalletDataManagerInput
+    let exchangeRateDataManager: ExchangeRateDataManagerInput
     
 
     // MARK: - Input
@@ -44,7 +45,7 @@ class BuyCoinInteractor: BuyCoinInteractorInput {
     
     // User Wallets
     var wallets: [Wallet] {
-        return self.dataManager.fetchUserWallet().filter({ $0.currency != self.coinSelected })
+        return self.walletDataManager.fetchUserWallet().filter({ $0.currency != self.coinSelected })
     }
     
     // Only virtual currencies
@@ -55,8 +56,9 @@ class BuyCoinInteractor: BuyCoinInteractorInput {
     
     // MARK: - Initializer
     
-    init(dataManager: WalletDataManagerInput) {
-        self.dataManager = dataManager
+    init(walletDataManager: WalletDataManagerInput, exchangeRateDataManager: ExchangeRateDataManagerInput) {
+        self.walletDataManager = walletDataManager
+        self.exchangeRateDataManager = exchangeRateDataManager
     }
     
     
@@ -70,6 +72,18 @@ class BuyCoinInteractor: BuyCoinInteractorInput {
     private func walletValueChanged() {
         if let wallet = self.walletSelected {
             self.output?.configureSelectedWallet(wallet)
+            
+            let amount: Double = 1
+            print("From: \(self.coinSelected.abbreviation) - Amount: \(amount)")
+
+            do {
+                let value = try self.exchangeRateDataManager.converter(amount: amount, from: self.coinSelected, to: wallet.currency)
+                print("To: \(wallet.currency.abbreviation) - Amount: \(value)")
+            } catch let error {
+                print(error)
+            }
+
+            
         } else {
             self.output?.configureUnselectedWallet()
         }

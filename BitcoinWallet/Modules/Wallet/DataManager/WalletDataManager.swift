@@ -23,14 +23,6 @@ class WalletDataManager: WalletDataManagerInput {
         ]
     }
     
-//    func getUserAmount(for currency: Currency) -> Double {
-//        // TODO: - Remover Mock (Pegar do banco)
-//        switch currency {
-//        case .real:     return 100000
-//        case .bitcoin:  return 1
-//        case .britta:   return 0
-//        }
-//    }
-    
 }
+
 
