@@ -8,8 +8,6 @@
 
 import Foundation
 
-// TODO: - Levar pra outro arquivo
-
 
 enum ExchangeRateError: Error {
     case missingCurrency

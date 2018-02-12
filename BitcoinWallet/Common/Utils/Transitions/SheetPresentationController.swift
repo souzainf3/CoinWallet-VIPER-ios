@@ -59,7 +59,7 @@ final class SheetPresentationController: UIPresentationController {
             width = presentedViewController.preferredContentSize.width
         }
         
-        // TODO: - Rever a divisão abaixo
+        // TODO: - Ajustar de acordo com necessidade da UI
         return CGRect(x: (containerView!.bounds.width - width) / 2, y: (containerView!.bounds.height - height) / 2 , width: width, height: height)
     }
     

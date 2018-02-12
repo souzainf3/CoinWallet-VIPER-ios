@@ -96,7 +96,7 @@ class BuyCoinInteractor: BuyCoinInteractorInput {
             print("From: \(self.coinSelected.abbreviation) - Amount: \(amount)")
             print("To: \(wallet.currency.abbreviation) - Amount: \(valueConverted)")
             
-            guard self.hasBalanceToBuyAmount(valueConverted, in: wallet) else {
+            guard self.hasBalanceToBuy(value: valueConverted, in: wallet) else {
                 self.output?.buyFailed(with: .insufficientBalance)
                 return
             }
@@ -111,7 +111,7 @@ class BuyCoinInteractor: BuyCoinInteractorInput {
         }
     }
     
-    private func hasBalanceToBuyAmount(_ value: Double, in wallet: Wallet) -> Bool {
+    private func hasBalanceToBuy(value: Double, in wallet: Wallet) -> Bool {
         return wallet.amount - value >= 0
     }
     
