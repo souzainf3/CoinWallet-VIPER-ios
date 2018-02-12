@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0334ED7B2031B09E005A06CB /* CoinPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334ED792031B09E005A06CB /* CoinPickerViewController.swift */; };
+		0334ED862031B7E7005A06CB /* SheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334ED842031B7E7005A06CB /* SheetPresentationController.swift */; };
+		0334ED872031B7E7005A06CB /* SheetTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334ED852031B7E7005A06CB /* SheetTransitioningDelegate.swift */; };
+		0334ED8A2031C12A005A06CB /* CoinPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0334ED882031C12A005A06CB /* CoinPickerCell.xib */; };
+		0334ED8B2031C12A005A06CB /* CoinPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334ED892031C12A005A06CB /* CoinPickerCell.swift */; };
 		0398C2D22026526B00D32808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D12026526B00D32808 /* AppDelegate.swift */; };
 		0398C2D42026526B00D32808 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D32026526B00D32808 /* FirstViewController.swift */; };
 		0398C2D62026526B00D32808 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D52026526B00D32808 /* SecondViewController.swift */; };
@@ -60,6 +65,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0334ED792031B09E005A06CB /* CoinPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPickerViewController.swift; sourceTree = "<group>"; };
+		0334ED842031B7E7005A06CB /* SheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetPresentationController.swift; sourceTree = "<group>"; };
+		0334ED852031B7E7005A06CB /* SheetTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetTransitioningDelegate.swift; sourceTree = "<group>"; };
+		0334ED882031C12A005A06CB /* CoinPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoinPickerCell.xib; sourceTree = "<group>"; };
+		0334ED892031C12A005A06CB /* CoinPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinPickerCell.swift; sourceTree = "<group>"; };
 		0398C2CE2026526B00D32808 /* BitcoinWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0398C2D12026526B00D32808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0398C2D32026526B00D32808 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +145,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0334ED782031B00C005A06CB /* CoinPicker */ = {
+			isa = PBXGroup;
+			children = (
+				0334ED792031B09E005A06CB /* CoinPickerViewController.swift */,
+				0334ED892031C12A005A06CB /* CoinPickerCell.swift */,
+				0334ED882031C12A005A06CB /* CoinPickerCell.xib */,
+			);
+			path = CoinPicker;
+			sourceTree = "<group>";
+		};
+		0334ED7D2031B7D0005A06CB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0334ED832031B7E7005A06CB /* Transitions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0334ED832031B7E7005A06CB /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				0334ED842031B7E7005A06CB /* SheetPresentationController.swift */,
+				0334ED852031B7E7005A06CB /* SheetTransitioningDelegate.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
 		0398C2C52026526B00D32808 = {
 			isa = PBXGroup;
 			children = (
@@ -205,7 +242,7 @@
 			children = (
 				0398C3032026570300D32808 /* Consts */,
 				0398C3052026570300D32808 /* Extensions */,
-				0398C3062026570300D32808 /* Helpers */,
+				0334ED7D2031B7D0005A06CB /* Utils */,
 				0398C3072026570300D32808 /* Model */,
 				0398C3082026570300D32808 /* Protocols */,
 				0398C3092026570300D32808 /* Service */,
@@ -228,13 +265,6 @@
 			children = (
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		0398C3062026570300D32808 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		0398C3072026570300D32808 /* Model */ = {
@@ -265,6 +295,7 @@
 		0398C30C2026584300D32808 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
+				0334ED782031B00C005A06CB /* CoinPicker */,
 			);
 			path = UIControls;
 			sourceTree = "<group>";
@@ -544,6 +575,7 @@
 			files = (
 				0398C2DE2026526B00D32808 /* LaunchScreen.storyboard in Resources */,
 				03C43ACD2026738900C53429 /* Wallet.storyboard in Resources */,
+				0334ED8A2031C12A005A06CB /* CoinPickerCell.xib in Resources */,
 				0398C2DB2026526B00D32808 /* Assets.xcassets in Resources */,
 				0398C2D92026526B00D32808 /* Main.storyboard in Resources */,
 				03C43AF22027440C00C53429 /* BuyCoin.storyboard in Resources */,
@@ -731,6 +763,7 @@
 				0398C2D62026526B00D32808 /* SecondViewController.swift in Sources */,
 				03B46BF42027A7140049635F /* BuyCells.swift in Sources */,
 				03C43AF32027440C00C53429 /* BuyCoinViewController.swift in Sources */,
+				0334ED862031B7E7005A06CB /* SheetPresentationController.swift in Sources */,
 				03C43AC920266C6300C53429 /* Reusable.swift in Sources */,
 				03C43AD920268F2900C53429 /* Wallet.swift in Sources */,
 				03C43AD7202687F000C53429 /* Currency.swift in Sources */,
@@ -739,11 +772,14 @@
 				03C43AF42027440C00C53429 /* BuyCoinWireframe.swift in Sources */,
 				03C43AF02027440C00C53429 /* BuyCoinInteractor.swift in Sources */,
 				03C43AF12027440C00C53429 /* BuyCoinPresenter.swift in Sources */,
+				0334ED8B2031C12A005A06CB /* CoinPickerCell.swift in Sources */,
 				0398C2D42026526B00D32808 /* FirstViewController.swift in Sources */,
 				03C43ACF202673C900C53429 /* WalletViewController.swift in Sources */,
 				03C43ADD202696FA00C53429 /* WalletViewModel.swift in Sources */,
 				03C43ADB202691A800C53429 /* WalletDataManager.swift in Sources */,
+				0334ED872031B7E7005A06CB /* SheetTransitioningDelegate.swift in Sources */,
 				03C43AEF2027440C00C53429 /* BuyCoinDataManager.swift in Sources */,
+				0334ED7B2031B09E005A06CB /* CoinPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

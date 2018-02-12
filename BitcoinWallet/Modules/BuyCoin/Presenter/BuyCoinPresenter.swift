@@ -8,8 +8,8 @@ protocol BuyCoinPresenterOutput: class {
     func setUnselectedWallet()
     func setSelectedWallet(_ wallet: Wallet)
     
-    func showWalletPicker(with wallets: [Wallet])
-    func showCoinPicker(with coins: [Currency])
+    func showWalletPicker(title: String, wallets: [Wallet])
+    func showCoinPicker(title: String, coins: [Currency])
 }
 
 // view ---->> presenter
@@ -45,11 +45,11 @@ class BuyCoinPresenter: BuyCoinPresenterInput {
     }
     
     func walletSelectionPressed() {
-        self.output?.showWalletPicker(with: self.interactor.wallets)
+        self.output?.showWalletPicker(title: "Selecione uma carteira", wallets: self.interactor.wallets)
     }
     
     func coinSelectionPressed() {
-        self.output?.showCoinPicker(with: self.interactor.coinsAvailable)
+        self.output?.showCoinPicker(title: "Selecione uma moeda", coins: self.interactor.coinsAvailable)
     }
     
     // MARK: - Private

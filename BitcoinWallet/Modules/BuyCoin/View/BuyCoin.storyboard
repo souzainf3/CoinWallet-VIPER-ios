@@ -77,6 +77,9 @@
                                                             <integer key="value" value="3"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="selecteCoinsPressed:" destination="NDx-54-OXI" eventType="touchUpInside" id="LFQ-2g-qa9"/>
+                                                    </connections>
                                                 </button>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j2K-EJ-2Z4">
                                                     <rect key="frame" x="62" y="11" width="245" height="44"/>

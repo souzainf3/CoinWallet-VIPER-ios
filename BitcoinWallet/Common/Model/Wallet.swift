@@ -21,7 +21,7 @@ extension Wallet {
     
     var amountFormatted: String {
         if currency == .real {
-            return "\(currency.symbol)\(realFormat(amount))"
+            return "\(currency.symbol) \(realFormat(amount))"
         }
         // coins
         return "\(currency.symbol) \(amount)"
