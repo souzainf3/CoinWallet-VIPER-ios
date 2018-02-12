@@ -113,6 +113,8 @@ extension CurrencyTextField: UITextFieldDelegate {
         
         if string == self.decimalSeparator {
             return !text.hasOccurrencesOf(self.decimalSeparator)
+        } else if string == "0" && text == "0" {
+            return false
         }
         
         return true
