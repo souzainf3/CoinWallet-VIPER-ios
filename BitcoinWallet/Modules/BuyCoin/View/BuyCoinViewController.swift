@@ -60,14 +60,16 @@ class BuyCoinViewController: UITableViewController {
 // MARK: - BuyCoinPresenterOutput
 
 extension BuyCoinViewController: BuyCoinPresenterOutput {
+   
     func showLoading() {
+        // TODO: - Change to RNLoadingButton-Swift
         self.view.endEditing(true)
-        self.view.rn_activityView.dimBackground = true
-        self.view.showActivityView()
+        self.navigationController?.view.rn_activityView.dimBackground = true
+        self.navigationController?.view.showActivityView()
     }
     
     func hideLoading() {
-        self.view.hideActivityView()
+        self.navigationController?.view.hideActivityView()
     }
     
     func configureSelectedCoin(_ coin: Currency) {
