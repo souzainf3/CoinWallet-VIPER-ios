@@ -2,18 +2,21 @@
 
 import Foundation
 
-
 // presenter ---->> view
 protocol BuyCoinPresenterOutput: class {
     func setSelectedCoin(_ coin: Currency)
+    func setUnselectedWallet()
+    func setSelectedWallet(_ wallet: Wallet)
     
-    func showUnselectedWallet()
-    func showSelectedWallet(_ wallet: Wallet)
+    func showWalletPicker(with wallets: [Wallet])
+    func showCoinPicker(with coins: [Currency])
 }
 
 // view ---->> presenter
 protocol BuyCoinPresenterInput {
     func viewDidLoad()
+    func walletSelectionPressed()
+    func coinSelectionPressed()
 }
 
 class BuyCoinPresenter: BuyCoinPresenterInput {
@@ -35,18 +38,29 @@ class BuyCoinPresenter: BuyCoinPresenterInput {
     
     func viewDidLoad() {
         // Coin to buy
-        self.output?.setSelectedCoin(self.interactor.selectedCoin)
+        self.output?.setSelectedCoin(self.interactor.coinSelected)
         
         // Wallet to pay
-        if let wallet = self.interactor.selectedWallet {
-            self.output?.showSelectedWallet(wallet)
-        } else {
-            self.output?.showUnselectedWallet()
-        }
+        self.configureWallet()
     }
     
+    func walletSelectionPressed() {
+        self.output?.showWalletPicker(with: self.interactor.wallets)
+    }
+    
+    func coinSelectionPressed() {
+        self.output?.showCoinPicker(with: self.interactor.coinsAvailable)
+    }
     
     // MARK: - Private
+    
+    private func configureWallet() {
+        if let wallet = self.interactor.walletSelected {
+            self.output?.setSelectedWallet(wallet)
+        } else {
+            self.output?.setUnselectedWallet()
+        }
+    }
     
 }
 

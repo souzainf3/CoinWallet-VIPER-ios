@@ -6,6 +6,7 @@
 
 import Foundation
 
+// TODO: - Agrupar Data Managers em uma única camada (pasta)
 protocol WalletDataManagerInput: class {
     func fetchUserWallet() -> [Wallet]
 }

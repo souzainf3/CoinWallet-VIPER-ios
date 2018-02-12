@@ -31,23 +31,6 @@ class BuyCoinViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return self.viewModel.title
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.viewModel.items.count
-//    }
-//
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyAmountCell.reuseIdentifier, for: indexPath) as! CurrencyAmountCell
-//
-//        let item = self.viewModel.items[indexPath.row]
-//        cell.configure(with: item)
-//
-//        return cell
-//    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -58,19 +41,26 @@ class BuyCoinViewController: UITableViewController {
 // MARK: - BuyCoinPresenterOutput
 
 extension BuyCoinViewController: BuyCoinPresenterOutput {
-    
+
     func setSelectedCoin(_ coin: Currency) {
         self.coinView.configure(with: coin)
     }
     
-    func showUnselectedWallet() {
+    func setUnselectedWallet() {
         self.walletView.setEmpty()
     }
     
-    func showSelectedWallet(_ wallet: Wallet) {
+    func setSelectedWallet(_ wallet: Wallet) {
         self.walletView.configure(with: wallet)
     }
     
+    func showWalletPicker(with wallets: [Wallet]) {
+        // TODO: - Show picker
+    }
+    
+    func showCoinPicker(with coins: [Currency]) {
+        // TODO: - Show picker
+    }
 }
 
 
