@@ -14,6 +14,13 @@ class CurrencyTextField: UITextField {
     
     private let currencySymbolLabel: UILabel = UILabel()
     
+    var currencyValue: Double {
+        guard let textValue = self.text?.replacingOccurrences(of: self.decimalSeparator, with: "."), let value = Double(textValue) else {
+            return 0.0
+        }
+        return value
+    }
+    
     @IBInspectable var currencySymbol: String? {
         set {
             self.currencySymbolLabel.text = newValue

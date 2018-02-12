@@ -21,7 +21,7 @@ protocol BuyCoinPresenterInput {
     func coinSelectionPressed()
     func didSelected(coin: Currency)
     func didSelected(wallet: Wallet)
-    func didPressedBuy(rawValue: String?)
+    func didPressedBuy(amount: Double)
 }
 
 class BuyCoinPresenter: BuyCoinPresenterInput {
@@ -72,13 +72,9 @@ class BuyCoinPresenter: BuyCoinPresenterInput {
         self.configureWallet()
     }
     
-    func didPressedBuy(rawValue: String?) {
-        if let textValue = rawValue, let value = Double(textValue) {
-            self.output?.showLoading()
-            self.interactor.buy(amount: value)
-        } else {
-            self.output?.showAlert(title: "Atenção!", message: "O valor inserido é inválido.", buttonTitle: "OK", onDismiss: nil)
-        }
+    func didPressedBuy(amount: Double) {
+        self.output?.showLoading()
+        self.interactor.buy(amount: amount)
     }
 
     

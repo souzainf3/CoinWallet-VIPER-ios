@@ -34,7 +34,7 @@ class BuyCoinViewController: UITableViewController {
     }
     
     @IBAction func buyPressed(_ sender: Any) {
-        self.presenter?.didPressedBuy(rawValue: coinView.amountTextField.text)
+        self.presenter?.didPressedBuy(amount: coinView.amountTextField.currencyValue)
     }
 
     
