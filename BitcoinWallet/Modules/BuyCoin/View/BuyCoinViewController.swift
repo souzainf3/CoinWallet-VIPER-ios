@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RNActivityView
 
 class BuyCoinViewController: UITableViewController {
 
@@ -60,9 +61,13 @@ class BuyCoinViewController: UITableViewController {
 
 extension BuyCoinViewController: BuyCoinPresenterOutput {
     func showLoading() {
+        self.view.endEditing(true)
+        self.view.rn_activityView.dimBackground = true
+        self.view.showActivityView()
     }
     
     func hideLoading() {
+        self.view.hideActivityView()
     }
     
     func configureSelectedCoin(_ coin: Currency) {

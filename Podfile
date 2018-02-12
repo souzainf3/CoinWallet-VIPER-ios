@@ -6,6 +6,7 @@ target 'BitcoinWallet' do
 
   # Pods for BitcoinWallet
   pod 'IQKeyboardManager', '~> 5.0.7'
+  pod 'RNActivityView', '~> 0.0.7'
 
   target 'BitcoinWalletTests' do
     inherit! :search_paths
