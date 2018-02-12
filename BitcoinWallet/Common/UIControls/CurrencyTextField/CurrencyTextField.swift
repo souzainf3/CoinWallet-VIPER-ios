@@ -17,6 +17,7 @@ class CurrencyTextField: UITextField {
     @IBInspectable var currencySymbol: String? {
         set {
             self.currencySymbolLabel.text = newValue
+            self.renderCurrencySymbolLabel(animated: true)
         }
         get {
             return self.currencySymbolLabel.text
@@ -70,6 +71,13 @@ class CurrencyTextField: UITextField {
         let maxLabelWidth: CGFloat = 100
         let labelWidth = self.currencySymbolLabel.sizeThatFits(CGSize(width: maxLabelWidth, height: bounds.height)).width
         return CGRect(x: 0, y: 0, width: labelWidth + padding, height: bounds.height)
+    }
+    
+    private func renderCurrencySymbolLabel(animated: Bool) {
+        let duration = animated ? 0.3 : 0.0
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseInOut, animations: {
+            self.setNeedsLayout()
+        }, completion: nil)
     }
 }
 
