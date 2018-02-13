@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // TODO: - Mock, remova daqui
         if !UserDefaults.standard.bool(forKey: "bitcoinWallet.mock.injected") {
-            WalletDataManager(database: DatabaseManager()).incrementWallet(amount: 100000, currency: .real)
+            WalletDataManager(database: DatabaseManager(configuration: .basic)).incrementWallet(amount: 100000, currency: .real)
             UserDefaults.standard.set(true, forKey: "bitcoinWallet.mock.injected")
         }
         

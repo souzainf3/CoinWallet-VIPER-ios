@@ -9,14 +9,12 @@
 import Foundation
 import RealmSwift
 
-// MARK: - Object Storable
+/* Object Storable */
 public protocol Storable {
 }
 extension Object: Storable {
 }
 
-
-// MARK: - Persistence
 
 /* Query options */
 public struct Sorted {
@@ -24,7 +22,19 @@ public struct Sorted {
     var ascending: Bool = true
 }
 
+
+/* Storage config options */
+public enum ConfigurationType {
+    case basic
+    case inMemory(identifier: String)
+}
+
+
+
 protocol StorageContext {
+    
+    init(configuration: ConfigurationType)
+    
     func salve(object: Storable, update: Bool) throws
     func save(objects: [Storable], update: Bool) throws
     func delete(object: Storable) throws

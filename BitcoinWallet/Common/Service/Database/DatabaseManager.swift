@@ -27,93 +27,47 @@ extension RealmDatabaseAccessible {
     }
 }
 
-class DatabaseManager: RealmDatabaseAccessible {
+class DatabaseManager: RealmDatabaseAccessible, StorageContext {
     
-    internal(set) lazy var realm: Realm = {
-        DatabaseManager.setRealmConfiguration()
-        // Migration granted
-        do {
-            return try Realm()
-        } catch {
-            print("Error Init Realm: \(error)")
-            DatabaseManager.migrate()
-            return try! Realm()
-        }
+    internal(set) lazy var realm: Realm = { [unowned self] in
+        return self.createRealmInstance()
     }()
 
+    let configuration: ConfigurationType
     
-    /// Migrate
     
-    // Fix recurrents migrations call
-    private static func setRealmConfiguration() {
-        let config = Realm.Configuration(schemaVersion: DatabaseManager.currentRealmSchemaVersion())
-        Realm.Configuration.defaultConfiguration = config
-    }
-    
-    private static func currentRealmSchemaVersion() -> UInt64 {
-        // Try migrate
-        do {
-            if let url = Realm.Configuration.defaultConfiguration.fileURL {
-                let schemaVersion = try schemaVersionAtURL(url)
-                return schemaVersion
-            }
-        } catch {
-            return 0
-        }
-        return 0
-    }
-    
-    private static func migrate() {
-        // Try migrate
-        do {
-            if let url = Realm.Configuration.defaultConfiguration.fileURL {
-                let schemaVersion = try schemaVersionAtURL(url)
-                migrate(to: schemaVersion + 1) // Increment
-            }
-        } catch {
-            DatabaseManager.dropDatabase()
-        }
-    }
-    
-    static func migrate(to newSchemaVersion: UInt64) {
-        
-        let config =  Realm.Configuration(
-            // Set the new schema version. This must be greater than the previously used
-            // version (if you've never set a schema version before, the version is 0).
-            schemaVersion: newSchemaVersion,
-            
-            // Set the block which will be called automatically when opening a Realm with
-            // a schema version lower than the one set above
-            migrationBlock: { (migration, oldSchemaVersion) in
-                // We haven’t migrated anything yet, so oldSchemaVersion == 0
-                if (oldSchemaVersion < newSchemaVersion) {
-                    // Nothing to do!
-                    // Realm will automatically detect new properties and removed properties
-                    // And will update the schema on disk automatically
-                    print("Realm migration nothing to do.")
-                }
-                print("Realm migration complete.")
-        },
-            deleteRealmIfMigrationNeeded: true
-        )
-        
-        // Tell Realm to use this new configuration object for the default Realm
-        Realm.Configuration.defaultConfiguration = config
-        
-        // Now that we've told Realm how to handle the schema change, opening the file
-        // will automatically perform the migration
-        do {
-            _ = try Realm()
-        } catch let error as NSError {
-            print(error)
-            DatabaseManager.dropDatabase()
-        }
-    }
-    
-}
+    // MARK: - Initializers
 
-extension DatabaseManager: StorageContext  {
+    required init(configuration: ConfigurationType) {
+        self.configuration = configuration
+    }
     
+    private func createRealmInstance() -> Realm {
+        
+        var rmConfig = Realm.Configuration()
+//                rmConfig.readOnly = true
+        switch configuration {
+        case .basic:
+            rmConfig = Realm.Configuration.defaultConfiguration
+            DatabaseManager.setRealmConfiguration()
+        case .inMemory(let identifier):
+            rmConfig = Realm.Configuration()
+            rmConfig.inMemoryIdentifier = identifier
+        }
+        
+        // Migration granted
+        do {
+            return try Realm(configuration: rmConfig)
+        } catch {
+            print("Error Realm: \(error)")
+            DatabaseManager.migrate()
+            return try! Realm(configuration: rmConfig)
+        }
+    }
+    
+
+    // MARK: - StorageContext
+
     func salve(object: Storable, update: Bool) throws {
         let aRealm = self.safeRealm()
         aRealm.beginWrite()
@@ -188,5 +142,76 @@ extension DatabaseManager: StorageContext  {
     }
 }
 
+
+// MARK: - Migrate
+
+extension DatabaseManager {
+    
+    // Fix recurrents migrations call
+    private static func setRealmConfiguration() {
+        let config = Realm.Configuration(schemaVersion: DatabaseManager.currentRealmSchemaVersion())
+        Realm.Configuration.defaultConfiguration = config
+    }
+    
+    private static func currentRealmSchemaVersion() -> UInt64 {
+        // Try migrate
+        do {
+            if let url = Realm.Configuration.defaultConfiguration.fileURL {
+                let schemaVersion = try schemaVersionAtURL(url)
+                return schemaVersion
+            }
+        } catch {
+            return 0
+        }
+        return 0
+    }
+    
+    private static func migrate() {
+        // Try migrate
+        do {
+            if let url = Realm.Configuration.defaultConfiguration.fileURL {
+                let schemaVersion = try schemaVersionAtURL(url)
+                migrate(to: schemaVersion + 1) // Increment
+            }
+        } catch {
+            DatabaseManager.dropDatabase()
+        }
+    }
+    
+    static func migrate(to newSchemaVersion: UInt64) {
+        
+        let config =  Realm.Configuration(
+            // Set the new schema version. This must be greater than the previously used
+            // version (if you've never set a schema version before, the version is 0).
+            schemaVersion: newSchemaVersion,
+            
+            // Set the block which will be called automatically when opening a Realm with
+            // a schema version lower than the one set above
+            migrationBlock: { (migration, oldSchemaVersion) in
+                // We haven’t migrated anything yet, so oldSchemaVersion == 0
+                if (oldSchemaVersion < newSchemaVersion) {
+                    // Nothing to do!
+                    // Realm will automatically detect new properties and removed properties
+                    // And will update the schema on disk automatically
+                    print("Realm migration nothing to do.")
+                }
+                print("Realm migration complete.")
+        },
+            deleteRealmIfMigrationNeeded: true
+        )
+        
+        // Tell Realm to use this new configuration object for the default Realm
+        Realm.Configuration.defaultConfiguration = config
+        
+        // Now that we've told Realm how to handle the schema change, opening the file
+        // will automatically perform the migration
+        do {
+            _ = try Realm()
+        } catch let error as NSError {
+            print(error)
+            DatabaseManager.dropDatabase()
+        }
+    }
+}
 
 

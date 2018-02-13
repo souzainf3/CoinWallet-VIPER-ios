@@ -54,7 +54,7 @@ extension ExchangeRateDataManagerInput {
      
      - parameter currency: currency to found
      
-     - returns: ExchangeRate from the currency
+     - returns: ExchangeRate from currency
      */
     func exchangeRate(from currency: Currency) -> ExchangeRate? {
         return rates.first(where: { $0.currency == currency })

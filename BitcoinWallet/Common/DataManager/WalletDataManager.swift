@@ -19,15 +19,9 @@ protocol WalletDataManagerInput: class {
 
 class WalletDataManager {
    
-    let database: StorageContext
+    let
+    database: StorageContext
 
-    // TODO: - Remover MOCK
-//    private var wallets: Set = [
-//        Wallet(currency: .real, amount: 100000.0),
-//        Wallet(currency: .bitcoin, amount: 0.002),
-//        Wallet(currency: .britta, amount: 0.0)
-//    ]
-    
     init(database: StorageContext) {
         self.database = database
     }
