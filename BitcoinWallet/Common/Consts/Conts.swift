@@ -12,11 +12,10 @@ let myAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
 
 struct App {
     
-    /// Versão vigente da aplicação.
-    static let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
-    static let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
-
+    /// Application Info.
     static let name = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? ""
+    static let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
+    static let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
     
     
     // MARK: - Currency
