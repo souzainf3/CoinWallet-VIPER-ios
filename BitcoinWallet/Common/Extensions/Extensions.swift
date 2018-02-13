@@ -61,6 +61,7 @@ extension UIAlertController {
 
 extension String {
     
+    // Case sensitive
     func hasOccurrencesOf(_ substring: String?) -> Bool {
         return count(occurrencesOf: substring) > 0
     }
