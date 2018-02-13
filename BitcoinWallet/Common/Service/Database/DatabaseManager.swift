@@ -112,7 +112,7 @@ class DatabaseManager: RealmDatabaseAccessible {
     
 }
 
-extension DatabaseManager: Persistence  {
+extension DatabaseManager: StorageContext  {
     
     func salve(object: Storable, update: Bool) throws {
         let aRealm = self.safeRealm()
@@ -150,7 +150,7 @@ extension DatabaseManager: Persistence  {
         }
     }
     
-    func fetch<T: Storable>(_ model: T.Type, predicate: NSPredicate? = nil, sorted: Sorted? = nil, completion: (([T]) -> ())) {
+    func fetch<T: Storable>(_ model: T.Type, predicate: NSPredicate? = nil, sorted: Sorted? = nil) -> [T] {
         let aRealm = self.safeRealm()
 
         var objects = aRealm.objects(model as! Object.Type)
@@ -163,7 +163,7 @@ extension DatabaseManager: Persistence  {
             objects = objects.sorted(byKeyPath: sorted.key, ascending: sorted.ascending)
         }
         
-        completion(objects.flatMap { $0 as? T })
+        return objects.flatMap { $0 as? T }
     }
     
     func clearData() {

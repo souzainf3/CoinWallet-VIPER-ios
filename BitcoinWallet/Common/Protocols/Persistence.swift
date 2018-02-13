@@ -24,14 +24,14 @@ public struct Sorted {
     var ascending: Bool = true
 }
 
-protocol Persistence {
+protocol StorageContext {
     func salve(object: Storable, update: Bool) throws
     func save(objects: [Storable], update: Bool) throws
     func delete(object: Storable) throws
     func delete(objects: [Storable]) throws
     func deleteAll<T: Storable>(_ model: T.Type) throws
     
-    func fetch<T: Storable>(_ model: T.Type, predicate: NSPredicate?, sorted: Sorted?, completion: (([T]) -> ()))
+    func fetch<T: Storable>(_ model: T.Type, predicate: NSPredicate?, sorted: Sorted?) -> [T]
 
     func clearData()
     static func dropDatabase()

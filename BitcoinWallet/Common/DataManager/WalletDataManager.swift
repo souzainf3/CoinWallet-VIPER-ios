@@ -19,31 +19,37 @@ protocol WalletDataManagerInput: class {
 
 class WalletDataManager {
    
-    static let shared: WalletDataManager = WalletDataManager()
+    // TODO: - Remover singleton
+    static let shared: WalletDataManager = WalletDataManager(database: DatabaseManager())
+    
+    let database: StorageContext
 
     // TODO: - Remover MOCK
-    private var wallets: Set = [
-        Wallet(currency: .real, amount: 100000.0),
-        Wallet(currency: .bitcoin, amount: 0.002),
-        Wallet(currency: .britta, amount: 0.0)
-    ]
+//    private var wallets: Set = [
+//        Wallet(currency: .real, amount: 100000.0),
+//        Wallet(currency: .bitcoin, amount: 0.002),
+//        Wallet(currency: .britta, amount: 0.0)
+//    ]
     
-    private init() {
+    init(database: StorageContext) {
+        self.database = database
     }
 }
 
 extension WalletDataManager: WalletDataManagerInput {
     
     func fetchUserWallets() -> [Wallet] {
-        // TODO: - Remove Mock
-        return Array(self.wallets)
+        return Currency.all.map({ self.fetchUserWallet(from: $0) })
     }
     
     func fetchUserWallet(from currency: Currency) -> Wallet {
-        if let wallet = self.fetchUserWallets().first(where: { $0.currency == currency }) {
+        let filter = NSPredicate(format: "currency = '\(currency.abbreviation)'")
+        if let wallet = self.database.fetch(DBWallet.self, predicate: filter, sorted: nil).flatMap({
+            Wallet(currency: currency, amount: $0.amount)
+        }).first {
             return wallet
         }
-        
+
         // Create a new empty wallet
         return Wallet(currency: currency, amount: 0.0)
     }
@@ -72,7 +78,15 @@ extension WalletDataManager: WalletDataManagerInput {
     // MARK: - Private
     
     func updateWallet(_ wallet: Wallet) {
-        self.wallets.update(with: wallet)
+        let dbWallet = DBWallet()
+        dbWallet.currency = wallet.currency.abbreviation
+        dbWallet.amount = wallet.amount
+
+        do {
+         try self.database.salve(object: dbWallet, update: true)
+        } catch {
+            print(error)
+        }
     }
     
 }

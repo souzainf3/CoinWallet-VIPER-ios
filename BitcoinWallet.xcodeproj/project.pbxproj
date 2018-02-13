@@ -16,8 +16,7 @@
 		0334ED922032259D005A06CB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334ED912032259D005A06CB /* Extensions.swift */; };
 		0334ED9620323381005A06CB /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334ED9520323380005A06CB /* CurrencyTextField.swift */; };
 		0334EDAB20325622005A06CB /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDA620325622005A06CB /* DatabaseManager.swift */; };
-		0334EDAC20325622005A06CB /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDA820325622005A06CB /* DatabaseModel.swift */; };
-		0334EDAD20325622005A06CB /* UserWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDA920325622005A06CB /* UserWallet.swift */; };
+		0334EDAC20325622005A06CB /* Models .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDA820325622005A06CB /* Models .swift */; };
 		0334EDAE20325622005A06CB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDAA20325622005A06CB /* Persistence.swift */; };
 		0334EDB22032563C005A06CB /* ExchangeRateDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDB02032563C005A06CB /* ExchangeRateDataManager.swift */; };
 		0334EDB32032563C005A06CB /* WalletDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDB12032563C005A06CB /* WalletDataManager.swift */; };
@@ -81,8 +80,7 @@
 		0334ED912032259D005A06CB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0334ED9520323380005A06CB /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
 		0334EDA620325622005A06CB /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
-		0334EDA820325622005A06CB /* DatabaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
-		0334EDA920325622005A06CB /* UserWallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWallet.swift; sourceTree = "<group>"; };
+		0334EDA820325622005A06CB /* Models .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Models .swift"; sourceTree = "<group>"; };
 		0334EDAA20325622005A06CB /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		0334EDB02032563C005A06CB /* ExchangeRateDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRateDataManager.swift; sourceTree = "<group>"; };
 		0334EDB12032563C005A06CB /* WalletDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletDataManager.swift; sourceTree = "<group>"; };
@@ -198,18 +196,9 @@
 			isa = PBXGroup;
 			children = (
 				0334EDA620325622005A06CB /* DatabaseManager.swift */,
-				0334EDA720325622005A06CB /* Model */,
+				0334EDA820325622005A06CB /* Models .swift */,
 			);
 			path = Database;
-			sourceTree = "<group>";
-		};
-		0334EDA720325622005A06CB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0334EDA820325622005A06CB /* DatabaseModel.swift */,
-				0334EDA920325622005A06CB /* UserWallet.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		0334EDAF2032563C005A06CB /* DataManager */ = {
@@ -810,12 +799,11 @@
 				03C43ACB20266C8800C53429 /* Protocols.swift in Sources */,
 				0334EDAE20325622005A06CB /* Persistence.swift in Sources */,
 				0398C2D62026526B00D32808 /* SecondViewController.swift in Sources */,
-				0334EDAD20325622005A06CB /* UserWallet.swift in Sources */,
 				03B46BF42027A7140049635F /* BuyCells.swift in Sources */,
 				03C43AF32027440C00C53429 /* BuyCoinViewController.swift in Sources */,
 				0334ED862031B7E7005A06CB /* SheetPresentationController.swift in Sources */,
 				03C43AC920266C6300C53429 /* Reusable.swift in Sources */,
-				0334EDAC20325622005A06CB /* DatabaseModel.swift in Sources */,
+				0334EDAC20325622005A06CB /* Models .swift in Sources */,
 				0334ED8D2031F371005A06CB /* ExchangeRate.swift in Sources */,
 				03C43AD920268F2900C53429 /* Wallet.swift in Sources */,
 				03C43AD7202687F000C53429 /* Currency.swift in Sources */,
