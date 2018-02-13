@@ -74,7 +74,7 @@ extension WalletDataManager: WalletDataManagerInput {
     
     // MARK: - Private
     
-    func updateWallet(_ wallet: Wallet) {
+    private func updateWallet(_ wallet: Wallet) {
         let dbWallet = DBWallet()
         dbWallet.currency = wallet.currency.abbreviation
         dbWallet.amount = wallet.amount
