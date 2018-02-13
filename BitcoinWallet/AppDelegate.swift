@@ -19,6 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        
+        // TODO: - Mock, remova daqui
+        if !UserDefaults.standard.bool(forKey: "bitcoinWallet.mock.injected") {
+            let wallet = Wallet(currency: .real, amount: 100000)
+            WalletDataManager(database: DatabaseManager()).updateWallet(wallet)
+            UserDefaults.standard.set(true, forKey: "bitcoinWallet.mock.injected")
+        }
+        
+        
         IQKeyboardManager.shared().isEnabled = true
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
