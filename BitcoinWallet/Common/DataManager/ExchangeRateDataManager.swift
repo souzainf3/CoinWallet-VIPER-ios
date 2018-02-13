@@ -12,13 +12,57 @@ import Foundation
 enum ExchangeRateError: Error {
     case missingCurrency
     case missingRate
+    case unsupportedNegativeValue
+
 }
 
 protocol ExchangeRateDataManagerInput: class {
     var rates: [ExchangeRate] { get set }
-    
     func converter(amount: Double, from sourceCurrency: Currency, to targetCurrency: Currency) throws -> Double
+    func exchangeRate(from currency: Currency) -> ExchangeRate?
 }
+
+extension ExchangeRateDataManagerInput {
+    /**
+     *Converter an amount of currency to another currency*
+     
+     - parameter amount: amount to converter
+     - parameter sourceCurrency: currency from value(amount)
+     - parameter targetCurrency: cutput currency
+     
+     - returns: Value converted (Double)
+     */
+    func converter(amount: Double, from sourceCurrency: Currency, to targetCurrency: Currency) throws -> Double {
+        
+        guard amount >= 0 else {
+            throw ExchangeRateError.unsupportedNegativeValue
+        }
+        
+        guard let exchangeRate = self.exchangeRate(from: sourceCurrency) else {
+            throw ExchangeRateError.missingCurrency
+        }
+        
+        guard let rate = exchangeRate.rate(from: targetCurrency) else {
+            throw ExchangeRateError.missingRate
+        }
+        
+        return amount * rate
+    }
+    
+    /**
+     *Serch exchange rate from a currency in rate list. *
+     
+     - parameter currency: currency to found
+     
+     - returns: ExchangeRate from the currency
+     */
+    func exchangeRate(from currency: Currency) -> ExchangeRate? {
+        return rates.first(where: { $0.currency == currency })
+    }
+}
+
+
+// MARK: - ExchangeRateDataManager
 
 class ExchangeRateDataManager: ExchangeRateDataManagerInput {
     
@@ -46,36 +90,6 @@ class ExchangeRateDataManager: ExchangeRateDataManagerInput {
             ]
         )
     ]
-    
-    
-    /**
-     *Converter an amount of currency to another currency*
-     
-     - parameter amount: amount to converter
-     - parameter sourceCurrency: currency from value(amount)
-     - parameter targetCurrency: cutput currency
-     
-     - returns: Value converted (Double)
-     */
-    func converter(amount: Double, from sourceCurrency: Currency, to targetCurrency: Currency) throws -> Double {
-        
-        guard let exchangeRate = self.exchangeRate(from: sourceCurrency) else {
-            throw ExchangeRateError.missingCurrency
-        }
-        
-        guard let rate = exchangeRate.rate(from: targetCurrency) else {
-            throw ExchangeRateError.missingRate
-        }
-        
-        return amount * rate
-    }
-    
-    
-    // MARK: - Private
-    
-    private func exchangeRate(from currency: Currency) -> ExchangeRate? {
-        return rates.first(where: { $0.currency == currency })
-    }
     
 }
 
