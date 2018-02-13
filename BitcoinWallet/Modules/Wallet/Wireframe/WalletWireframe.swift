@@ -46,7 +46,8 @@ class WalletWireframe: TabBarInterface, StoryboardInstanciate {
         
         let walletViewController = viewControllerFromStoryboard(withIdentifier: "WalletViewController") as! WalletViewController
         
-        let interactor = WalletInteractor(dataManager: WalletDataManager.shared)
+        let walletDataManager = WalletDataManager(database: DatabaseManager())
+        let interactor = WalletInteractor(dataManager: walletDataManager)
         
         let presenter = WalletPresenter(interactor: interactor, wireframe: self)
         presenter.output = walletViewController

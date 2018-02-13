@@ -19,9 +19,6 @@ protocol WalletDataManagerInput: class {
 
 class WalletDataManager {
    
-    // TODO: - Remover singleton
-    static let shared: WalletDataManager = WalletDataManager(database: DatabaseManager())
-    
     let database: StorageContext
 
     // TODO: - Remover MOCK
