@@ -210,6 +210,116 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		0334EDB420331128005A06CB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0334EDB520331128005A06CB /* BuyCoin */,
+				0334EDB820331128005A06CB /* Wallet */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0334EDB520331128005A06CB /* BuyCoin */ = {
+			isa = PBXGroup;
+			children = (
+				0334EDB620331128005A06CB /* Interactor */,
+				0334EDB720331128005A06CB /* Presenter */,
+			);
+			path = BuyCoin;
+			sourceTree = "<group>";
+		};
+		0334EDB620331128005A06CB /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		0334EDB720331128005A06CB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0334EDB820331128005A06CB /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				0334EDB920331128005A06CB /* Interactor */,
+				0334EDBA20331128005A06CB /* Presenter */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		0334EDB920331128005A06CB /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		0334EDBA20331128005A06CB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0334EDBB20331128005A06CB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0334EDBC20331128005A06CB /* DataManager */,
+				0334EDBD20331128005A06CB /* Extensions */,
+				0334EDBE20331128005A06CB /* Model */,
+				0334EDBF20331128005A06CB /* Service */,
+				0334EDC120331128005A06CB /* Utils */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0334EDBC20331128005A06CB /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		0334EDBD20331128005A06CB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0334EDBE20331128005A06CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0334EDBF20331128005A06CB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0334EDC020331128005A06CB /* Database */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0334EDC020331128005A06CB /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		0334EDC120331128005A06CB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		0398C2C52026526B00D32808 = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +362,8 @@
 			isa = PBXGroup;
 			children = (
 				0398C2E82026526C00D32808 /* BitcoinWalletTests.swift */,
+				0334EDBB20331128005A06CB /* Common */,
+				0334EDB420331128005A06CB /* Modules */,
 				0398C2EA2026526C00D32808 /* Info.plist */,
 			);
 			path = BitcoinWalletTests;
