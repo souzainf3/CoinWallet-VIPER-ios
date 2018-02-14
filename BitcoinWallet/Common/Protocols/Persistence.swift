@@ -25,7 +25,7 @@ public struct Sorted {
 
 /* Storage config options */
 public enum ConfigurationType {
-    case basic
+    case standard
     case inMemory(identifier: String)
 }
 

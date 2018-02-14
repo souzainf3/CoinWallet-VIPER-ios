@@ -21,6 +21,35 @@ class DBWallet: Object {
     }
 }
 
+class DBTransaction: Object {
+    @objc dynamic var identifier: String = ""
+    @objc dynamic var type: Int = 0 // BUY = 0 | SELL = 1 | EXCHANGE = 2
+    @objc dynamic var operation: Int = 0 // Debit = 0 | Credit = 1
+    @objc dynamic var amount: Double = 0.0
+    @objc dynamic var date: Date = Date()
+    @objc dynamic var currency: String = ""
+
+    override class func primaryKey() -> String {
+        return "identifier"
+    }
+    
+//    override static func indexedProperties() -> [String] {
+//        return ["identifier", "date", "amount", "currency"]
+//    }
+}
+
+extension DBTransaction {
+    convenience init(identifier: String, type: Int, operation: Int, amount: Double, date: Date, currency: String) {
+        self.init()
+        self.identifier = identifier
+        self.type = type
+        self.operation = operation
+        self.amount = amount
+        self.date = date
+        self.currency = currency
+    }
+}
+
 //// User
 //class DBUser: BaseModel {
 //    @objc dynamic var name : String = ""

@@ -35,8 +35,9 @@ class BuyCoinInteractor: BuyCoinInteractorInput {
     
     let walletDataManager: WalletDataManagerInput
     let exchangeRateDataManager: ExchangeRateDataManagerInput
-    
+    let transactionDataManager: TransactionDataManagerInput
 
+    
     // Coin selected. Default value is .bitcoin
     var coinSelected: Currency = .bitcoin {
         didSet {
@@ -64,9 +65,10 @@ class BuyCoinInteractor: BuyCoinInteractorInput {
     
     // MARK: - Initializer
     
-    init(walletDataManager: WalletDataManagerInput, exchangeRateDataManager: ExchangeRateDataManagerInput) {
+    init(walletDataManager: WalletDataManagerInput, exchangeRateDataManager: ExchangeRateDataManagerInput, transactionDataManager: TransactionDataManagerInput) {
         self.walletDataManager = walletDataManager
         self.exchangeRateDataManager = exchangeRateDataManager
+        self.transactionDataManager = transactionDataManager
     }
     
     
@@ -102,7 +104,11 @@ class BuyCoinInteractor: BuyCoinInteractorInput {
             }
             
             self.walletDataManager.incrementWallet(amount: amount, currency: self.coinSelected)
+            self.transactionDataManager.setNewTransaction(type: .buy, operation: .credit, amount: amount, currency: self.coinSelected)
+            
             self.walletDataManager.decrement(amount: valueConverted, from: wallet)
+            self.transactionDataManager.setNewTransaction(type: .exchange, operation: .debit, amount: valueConverted, currency: wallet.currency)
+            
             self.output?.buyed()
             
         } catch let error {

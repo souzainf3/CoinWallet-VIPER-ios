@@ -14,8 +14,14 @@ class BuyCoinWireframe: StoryboardInstanciate {
         
        let viewController = viewControllerFromStoryboard(withIdentifier: "BuyCoinViewController") as! BuyCoinViewController
         
-        let walletDataManager = WalletDataManager(database: DatabaseManager(configuration: .basic))
-        let interactor = BuyCoinInteractor(walletDataManager: walletDataManager, exchangeRateDataManager: ExchangeRateDataManager())
+        let walletDataManager = WalletDataManager(database: DatabaseManager(configuration: .standard))
+        let transactionDataManager = TransactionDataManager(database: DatabaseManager(configuration: .standard))
+        
+        let interactor = BuyCoinInteractor(
+            walletDataManager: walletDataManager,
+            exchangeRateDataManager: ExchangeRateDataManager(),
+            transactionDataManager: transactionDataManager
+        )
         
         let presenter = BuyCoinPresenter(interactor: interactor, wireframe: self)
         presenter.output = viewController

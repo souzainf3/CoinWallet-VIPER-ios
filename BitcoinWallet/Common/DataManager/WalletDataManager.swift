@@ -19,8 +19,7 @@ protocol WalletDataManagerInput: class {
 
 class WalletDataManager {
    
-    let
-    database: StorageContext
+    let database: StorageContext
 
     init(database: StorageContext) {
         self.database = database
@@ -34,7 +33,7 @@ extension WalletDataManager: WalletDataManagerInput {
     }
     
     func fetchUserWallet(from currency: Currency) -> Wallet {
-        let filter = NSPredicate(format: "currency = '\(currency.abbreviation)'")
+        let filter = NSPredicate(format: "currency = '\(currency.identifier)'")
         if let wallet = self.database.fetch(DBWallet.self, predicate: filter, sorted: nil).flatMap({
             Wallet(currency: currency, amount: $0.amount)
         }).first {

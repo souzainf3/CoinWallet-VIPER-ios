@@ -25,6 +25,8 @@
 		0334EDC720331D6E005A06CB /* ExchangeRateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDC620331D6E005A06CB /* ExchangeRateTests.swift */; };
 		0334EDC920331FA5005A06CB /* ExchangeRateDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDC820331FA5005A06CB /* ExchangeRateDataManagerTests.swift */; };
 		0334EDCB2033421E005A06CB /* WalletDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDCA2033421E005A06CB /* WalletDataManagerTests.swift */; };
+		0334EDCD2033B38B005A06CB /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDCC2033B38B005A06CB /* Transaction.swift */; };
+		0334EDCF2033B4DE005A06CB /* TransactionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDCE2033B4DE005A06CB /* TransactionDataManager.swift */; };
 		0398C2D22026526B00D32808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D12026526B00D32808 /* AppDelegate.swift */; };
 		0398C2D42026526B00D32808 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D32026526B00D32808 /* FirstViewController.swift */; };
 		0398C2D62026526B00D32808 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D52026526B00D32808 /* SecondViewController.swift */; };
@@ -94,6 +96,8 @@
 		0334EDC620331D6E005A06CB /* ExchangeRateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateTests.swift; sourceTree = "<group>"; };
 		0334EDC820331FA5005A06CB /* ExchangeRateDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateDataManagerTests.swift; sourceTree = "<group>"; };
 		0334EDCA2033421E005A06CB /* WalletDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDataManagerTests.swift; sourceTree = "<group>"; };
+		0334EDCC2033B38B005A06CB /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		0334EDCE2033B4DE005A06CB /* TransactionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataManager.swift; sourceTree = "<group>"; };
 		0398C2CE2026526B00D32808 /* BitcoinWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0398C2D12026526B00D32808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0398C2D32026526B00D32808 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 			children = (
 				0334EDB02032563C005A06CB /* ExchangeRateDataManager.swift */,
 				0334EDB12032563C005A06CB /* WalletDataManager.swift */,
+				0334EDCE2033B4DE005A06CB /* TransactionDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -440,6 +445,7 @@
 				03C43AD6202687F000C53429 /* Currency.swift */,
 				03C43AD820268F2900C53429 /* Wallet.swift */,
 				0334ED8C2031F371005A06CB /* ExchangeRate.swift */,
+				0334EDCC2033B38B005A06CB /* Transaction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -922,6 +928,7 @@
 				03C43AC7202666B100C53429 /* WalletWireframe.swift in Sources */,
 				0334EDB22032563C005A06CB /* ExchangeRateDataManager.swift in Sources */,
 				0398C30F2026584D00D32808 /* AppWireframe.swift in Sources */,
+				0334EDCD2033B38B005A06CB /* Transaction.swift in Sources */,
 				03C43AD12026741A00C53429 /* WalletPresenter.swift in Sources */,
 				03C43ACB20266C8800C53429 /* Protocols.swift in Sources */,
 				0334EDAE20325622005A06CB /* Persistence.swift in Sources */,
@@ -937,6 +944,7 @@
 				0398C30B2026570300D32808 /* Conts.swift in Sources */,
 				0398C2D22026526B00D32808 /* AppDelegate.swift in Sources */,
 				03C43AF42027440C00C53429 /* BuyCoinWireframe.swift in Sources */,
+				0334EDCF2033B4DE005A06CB /* TransactionDataManager.swift in Sources */,
 				03C43AF02027440C00C53429 /* BuyCoinInteractor.swift in Sources */,
 				03C43AF12027440C00C53429 /* BuyCoinPresenter.swift in Sources */,
 				0334EDB32032563C005A06CB /* WalletDataManager.swift in Sources */,

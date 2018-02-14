@@ -47,9 +47,9 @@ class DatabaseManager: RealmDatabaseAccessible, StorageContext {
         var rmConfig = Realm.Configuration()
 //                rmConfig.readOnly = true
         switch configuration {
-        case .basic:
-            rmConfig = Realm.Configuration.defaultConfiguration
+        case .standard:
             DatabaseManager.setRealmConfiguration()
+            rmConfig = Realm.Configuration.defaultConfiguration
         case .inMemory(let identifier):
             rmConfig = Realm.Configuration()
             rmConfig.inMemoryIdentifier = identifier

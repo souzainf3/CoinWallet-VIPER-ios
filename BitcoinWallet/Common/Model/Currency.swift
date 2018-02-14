@@ -15,6 +15,10 @@ enum Currency: String {
     
     static let all: [Currency] = [.real, .bitcoin, .britta]
     
+    var identifier: String {
+        return self.abbreviation
+    }
+    
     var name: String {
         return self.rawValue
     }
@@ -46,6 +50,17 @@ enum Currency: String {
         case .britta:   return .black
         }
     }
+    
+    init?(identifier: String) {
+        switch identifier {
+        case "BRL":  self = .real
+        case "BTC":  self = .bitcoin
+        case "BRT":  self = .britta
+        default:
+            return nil
+        }
+    }
+
 }
 
 extension Currency: Hashable {
