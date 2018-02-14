@@ -42,4 +42,18 @@ class ExtensionsTests: XCTestCase {
         XCTAssertFalse(string.hasOccurrencesOf(findString.uppercased()))
         XCTAssertEqual(string.count(occurrencesOf: findString.uppercased()), 0)
     }
+    
+    
+    // MARK: - Date
+
+    func testDateFormat() {
+        
+        // "date is 2015-05-07 18:48:08 +0000"
+        let date =  Date(timeIntervalSince1970: 1431024488)
+        
+        XCTAssert(date.toString(format: "dd-MM-yyyy HH:mm:ssZZZ") == "07-05-2015 15:48:08-0300")
+        XCTAssert(date.toString(format: "hh:mm") == "03:48")
+        XCTAssert(date.toString(format: "HH:mm") == "15:48")
+        XCTAssert(date.toString(format: "yyyy") == "2015")
+    }
 }
