@@ -115,13 +115,13 @@ extension SellCoinPresenter: SellCoinInteractorOutput {
     
     func currencyForReceivingNotSelected() {
         self.output?.configureEmptyCreditCurrency(message: "Selecione uma moeda")
-        self.output?.showAlert(title: "Venda realizada com sucesso", message: "", buttonTitle: "OK", onDismiss: {
-            self.wireframe?.dismissSellScreen()
-        })
     }
     
     func buyed() {
         self.output?.hideLoading()
+        self.output?.showAlert(title: "Venda realizada com sucesso", message: "", buttonTitle: "OK", onDismiss: {
+            self.wireframe?.dismissSellScreen()
+        })
     }
     
     func buyFailed(with error: SellCoinFail) {

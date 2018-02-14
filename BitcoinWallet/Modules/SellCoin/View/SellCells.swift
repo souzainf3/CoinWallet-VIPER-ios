@@ -27,6 +27,18 @@ extension SellCoinAmountCell {
 class CurrencyCell: UITableViewCell {
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    
+    func setEmpty(title: String) {
+        self.currencyLabel.backgroundColor = .lightGray
+        self.currencyLabel.text = nil
+        self.titleLabel.text = title
+    }
+    
+    func configure(with currency: Currency) {
+        self.currencyLabel.backgroundColor = currency.color
+        self.currencyLabel.text = currency.symbol
+        self.titleLabel.text = currency.name
+    }
 }
 
 

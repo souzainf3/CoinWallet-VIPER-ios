@@ -61,18 +61,21 @@ extension SellCoinViewController: SellCoinPresenterOutput {
     }
     
     func configureOutputCurrency(_ currency: Currency) {
-        self.coinAmountView.configure(with: currency)
+        self.walletCreditView.configure(with: currency)
     }
     
     func configureDebitWallet(_ wallet: Wallet) {
         self.walletDebitView.configure(with: wallet)
+        self.coinAmountView.configure(with: wallet.currency)
     }
     
     func configureEmptyDebitWallet(message: String) {
         self.walletDebitView.setEmpty(title: message)
+        self.coinAmountView.amountTextField.currencySymbol = nil
     }
     
     func configureEmptyCreditCurrency(message: String) {
+        self.walletCreditView.setEmpty(title: message)
     }
     
     func showWalletPicker(title: String, wallets: [Wallet], walletSelected: Wallet?) {
