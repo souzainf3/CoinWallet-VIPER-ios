@@ -20,7 +20,9 @@ class WalletWireframe: TabBarInterface, StoryboardInstanciate {
     func configuredViewController() -> UIViewController {
         
         let walletViewController = newWalletViewController()
+        walletViewController.tabBarItem = UITabBarItem(title: "Carteira", image: #imageLiteral(resourceName: "wallet"), tag: 0)
         let navigationController = UINavigationController(rootViewController: walletViewController)
+
         
         defer {
             self.walletViewController = walletViewController

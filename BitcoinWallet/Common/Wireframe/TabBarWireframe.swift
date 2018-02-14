@@ -15,6 +15,7 @@ protocol TabBarInterface: class {
     func configuredViewController() -> UIViewController
 }
 
+
 class TabBarWireframe {
     
     let wireFrames: [TabBarInterface]

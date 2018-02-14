@@ -43,7 +43,7 @@ extension TransactionsPresenter: TransactionsInteractorOutput {
         let displayItems = items.flatMap({
             TransactionDisplayItem(
                 title: "\($0.operation == .debit ? "-" : "")\($0.currency.symbol) \($0.amount)",
-                titleColor: $0.operation == .credit ? .green : .red,
+                titleColor: $0.operation.color,
                 description: $0.operation == .credit ? "Crédito de venda/troca de valores" : "Pagamento de valores",
                 date: $0.date.toString(format: "dd/MM/yyyy").uppercased(),
                 currency: (name: $0.currency.name.capitalized, abbreviation: $0.currency.abbreviation, color: $0.currency.color)

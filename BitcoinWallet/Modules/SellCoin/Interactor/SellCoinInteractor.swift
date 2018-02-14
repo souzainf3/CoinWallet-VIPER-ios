@@ -109,12 +109,12 @@ class SellCoinInteractor: SellCoinInteractorInput {
                 return
             }
 
-            self.walletDataManager.decrement(amount: amount, from: wallet)
-            self.transactionDataManager.setNewTransaction(type: .sell, operation: .debit, amount: amount, currency: wallet.currency)
-
             self.walletDataManager.incrementWallet(amount: valueToCredit, currency: currency)
             self.transactionDataManager.setNewTransaction(type: .sell, operation: .credit, amount: valueToCredit, currency: currency)
 
+            self.walletDataManager.decrement(amount: amount, from: wallet)
+            self.transactionDataManager.setNewTransaction(type: .sell, operation: .debit, amount: amount, currency: wallet.currency)
+            
             self.output?.buyed()
 
         } catch let error {

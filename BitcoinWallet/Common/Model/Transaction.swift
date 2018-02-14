@@ -6,7 +6,7 @@
 //  Copyright © 2018 Romilson Nunes. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum TransactionType: Int {
     case buy = 0
@@ -17,6 +17,15 @@ enum TransactionType: Int {
 enum OperationType: Int {
     case debit = 0
     case credit
+    
+    var color: UIColor {
+        switch self {
+        case .credit:
+            return UIColor(red: 40/255, green: 225/255, blue: 40/255, alpha: 1)
+        case .debit:
+            return UIColor(red: 225/255, green: 40/255, blue: 40/255, alpha: 1)
+        }
+    }
 }
 
 struct Transaction {

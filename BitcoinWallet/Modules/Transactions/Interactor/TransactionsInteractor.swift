@@ -30,7 +30,7 @@ class TransactionsInteractor: TransactionsInteractorInput {
     // MARK: - Input
     
     func fetchTransactions() {
-        self.output?.fetchedTransactions(items: self.transactionDataManager.transactions(ascending: true))
+        self.output?.fetchedTransactions(items: self.transactionDataManager.transactions(ascending: false))
     }
     
 }
