@@ -11,17 +11,22 @@ import Foundation
 protocol TransactionDataManagerInput: class {
     func transactions(ascending: Bool) -> [Transaction]
     func setNewTransaction(type: TransactionType, operation: OperationType, amount: Double, currency: Currency)
+    func observeTransactionsUpdate(_ block: BlockCompletion?)
 }
 
 class TransactionDataManager {
-    let database: StorageContext
-    
+    var database: StorageContext
+
     init(database: StorageContext) {
         self.database = database
     }
 }
 
 extension TransactionDataManager: TransactionDataManagerInput {
+    
+    func observeTransactionsUpdate(_ block: BlockCompletion?) {
+        self.database.storageContextNotification = block
+    }
     
     func transactions(ascending: Bool = true) -> [Transaction] {
         let sort = Sorted(key: "date", ascending: ascending)
@@ -43,7 +48,7 @@ extension TransactionDataManager: TransactionDataManagerInput {
     
     func setNewTransaction(type: TransactionType, operation: OperationType, amount: Double, currency: Currency) {
         let date = Date()
-        let identifier = date.toString(format: "yyyyMMddHHmmssSSS") ?? UUID().uuidString
+        let identifier = date.toString(format: "yyyyMMddHHmmssSSS")
         let dbTransaction = DBTransaction(
             identifier: identifier,
             type: type.rawValue,

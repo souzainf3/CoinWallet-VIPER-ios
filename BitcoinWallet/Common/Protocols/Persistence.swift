@@ -33,6 +33,9 @@ public enum ConfigurationType {
 
 protocol StorageContext {
     
+    // Used to notify database changes
+    var storageContextNotification: (()->Void)? { get set }
+    
     init(configuration: ConfigurationType)
     
     func salve(object: Storable, update: Bool) throws

@@ -84,7 +84,7 @@ extension String {
 
 extension Date {
     
-    func toString(format: String) -> String? {
+    func toString(format: String) -> String {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = format

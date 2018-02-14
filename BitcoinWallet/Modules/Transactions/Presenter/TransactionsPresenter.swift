@@ -4,6 +4,7 @@ import Foundation
 
 // presenter ---->> view
 protocol TransactionsPresenterOutput: class {
+    func showTransactionItems(items: [TransactionDisplayItem])
 }
 
 // view ---->> presenter
@@ -29,6 +30,7 @@ class TransactionsPresenter: TransactionsPresenterInput {
     // MARK: Input
     
     func viewDidLoad() {
+        self.interactor.fetchTransactions()
     }
     
 }
@@ -37,8 +39,18 @@ class TransactionsPresenter: TransactionsPresenterInput {
 // MARK: - TransactionsInteractorOutput
 
 extension TransactionsPresenter: TransactionsInteractorOutput {
+    func fetchedTransactions(items: [Transaction]) {
+        let displayItems = items.flatMap({
+            TransactionDisplayItem(
+                title: "\($0.operation == .debit ? "-" : "")\($0.currency.symbol) \($0.amount)",
+                titleColor: $0.operation == .credit ? .green : .red,
+                description: $0.operation == .credit ? "Crédito de venda/troca de valores" : "Pagamento de valores",
+                date: $0.date.toString(format: "dd/MM/yyyy").uppercased(),
+                currency: (name: $0.currency.name.capitalized, abbreviation: $0.currency.abbreviation, color: $0.currency.color)
+            )
+        })
+        self.output?.showTransactionItems(items: displayItems)
+    }
 }
-
-
 
 

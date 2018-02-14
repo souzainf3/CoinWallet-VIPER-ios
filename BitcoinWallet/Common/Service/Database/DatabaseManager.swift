@@ -30,22 +30,38 @@ extension RealmDatabaseAccessible {
 class DatabaseManager: RealmDatabaseAccessible, StorageContext {
     
     internal(set) lazy var realm: Realm = { [unowned self] in
-        return self.createRealmInstance()
+        let realm = self.createRealmInstance()
+        notificationToken = realm.observe { [weak self] note, realm in
+            self?.storageContextNotification?()
+        }
+        return realm
     }()
 
+    private var notificationToken: NotificationToken?
+
+    
     let configuration: ConfigurationType
+    
+    // Used to notify database changes
+    var storageContextNotification: (()->Void)?
     
     
     // MARK: - Initializers
 
+    deinit {
+        self.notificationToken?.invalidate()
+    }
+    
     required init(configuration: ConfigurationType) {
         self.configuration = configuration
     }
     
+    
+    // MARK: - Helpers
+    
     private func createRealmInstance() -> Realm {
         
         var rmConfig = Realm.Configuration()
-//                rmConfig.readOnly = true
         switch configuration {
         case .standard:
             DatabaseManager.setRealmConfiguration()

@@ -34,9 +34,8 @@ class TransactionsWireframe: TabBarInterface, StoryboardInstanciate {
         
         let viewController = viewControllerFromStoryboard(withIdentifier: "TransactionsViewController") as! TransactionsViewController
         
-        let walletDataManager = WalletDataManager(database: DatabaseManager(configuration: .standard))
         let transactionDataManager = TransactionDataManager(database: DatabaseManager(configuration: .standard))
-        let interactor = TransactionsInteractor(walletDataManager: walletDataManager, transactionDataManager: transactionDataManager)
+        let interactor = TransactionsInteractor(transactionDataManager: transactionDataManager)
 
         let presenter = TransactionsPresenter(interactor: interactor, wireframe: self)
         presenter.output = viewController

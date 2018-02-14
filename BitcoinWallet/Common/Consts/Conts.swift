@@ -9,6 +9,8 @@
 import UIKit
 
 let myAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+typealias BlockCompletion = ()->Void
+
 
 struct App {
     

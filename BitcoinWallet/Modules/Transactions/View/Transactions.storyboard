@@ -15,7 +15,7 @@
         <scene sceneID="CDd-5D-tLH">
             <objects>
                 <tableViewController storyboardIdentifier="TransactionsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NDx-54-OXI" customClass="TransactionsViewController" customModule="BitcoinWallet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jmJ-78-IVu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="97" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jmJ-78-IVu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,11 +65,11 @@
                                                 <constraint firstAttribute="width" constant="1" id="f1I-jk-WL7"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05 FEV" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Mj-9A-6EY">
-                                            <rect key="frame" x="291.5" y="16.5" width="67.5" height="10"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05 FEV" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Mj-9A-6EY">
+                                            <rect key="frame" x="291.5" y="16.5" width="67.5" height="13.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="67.5" id="E75-f5-cGX"/>
-                                                <constraint firstAttribute="height" constant="10" id="pgC-gR-bOA"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="pgC-gR-bOA"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
