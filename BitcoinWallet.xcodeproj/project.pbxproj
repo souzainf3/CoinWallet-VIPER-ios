@@ -38,6 +38,7 @@
 		0334EDFD2034B0A9005A06CB /* Transactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0334EDF72034B0A8005A06CB /* Transactions.storyboard */; };
 		0334EDFE2034B0A9005A06CB /* TransactionsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDFA2034B0A8005A06CB /* TransactionsWireframe.swift */; };
 		0334EE002034CA9B005A06CB /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDFF2034CA9A005A06CB /* TransactionCell.swift */; };
+		0334EE022034CE6A005A06CB /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EE012034CE6A005A06CB /* TransactionsViewController.swift */; };
 		0398C2D22026526B00D32808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D12026526B00D32808 /* AppDelegate.swift */; };
 		0398C2DB2026526B00D32808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0398C2DA2026526B00D32808 /* Assets.xcassets */; };
 		0398C2DE2026526B00D32808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0398C2DC2026526B00D32808 /* LaunchScreen.storyboard */; };
@@ -116,6 +117,7 @@
 		0334EDF72034B0A8005A06CB /* Transactions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Transactions.storyboard; sourceTree = "<group>"; };
 		0334EDFA2034B0A8005A06CB /* TransactionsWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsWireframe.swift; sourceTree = "<group>"; };
 		0334EDFF2034CA9A005A06CB /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		0334EE012034CE6A005A06CB /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		0398C2CE2026526B00D32808 /* BitcoinWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0398C2D12026526B00D32808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0398C2DA2026526B00D32808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 			children = (
 				0334EDF72034B0A8005A06CB /* Transactions.storyboard */,
 				0334EDFF2034CA9A005A06CB /* TransactionCell.swift */,
+				0334EE012034CE6A005A06CB /* TransactionsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1077,6 +1080,7 @@
 				0334EDAB20325622005A06CB /* DatabaseManager.swift in Sources */,
 				03C43ACF202673C900C53429 /* WalletViewController.swift in Sources */,
 				03C43ADD202696FA00C53429 /* WalletViewModel.swift in Sources */,
+				0334EE022034CE6A005A06CB /* TransactionsViewController.swift in Sources */,
 				0334ED922032259D005A06CB /* Extensions.swift in Sources */,
 				0334ED9620323381005A06CB /* CurrencyTextField.swift in Sources */,
 				0334EDDD203455A1005A06CB /* SellCoinWireframe.swift in Sources */,
