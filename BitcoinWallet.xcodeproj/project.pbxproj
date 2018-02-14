@@ -34,9 +34,6 @@
 		0334EDDF2034768C005A06CB /* SellCoinPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDDE2034768C005A06CB /* SellCoinPresenter.swift */; };
 		0334EDE1203478EE005A06CB /* SellCoinInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDE0203478EE005A06CB /* SellCoinInteractor.swift */; };
 		0398C2D22026526B00D32808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D12026526B00D32808 /* AppDelegate.swift */; };
-		0398C2D42026526B00D32808 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D32026526B00D32808 /* FirstViewController.swift */; };
-		0398C2D62026526B00D32808 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D52026526B00D32808 /* SecondViewController.swift */; };
-		0398C2D92026526B00D32808 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0398C2D72026526B00D32808 /* Main.storyboard */; };
 		0398C2DB2026526B00D32808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0398C2DA2026526B00D32808 /* Assets.xcassets */; };
 		0398C2DE2026526B00D32808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0398C2DC2026526B00D32808 /* LaunchScreen.storyboard */; };
 		0398C2E92026526C00D32808 /* BitcoinWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2E82026526C00D32808 /* BitcoinWalletTests.swift */; };
@@ -112,9 +109,6 @@
 		0334EDE0203478EE005A06CB /* SellCoinInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCoinInteractor.swift; sourceTree = "<group>"; };
 		0398C2CE2026526B00D32808 /* BitcoinWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0398C2D12026526B00D32808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0398C2D32026526B00D32808 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		0398C2D52026526B00D32808 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		0398C2D82026526B00D32808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0398C2DA2026526B00D32808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0398C2DD2026526B00D32808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0398C2DF2026526B00D32808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -433,9 +427,6 @@
 				0398C2D12026526B00D32808 /* AppDelegate.swift */,
 				0398C3022026570300D32808 /* Common */,
 				0398C3012026570300D32808 /* Modules */,
-				0398C2D32026526B00D32808 /* FirstViewController.swift */,
-				0398C2D52026526B00D32808 /* SecondViewController.swift */,
-				0398C2D72026526B00D32808 /* Main.storyboard */,
 				0398C2DA2026526B00D32808 /* Assets.xcassets */,
 				0398C2DC2026526B00D32808 /* LaunchScreen.storyboard */,
 				0398C2DF2026526B00D32808 /* Info.plist */,
@@ -803,7 +794,6 @@
 				0334ED8A2031C12A005A06CB /* CoinPickerCell.xib in Resources */,
 				0398C2DB2026526B00D32808 /* Assets.xcassets in Resources */,
 				0334EDD72033EE73005A06CB /* SellCoin.storyboard in Resources */,
-				0398C2D92026526B00D32808 /* Main.storyboard in Resources */,
 				03C43AF22027440C00C53429 /* BuyCoin.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1001,7 +991,6 @@
 				03C43AD12026741A00C53429 /* WalletPresenter.swift in Sources */,
 				03C43ACB20266C8800C53429 /* Protocols.swift in Sources */,
 				0334EDAE20325622005A06CB /* Persistence.swift in Sources */,
-				0398C2D62026526B00D32808 /* SecondViewController.swift in Sources */,
 				03B46BF42027A7140049635F /* BuyCells.swift in Sources */,
 				0334EDDF2034768C005A06CB /* SellCoinPresenter.swift in Sources */,
 				0334EDE1203478EE005A06CB /* SellCoinInteractor.swift in Sources */,
@@ -1021,7 +1010,6 @@
 				0334EDB32032563C005A06CB /* WalletDataManager.swift in Sources */,
 				0334ED8B2031C12A005A06CB /* CoinPickerCell.swift in Sources */,
 				0334EDAB20325622005A06CB /* DatabaseManager.swift in Sources */,
-				0398C2D42026526B00D32808 /* FirstViewController.swift in Sources */,
 				03C43ACF202673C900C53429 /* WalletViewController.swift in Sources */,
 				03C43ADD202696FA00C53429 /* WalletViewModel.swift in Sources */,
 				0334ED922032259D005A06CB /* Extensions.swift in Sources */,
@@ -1069,14 +1057,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0398C2D72026526B00D32808 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0398C2D82026526B00D32808 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0398C2DC2026526B00D32808 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
