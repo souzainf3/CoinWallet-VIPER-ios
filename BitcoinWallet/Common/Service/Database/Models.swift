@@ -32,10 +32,7 @@ class DBTransaction: Object {
     override class func primaryKey() -> String {
         return "identifier"
     }
-    
-//    override static func indexedProperties() -> [String] {
-//        return ["identifier", "date", "amount", "currency"]
-//    }
+
 }
 
 extension DBTransaction {
