@@ -31,6 +31,8 @@
 		0334EDD920344C91005A06CB /* SellCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDD820344C91005A06CB /* SellCells.swift */; };
 		0334EDDB2034536D005A06CB /* SellCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDDA2034536D005A06CB /* SellCoinViewController.swift */; };
 		0334EDDD203455A1005A06CB /* SellCoinWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDDC203455A1005A06CB /* SellCoinWireframe.swift */; };
+		0334EDDF2034768C005A06CB /* SellCoinPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDDE2034768C005A06CB /* SellCoinPresenter.swift */; };
+		0334EDE1203478EE005A06CB /* SellCoinInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDE0203478EE005A06CB /* SellCoinInteractor.swift */; };
 		0398C2D22026526B00D32808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D12026526B00D32808 /* AppDelegate.swift */; };
 		0398C2D42026526B00D32808 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D32026526B00D32808 /* FirstViewController.swift */; };
 		0398C2D62026526B00D32808 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D52026526B00D32808 /* SecondViewController.swift */; };
@@ -106,6 +108,8 @@
 		0334EDD820344C91005A06CB /* SellCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCells.swift; sourceTree = "<group>"; };
 		0334EDDA2034536D005A06CB /* SellCoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCoinViewController.swift; sourceTree = "<group>"; };
 		0334EDDC203455A1005A06CB /* SellCoinWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCoinWireframe.swift; sourceTree = "<group>"; };
+		0334EDDE2034768C005A06CB /* SellCoinPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCoinPresenter.swift; sourceTree = "<group>"; };
+		0334EDE0203478EE005A06CB /* SellCoinInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCoinInteractor.swift; sourceTree = "<group>"; };
 		0398C2CE2026526B00D32808 /* BitcoinWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0398C2D12026526B00D32808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0398C2D32026526B00D32808 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -363,6 +367,7 @@
 		0334EDD12033EE73005A06CB /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				0334EDE0203478EE005A06CB /* SellCoinInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 		0334EDD22033EE73005A06CB /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				0334EDDE2034768C005A06CB /* SellCoinPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -997,6 +1003,8 @@
 				0334EDAE20325622005A06CB /* Persistence.swift in Sources */,
 				0398C2D62026526B00D32808 /* SecondViewController.swift in Sources */,
 				03B46BF42027A7140049635F /* BuyCells.swift in Sources */,
+				0334EDDF2034768C005A06CB /* SellCoinPresenter.swift in Sources */,
+				0334EDE1203478EE005A06CB /* SellCoinInteractor.swift in Sources */,
 				03C43AF32027440C00C53429 /* BuyCoinViewController.swift in Sources */,
 				0334ED862031B7E7005A06CB /* SheetPresentationController.swift in Sources */,
 				03C43AC920266C6300C53429 /* Reusable.swift in Sources */,

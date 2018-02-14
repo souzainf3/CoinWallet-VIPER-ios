@@ -21,7 +21,20 @@ class SellCoinWireframe: StoryboardInstanciate {
         
         let viewController = viewControllerFromStoryboard(withIdentifier: "SellCoinViewController") as! SellCoinViewController
         
-        // TODO: - Dependency injection here
+        let walletDataManager = WalletDataManager(database: DatabaseManager(configuration: .standard))
+        let transactionDataManager = TransactionDataManager(database: DatabaseManager(configuration: .standard))
+        
+        let interactor = SellCoinInteractor(
+            walletDataManager: walletDataManager,
+            exchangeRateDataManager: ExchangeRateDataManager(),
+            transactionDataManager: transactionDataManager
+        )
+        
+        let presenter = SellCoinPresenter(interactor: interactor, wireframe: self)
+        presenter.output = viewController
+        
+        viewController.presenter = presenter
+        interactor.output = presenter
         
         navigationController.pushViewController(viewController, animated: true)
         self.viewController = viewController

@@ -128,7 +128,7 @@ extension BuyCoinPresenter: BuyCoinInteractorOutput {
         let message: String
         switch error {
         case .exchangeRateUnavailable:
-            message = "Taxa de câmbio indisponivel no momento. Tente novamente mais tarte."
+            message = "Taxa de câmbio indisponível no momento. Tente novamente mais tarte."
         case .insufficientBalance:
             message = "A carteira selecionada não tem saldo suficiente pra essa transação."
         case .invalidValue:
