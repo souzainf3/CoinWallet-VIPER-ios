@@ -98,29 +98,29 @@ class SellCoinInteractor: SellCoinInteractorInput {
     // MARK: - Private
     
     private func trySell(amount: Double, from wallet: Wallet, creditIn currency: Currency) {
-//        do {
-//            let valueConverted = try self.exchangeRateDataManager.converter(amount: amount, from: self.coinSelected, to: wallet.currency)
-//
-//            print("From: \(self.coinSelected.abbreviation) - Amount: \(amount)")
-//            print("To: \(wallet.currency.abbreviation) - Amount: \(valueConverted)")
-//
-//            guard self.hasBalanceToBuy(value: valueConverted, in: wallet) else {
-//                self.output?.buyFailed(with: .insufficientBalance)
-//                return
-//            }
-//
-//            self.walletDataManager.incrementWallet(amount: amount, currency: self.coinSelected)
-//            self.transactionDataManager.setNewTransaction(type: .buy, operation: .credit, amount: amount, currency: self.coinSelected)
-//
-//            self.walletDataManager.decrement(amount: valueConverted, from: wallet)
-//            self.transactionDataManager.setNewTransaction(type: .exchange, operation: .debit, amount: valueConverted, currency: wallet.currency)
-//
-//            self.output?.buyed()
-//
-//        } catch let error {
-//            print(error)
-//            self.output?.buyFailed(with: .exchangeRateUnavailable)
-//        }
+        do {
+            let valueToCredit = try self.exchangeRateDataManager.converter(amount: amount, from: wallet.currency, to: currency)
+
+            print("Sell: \(wallet.currency.identifier) - Amount: \(amount)")
+            print("Sell Payment: \(currency.identifier) - Amount: \(valueToCredit)")
+
+            guard self.hasBalanceToPay(value: amount, in: wallet) else {
+                self.output?.buyFailed(with: .insufficientBalance)
+                return
+            }
+
+            self.walletDataManager.decrement(amount: amount, from: wallet)
+            self.transactionDataManager.setNewTransaction(type: .sell, operation: .debit, amount: amount, currency: wallet.currency)
+
+            self.walletDataManager.incrementWallet(amount: valueToCredit, currency: currency)
+            self.transactionDataManager.setNewTransaction(type: .sell, operation: .credit, amount: valueToCredit, currency: currency)
+
+            self.output?.buyed()
+
+        } catch let error {
+            print(error)
+            self.output?.buyFailed(with: .exchangeRateUnavailable)
+        }
     }
     
     private func hasBalanceToPay(value: Double, in wallet: Wallet) -> Bool {
