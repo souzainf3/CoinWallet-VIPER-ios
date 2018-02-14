@@ -23,7 +23,10 @@ class AppWireframe {
         self.window = window
         
         let walletWireframe = WalletWireframe(buyCoinWireframe: BuyCoinWireframe(), sellCoinWireframe: SellCoinWireframe())
-        self.tabBarWireframe = TabBarWireframe(walletWireframe)
+
+        let transactionWireframe = TransactionsWireframe()
+        
+        self.tabBarWireframe = TabBarWireframe(walletWireframe, transactionWireframe)
     }
     
     func installRootViewController() {
