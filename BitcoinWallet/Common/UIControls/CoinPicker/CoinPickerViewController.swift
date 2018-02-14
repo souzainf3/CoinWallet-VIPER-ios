@@ -21,7 +21,7 @@ extension CoinPickerViewController {
         let width = viewController.view.frame.width
         self.preferredContentSize = CGSize(width: width, height: 280)
         
-        let navigation = UINavigationController(rootViewController: self)
+        let navigation = CustomNavigationController(rootViewController: self)
         navigation.modalPresentationStyle = .custom
         navigation.transitioningDelegate = self.transitionDelegate
         

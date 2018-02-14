@@ -21,7 +21,7 @@ class TransactionsWireframe: TabBarInterface, StoryboardInstanciate {
         
         let viewController = newTransactionsViewController()
         viewController.tabBarItem = UITabBarItem(title: "Histórico", image: #imageLiteral(resourceName: "list"), tag: 0)
-        let navigationController = UINavigationController(rootViewController: viewController)
+        let navigationController = CustomNavigationController(rootViewController: viewController)
 
         defer {
             self.transactionsViewController = viewController

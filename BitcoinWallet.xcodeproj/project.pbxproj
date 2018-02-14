@@ -40,6 +40,7 @@
 		0334EE002034CA9B005A06CB /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDFF2034CA9A005A06CB /* TransactionCell.swift */; };
 		0334EE022034CE6A005A06CB /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EE012034CE6A005A06CB /* TransactionsViewController.swift */; };
 		0334EE042034CFB6005A06CB /* TransactionDisplayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EE032034CFB6005A06CB /* TransactionDisplayItem.swift */; };
+		0334EE072034F822005A06CB /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EE062034F822005A06CB /* CustomNavigationController.swift */; };
 		0398C2D22026526B00D32808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D12026526B00D32808 /* AppDelegate.swift */; };
 		0398C2DB2026526B00D32808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0398C2DA2026526B00D32808 /* Assets.xcassets */; };
 		0398C2DE2026526B00D32808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0398C2DC2026526B00D32808 /* LaunchScreen.storyboard */; };
@@ -120,6 +121,7 @@
 		0334EDFF2034CA9A005A06CB /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		0334EE012034CE6A005A06CB /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		0334EE032034CFB6005A06CB /* TransactionDisplayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDisplayItem.swift; sourceTree = "<group>"; };
+		0334EE062034F822005A06CB /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		0398C2CE2026526B00D32808 /* BitcoinWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0398C2D12026526B00D32808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0398C2DA2026526B00D32808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -465,6 +467,14 @@
 			path = Wireframe;
 			sourceTree = "<group>";
 		};
+		0334EE052034F7F4005A06CB /* CustomNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				0334EE062034F822005A06CB /* CustomNavigationController.swift */,
+			);
+			path = CustomNavigationController;
+			sourceTree = "<group>";
+		};
 		0398C2C52026526B00D32808 = {
 			isa = PBXGroup;
 			children = (
@@ -594,6 +604,7 @@
 		0398C30C2026584300D32808 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
+				0334EE052034F7F4005A06CB /* CustomNavigationController */,
 				0334ED94203231B0005A06CB /* CurrencyTextField */,
 				0334ED782031B00C005A06CB /* CoinPicker */,
 			);
@@ -1067,6 +1078,7 @@
 				03C43AF32027440C00C53429 /* BuyCoinViewController.swift in Sources */,
 				0334ED862031B7E7005A06CB /* SheetPresentationController.swift in Sources */,
 				03C43AC920266C6300C53429 /* Reusable.swift in Sources */,
+				0334EE072034F822005A06CB /* CustomNavigationController.swift in Sources */,
 				0334EDAC20325622005A06CB /* Models.swift in Sources */,
 				0334ED8D2031F371005A06CB /* ExchangeRate.swift in Sources */,
 				03C43AD920268F2900C53429 /* Wallet.swift in Sources */,

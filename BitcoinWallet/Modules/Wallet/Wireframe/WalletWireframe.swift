@@ -21,8 +21,11 @@ class WalletWireframe: TabBarInterface, StoryboardInstanciate {
         
         let walletViewController = newWalletViewController()
         walletViewController.tabBarItem = UITabBarItem(title: "Carteira", image: #imageLiteral(resourceName: "wallet"), tag: 0)
-        let navigationController = UINavigationController(rootViewController: walletViewController)
-
+        let navigationController = CustomNavigationController(rootViewController: walletViewController)
+       
+        if #available(iOS 11.0, *) {
+            navigationController.navigationBar.prefersLargeTitles = true
+        }
         
         defer {
             self.walletViewController = walletViewController
