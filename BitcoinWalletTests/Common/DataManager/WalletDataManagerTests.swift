@@ -15,15 +15,11 @@ class WalletDataManagerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
         self.walletManagerMock = WalletDataManager(database: DatabaseManager(configuration: .inMemory(identifier: "tests.wallet")))
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        
         self.walletManagerMock.database.clearData()
-        
         super.tearDown()
     }
     

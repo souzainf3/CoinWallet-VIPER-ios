@@ -36,7 +36,6 @@
 		0398C2D22026526B00D32808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D12026526B00D32808 /* AppDelegate.swift */; };
 		0398C2DB2026526B00D32808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0398C2DA2026526B00D32808 /* Assets.xcassets */; };
 		0398C2DE2026526B00D32808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0398C2DC2026526B00D32808 /* LaunchScreen.storyboard */; };
-		0398C2E92026526C00D32808 /* BitcoinWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2E82026526C00D32808 /* BitcoinWalletTests.swift */; };
 		0398C2F42026526C00D32808 /* BitcoinWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2F32026526C00D32808 /* BitcoinWalletUITests.swift */; };
 		0398C30B2026570300D32808 /* Conts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C3042026570300D32808 /* Conts.swift */; };
 		0398C30F2026584D00D32808 /* AppWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C30E2026584D00D32808 /* AppWireframe.swift */; };
@@ -113,7 +112,6 @@
 		0398C2DD2026526B00D32808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0398C2DF2026526B00D32808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0398C2E42026526C00D32808 /* BitcoinWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitcoinWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0398C2E82026526C00D32808 /* BitcoinWalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinWalletTests.swift; sourceTree = "<group>"; };
 		0398C2EA2026526C00D32808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0398C2EF2026526C00D32808 /* BitcoinWalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitcoinWalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0398C2F32026526C00D32808 /* BitcoinWalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinWalletUITests.swift; sourceTree = "<group>"; };
@@ -437,7 +435,6 @@
 		0398C2E72026526C00D32808 /* BitcoinWalletTests */ = {
 			isa = PBXGroup;
 			children = (
-				0398C2E82026526C00D32808 /* BitcoinWalletTests.swift */,
 				0334EDBB20331128005A06CB /* Common */,
 				0334EDB420331128005A06CB /* Modules */,
 				0398C2EA2026526C00D32808 /* Info.plist */,
@@ -1026,7 +1023,6 @@
 			files = (
 				0334EDCB2033421E005A06CB /* WalletDataManagerTests.swift in Sources */,
 				0334EDC720331D6E005A06CB /* ExchangeRateTests.swift in Sources */,
-				0398C2E92026526C00D32808 /* BitcoinWalletTests.swift in Sources */,
 				0334EDC52033191B005A06CB /* WalletTests.swift in Sources */,
 				0334EDC920331FA5005A06CB /* ExchangeRateDataManagerTests.swift in Sources */,
 				0334EDC32033120F005A06CB /* ExtensionsTests.swift in Sources */,
