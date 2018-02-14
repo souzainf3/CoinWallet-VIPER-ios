@@ -28,6 +28,9 @@
 		0334EDCD2033B38B005A06CB /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDCC2033B38B005A06CB /* Transaction.swift */; };
 		0334EDCF2033B4DE005A06CB /* TransactionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDCE2033B4DE005A06CB /* TransactionDataManager.swift */; };
 		0334EDD72033EE73005A06CB /* SellCoin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0334EDD42033EE73005A06CB /* SellCoin.storyboard */; };
+		0334EDD920344C91005A06CB /* SellCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDD820344C91005A06CB /* SellCells.swift */; };
+		0334EDDB2034536D005A06CB /* SellCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDDA2034536D005A06CB /* SellCoinViewController.swift */; };
+		0334EDDD203455A1005A06CB /* SellCoinWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334EDDC203455A1005A06CB /* SellCoinWireframe.swift */; };
 		0398C2D22026526B00D32808 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D12026526B00D32808 /* AppDelegate.swift */; };
 		0398C2D42026526B00D32808 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D32026526B00D32808 /* FirstViewController.swift */; };
 		0398C2D62026526B00D32808 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398C2D52026526B00D32808 /* SecondViewController.swift */; };
@@ -100,6 +103,9 @@
 		0334EDCC2033B38B005A06CB /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		0334EDCE2033B4DE005A06CB /* TransactionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataManager.swift; sourceTree = "<group>"; };
 		0334EDD42033EE73005A06CB /* SellCoin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SellCoin.storyboard; sourceTree = "<group>"; };
+		0334EDD820344C91005A06CB /* SellCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCells.swift; sourceTree = "<group>"; };
+		0334EDDA2034536D005A06CB /* SellCoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCoinViewController.swift; sourceTree = "<group>"; };
+		0334EDDC203455A1005A06CB /* SellCoinWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCoinWireframe.swift; sourceTree = "<group>"; };
 		0398C2CE2026526B00D32808 /* BitcoinWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0398C2D12026526B00D32808 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0398C2D32026526B00D32808 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -372,6 +378,8 @@
 			isa = PBXGroup;
 			children = (
 				0334EDD42033EE73005A06CB /* SellCoin.storyboard */,
+				0334EDDA2034536D005A06CB /* SellCoinViewController.swift */,
+				0334EDD820344C91005A06CB /* SellCells.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -386,6 +394,7 @@
 		0334EDD62033EE73005A06CB /* Wireframe */ = {
 			isa = PBXGroup;
 			children = (
+				0334EDDC203455A1005A06CB /* SellCoinWireframe.swift */,
 			);
 			path = Wireframe;
 			sourceTree = "<group>";
@@ -975,10 +984,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				03C43ABE2026638D00C53429 /* TabBarWireframe.swift in Sources */,
+				0334EDDB2034536D005A06CB /* SellCoinViewController.swift in Sources */,
 				03C43AD32026742000C53429 /* WalletInteractor.swift in Sources */,
 				03C43AE120269D0800C53429 /* CurrencyAmountCell.swift in Sources */,
 				03C43AC7202666B100C53429 /* WalletWireframe.swift in Sources */,
 				0334EDB22032563C005A06CB /* ExchangeRateDataManager.swift in Sources */,
+				0334EDD920344C91005A06CB /* SellCells.swift in Sources */,
 				0398C30F2026584D00D32808 /* AppWireframe.swift in Sources */,
 				0334EDCD2033B38B005A06CB /* Transaction.swift in Sources */,
 				03C43AD12026741A00C53429 /* WalletPresenter.swift in Sources */,
@@ -1007,6 +1018,7 @@
 				03C43ADD202696FA00C53429 /* WalletViewModel.swift in Sources */,
 				0334ED922032259D005A06CB /* Extensions.swift in Sources */,
 				0334ED9620323381005A06CB /* CurrencyTextField.swift in Sources */,
+				0334EDDD203455A1005A06CB /* SellCoinWireframe.swift in Sources */,
 				0334ED872031B7E7005A06CB /* SheetTransitioningDelegate.swift in Sources */,
 				0334ED7B2031B09E005A06CB /* CoinPickerViewController.swift in Sources */,
 			);

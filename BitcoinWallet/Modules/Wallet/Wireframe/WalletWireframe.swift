@@ -8,12 +8,13 @@ class WalletWireframe: TabBarInterface, StoryboardInstanciate {
     private(set) weak var walletViewController: UIViewController?
 
     let buyCoinWireframe: BuyCoinWireframe
-
+    let sellCoinWireframe: SellCoinWireframe
     
     // MARK: Public
     
-    init(buyCoinWireframe: BuyCoinWireframe) {
+    init(buyCoinWireframe: BuyCoinWireframe, sellCoinWireframe: SellCoinWireframe) {
         self.buyCoinWireframe = buyCoinWireframe
+        self.sellCoinWireframe = sellCoinWireframe
     }
     
     func configuredViewController() -> UIViewController {
@@ -36,7 +37,10 @@ class WalletWireframe: TabBarInterface, StoryboardInstanciate {
     }
     
     func showScreenToSellCoins() {
-        
+        guard let navigation = self.walletViewController?.navigationController else {
+            return
+        }
+        self.sellCoinWireframe.presentSellScreen(in: navigation)
     }
     
     

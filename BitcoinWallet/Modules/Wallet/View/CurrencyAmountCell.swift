@@ -8,6 +8,8 @@
 
 import UIKit
 
+// TODO: - Rename to WalletCell
+
 class CurrencyAmountCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var symbolLabel: UILabel!

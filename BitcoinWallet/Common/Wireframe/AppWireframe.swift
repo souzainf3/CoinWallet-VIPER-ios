@@ -22,7 +22,7 @@ class AppWireframe {
     init(window: UIWindow) {
         self.window = window
         
-        let walletWireframe = WalletWireframe(buyCoinWireframe: BuyCoinWireframe())
+        let walletWireframe = WalletWireframe(buyCoinWireframe: BuyCoinWireframe(), sellCoinWireframe: SellCoinWireframe())
         self.tabBarWireframe = TabBarWireframe(walletWireframe)
     }
     

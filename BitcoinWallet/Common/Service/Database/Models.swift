@@ -47,10 +47,4 @@ extension DBTransaction {
     }
 }
 
-//// User
-//class DBUser: BaseModel {
-//    @objc dynamic var name : String = ""
-//    var wallets = List<DBWallet>()
-//}
-
 
