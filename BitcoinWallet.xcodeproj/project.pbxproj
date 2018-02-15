@@ -59,7 +59,7 @@
 		03C43AD7202687F000C53429 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AD6202687F000C53429 /* Currency.swift */; };
 		03C43AD920268F2900C53429 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AD820268F2900C53429 /* Wallet.swift */; };
 		03C43ADD202696FA00C53429 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43ADC202696FA00C53429 /* WalletViewModel.swift */; };
-		03C43AE120269D0800C53429 /* CurrencyAmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AE020269D0800C53429 /* CurrencyAmountCell.swift */; };
+		03C43AE120269D0800C53429 /* WalletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AE020269D0800C53429 /* WalletCell.swift */; };
 		03C43AF02027440C00C53429 /* BuyCoinInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AE62027440B00C53429 /* BuyCoinInteractor.swift */; };
 		03C43AF12027440C00C53429 /* BuyCoinPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AE82027440B00C53429 /* BuyCoinPresenter.swift */; };
 		03C43AF22027440C00C53429 /* BuyCoin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C43AEA2027440B00C53429 /* BuyCoin.storyboard */; };
@@ -146,7 +146,7 @@
 		03C43AD6202687F000C53429 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		03C43AD820268F2900C53429 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		03C43ADC202696FA00C53429 /* WalletViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
-		03C43AE020269D0800C53429 /* CurrencyAmountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyAmountCell.swift; sourceTree = "<group>"; };
+		03C43AE020269D0800C53429 /* WalletCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCell.swift; sourceTree = "<group>"; };
 		03C43AE62027440B00C53429 /* BuyCoinInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCoinInteractor.swift; sourceTree = "<group>"; };
 		03C43AE82027440B00C53429 /* BuyCoinPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCoinPresenter.swift; sourceTree = "<group>"; };
 		03C43AEA2027440B00C53429 /* BuyCoin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BuyCoin.storyboard; sourceTree = "<group>"; };
@@ -652,7 +652,7 @@
 			isa = PBXGroup;
 			children = (
 				03C43ACE202673C900C53429 /* WalletViewController.swift */,
-				03C43AE020269D0800C53429 /* CurrencyAmountCell.swift */,
+				03C43AE020269D0800C53429 /* WalletCell.swift */,
 				03C43ACC2026738900C53429 /* Wallet.storyboard */,
 			);
 			path = View;
@@ -1060,7 +1060,7 @@
 				03C43ABE2026638D00C53429 /* TabBarWireframe.swift in Sources */,
 				0334EDDB2034536D005A06CB /* SellCoinViewController.swift in Sources */,
 				03C43AD32026742000C53429 /* WalletInteractor.swift in Sources */,
-				03C43AE120269D0800C53429 /* CurrencyAmountCell.swift in Sources */,
+				03C43AE120269D0800C53429 /* WalletCell.swift in Sources */,
 				0334EDFB2034B0A9005A06CB /* TransactionsInteractor.swift in Sources */,
 				03C43AC7202666B100C53429 /* WalletWireframe.swift in Sources */,
 				0334EDB22032563C005A06CB /* ExchangeRateDataManager.swift in Sources */,

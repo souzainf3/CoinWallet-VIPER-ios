@@ -57,7 +57,7 @@
                         <sections>
                             <tableViewSection headerTitle="Quantia" id="2nw-VH-2DH">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CurrencyAmountCell" rowHeight="62" id="L8Z-Yh-o3Z" customClass="BuyCoinAmountCell" customModule="BitcoinWallet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="62" id="L8Z-Yh-o3Z" customClass="BuyCoinAmountCell" customModule="BitcoinWallet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L8Z-Yh-o3Z" id="xiY-Jo-UoZ">
@@ -116,7 +116,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Pagar com:" footerTitle="Os valores serão debitados da carteira escolhida." id="iZk-dm-fc7">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CurrencyAmountCell" rowHeight="55" id="p9a-jw-oar" customClass="WalletToPayCell" customModule="BitcoinWallet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="55" id="p9a-jw-oar" customClass="WalletToPayCell" customModule="BitcoinWallet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="181" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p9a-jw-oar" id="d9q-39-NCe">
