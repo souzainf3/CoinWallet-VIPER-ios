@@ -52,7 +52,6 @@ class WalletDetailCell: UITableViewCell {
     @IBOutlet weak var amountLabel: UILabel!
 }
 
-// TODO: - Refactor code repeated
 extension WalletDetailCell {
     
     func setEmpty(title: String) {
