@@ -47,6 +47,7 @@ class SellCoinViewController: UITableViewController {
     }
 }
 
+
 // MARK: - SellCoinPresenterOutput
 
 extension SellCoinViewController: SellCoinPresenterOutput {

@@ -5,7 +5,6 @@ import UIKit
 protocol BuyCoinInteractorInput {
     var coinSelected: Currency { get set}
     var walletSelected: Wallet? { get set}
-    
     var wallets: [Wallet] { get }
     var coinsAvailable: [Currency] { get }
 
@@ -17,7 +16,6 @@ protocol BuyCoinInteractorOutput: class {
     func configureSelectedCoin(_ coin: Currency)
     func configureSelectedWallet(_ wallet: Wallet)
     func configureUnselectedWallet()
-    
     func buyed()
     func buyFailed(with error: BuyCoinFail)
 }
@@ -37,7 +35,6 @@ class BuyCoinInteractor: BuyCoinInteractorInput {
     let exchangeRateDataManager: ExchangeRateDataManagerInput
     let transactionDataManager: TransactionDataManagerInput
 
-    
     // Coin selected. Default value is .bitcoin
     var coinSelected: Currency = .bitcoin {
         didSet {

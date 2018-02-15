@@ -35,13 +35,13 @@ class WalletToPayCell: UITableViewCell {
 
 extension WalletToPayCell {
     
-    func setEmpty() {
+    func setEmpty(title: String?) {
         return configure(
             currencyColor: .clear,
             currencyAbbreviation: nil,
             currencyTitle: nil,
             balanceTitle: nil,
-            amountValue: "Selecione uma carteira"
+            amountValue: title
         )
     }
     

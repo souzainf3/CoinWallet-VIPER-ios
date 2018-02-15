@@ -7,7 +7,7 @@ protocol BuyCoinPresenterOutput: class {
     func showLoading()
     func hideLoading()
     func configureSelectedCoin(_ coin: Currency)
-    func configureWalletNotSelected()
+    func configureWalletNotSelected(message: String)
     func configureSelectedWallet(_ wallet: Wallet)
     func showWalletPicker(title: String, wallets: [Wallet], walletSelected: Wallet?)
     func showCoinPicker(title: String, coins: [Currency], coinSelected: Currency?)
@@ -92,7 +92,7 @@ class BuyCoinPresenter: BuyCoinPresenterInput {
         if let wallet = self.interactor.walletSelected {
             self.output?.configureSelectedWallet(wallet)
         } else {
-            self.output?.configureWalletNotSelected()
+            self.output?.configureWalletNotSelected(message: "Selecione uma carteira")
         }
     }
     
@@ -112,7 +112,7 @@ extension BuyCoinPresenter: BuyCoinInteractorOutput {
     }
     
     func configureUnselectedWallet() {
-        self.output?.configureWalletNotSelected()
+        self.output?.configureWalletNotSelected(message: "Selecione uma carteira")
     }
     
     func buyed() {

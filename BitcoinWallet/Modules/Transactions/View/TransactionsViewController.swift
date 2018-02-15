@@ -24,7 +24,6 @@ class TransactionsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Histórico"
-
         self.presenter?.viewDidLoad()
     }
 

@@ -71,8 +71,8 @@ extension BuyCoinViewController: BuyCoinPresenterOutput {
         self.coinView.configure(with: coin)
     }
     
-    func configureWalletNotSelected() {
-        self.walletView.setEmpty()
+    func configureWalletNotSelected(message: String) {
+        self.walletView.setEmpty(title: message)
     }
     
     func configureSelectedWallet(_ wallet: Wallet) {

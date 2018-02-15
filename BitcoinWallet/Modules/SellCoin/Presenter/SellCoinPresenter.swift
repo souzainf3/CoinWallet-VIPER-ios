@@ -32,7 +32,7 @@ class SellCoinPresenter: SellCoinPresenterInput {
     var interactor: SellCoinInteractorInput
     
     
-    // MARK: Initializes
+    // MARK: - Initializes
     
     init(interactor: SellCoinInteractorInput, wireframe: SellCoinWireframe) {
         self.interactor = interactor
@@ -40,7 +40,7 @@ class SellCoinPresenter: SellCoinPresenterInput {
     }
     
     
-    // MARK: Input
+    // MARK: - Input
     
     func viewDidLoad() {
         self.configureOutputCurrency()
@@ -98,7 +98,7 @@ class SellCoinPresenter: SellCoinPresenterInput {
 }
 
 
-// MARK: - WalletInteractorOutput
+// MARK: - SellCoinInteractorOutput
 
 extension SellCoinPresenter: SellCoinInteractorOutput {
     func receivingCurrencyChanged(to currency: Currency) {
