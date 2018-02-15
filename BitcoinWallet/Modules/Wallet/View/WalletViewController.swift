@@ -23,15 +23,8 @@ class WalletViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.title = "Carteira"
         self.presenter?.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.presenter?.viewWillAppear()
     }
 
     

@@ -7,19 +7,21 @@
 import Foundation
 
 protocol WalletDataManagerInput: class {
+    func observeWalletUpdates(_ block: BlockCompletion?)
+    // Fech
     func fetchUserWallets() -> [Wallet]
     func fetchUserWallet(from currency: Currency) -> Wallet
-
+    // Increment
     func increment(amount: Double, to wallet: Wallet)
-    func decrement(amount: Double, from wallet: Wallet)
-    
     func incrementWallet(amount: Double, currency: Currency)
+    // Decrement
     func decrementWallet(amount: Double, currency: Currency)
+    func decrement(amount: Double, from wallet: Wallet)
 }
 
 class WalletDataManager {
    
-    let database: StorageContext
+    private(set) var database: StorageContext
 
     init(database: StorageContext) {
         self.database = database
@@ -30,6 +32,10 @@ class WalletDataManager {
 // MARK: - WalletDataManagerInput
 
 extension WalletDataManager: WalletDataManagerInput {
+    
+    func observeWalletUpdates(_ block: BlockCompletion?) {
+        self.database.storageContextNotification = block
+    }
     
     func fetchUserWallets() -> [Wallet] {
         return Currency.all.map({ self.fetchUserWallet(from: $0) })

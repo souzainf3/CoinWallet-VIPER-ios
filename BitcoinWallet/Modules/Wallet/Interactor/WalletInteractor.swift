@@ -3,11 +3,12 @@ import UIKit
 
 // presenter ---->> interactor
 protocol WalletInteractorInput {
-    func getUserWallet() -> [Wallet]
+    func fetchUserWallets() -> [Wallet]
 }
 
 // interactor ---->> presenter
 protocol WalletInteractorOutput: class {
+    func didUpdateUserWallets(_ wallets: [Wallet])
 }
 
 class WalletInteractor: WalletInteractorInput {
@@ -18,12 +19,15 @@ class WalletInteractor: WalletInteractorInput {
     
     init(dataManager: WalletDataManagerInput) {
         self.dataManager = dataManager
+        self.dataManager.observeWalletUpdates {
+            self.output?.didUpdateUserWallets(self.fetchUserWallets())
+        }
     }
     
     
     // MARK: Input
     
-    func getUserWallet() -> [Wallet] {
+    func fetchUserWallets() -> [Wallet] {
         return self.dataManager.fetchUserWallets()
     }
     

@@ -11,7 +11,6 @@ protocol WalletPresenterOutput: class {
 // view ---->> presenter
 protocol WalletPresenterInput {
     func viewDidLoad()
-    func viewWillAppear()
     func didPressedBuyButton()
     func didPressedSellButton()
 }
@@ -34,11 +33,7 @@ class WalletPresenter: WalletPresenterInput {
     // MARK: Input
     
     func viewDidLoad() {
-//        self.showUserWallet()
-    }
-    
-    func viewWillAppear() {
-        self.showUserWallet()
+        self.showUserWallets(self.interactor.fetchUserWallets())
     }
     
     func didPressedBuyButton() {
@@ -52,8 +47,8 @@ class WalletPresenter: WalletPresenterInput {
     
     // MARK: - Private
     
-    private func showUserWallet() {
-        let items = self.interactor.getUserWallet().map({
+    private func showUserWallets(_ wallets: [Wallet]) {
+        let items = wallets.map({
             WalletItem(
                 title: $0.currency.name.capitalized,
                 amountValue: $0.amountFormatted,
@@ -63,12 +58,15 @@ class WalletPresenter: WalletPresenterInput {
         
         self.output?.reloadWallet(viewModel: WalletViewModel(title: "Saldo", items: items))
     }
-
 }
+
 
 // MARK: - WalletInteractorOutput
 
 extension WalletPresenter: WalletInteractorOutput {
+    func didUpdateUserWallets(_ wallets: [Wallet]) {
+        self.showUserWallets(wallets)
+    }
 }
 
 
