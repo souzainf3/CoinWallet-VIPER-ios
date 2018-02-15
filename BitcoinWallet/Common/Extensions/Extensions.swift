@@ -93,3 +93,14 @@ extension Date {
     }
 }
 
+
+// MARK: - Double
+
+extension Double {
+    func toString() -> String {
+        let number: NSDecimalNumber = NSDecimalNumber(value: self)
+        return number.stringValue
+    }
+}
+
+

@@ -56,4 +56,17 @@ class ExtensionsTests: XCTestCase {
         XCTAssert(date.toString(format: "HH:mm") == "15:48")
         XCTAssert(date.toString(format: "yyyy") == "2015")
     }
+    
+    
+    // MARK: - Double
+    
+    func testDoubleStringConversion() {
+        let num: Double = 0.000035
+        XCTAssertEqual(num.toString(), "0.000035")
+        
+        let num2: Double = -0.000035
+        XCTAssertEqual(num2.toString(), "-0.000035")
+
+    }
+
 }

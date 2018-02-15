@@ -65,6 +65,7 @@
 		03C43AF22027440C00C53429 /* BuyCoin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C43AEA2027440B00C53429 /* BuyCoin.storyboard */; };
 		03C43AF32027440C00C53429 /* BuyCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AEB2027440B00C53429 /* BuyCoinViewController.swift */; };
 		03C43AF42027440C00C53429 /* BuyCoinWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AEE2027440C00C53429 /* BuyCoinWireframe.swift */; };
+		03D605A3203643F300727396 /* ExchangeRateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D605A2203643F300727396 /* ExchangeRateInteractor.swift */; };
 		4CD0EA439FEADCCB19D16986 /* Pods_BitcoinWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B798D79EF3DF2142C982BDE5 /* Pods_BitcoinWallet.framework */; };
 		51A3F3DE92AF3CF30F1CA567 /* Pods_BitcoinWalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BF90BD25E668A6E384D359 /* Pods_BitcoinWalletTests.framework */; };
 		E2EB0DAB6987362CC0659F13 /* Pods_BitcoinWalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630A8E6D74CB74CC6FC022C6 /* Pods_BitcoinWalletUITests.framework */; };
@@ -152,6 +153,7 @@
 		03C43AEA2027440B00C53429 /* BuyCoin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BuyCoin.storyboard; sourceTree = "<group>"; };
 		03C43AEB2027440B00C53429 /* BuyCoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCoinViewController.swift; sourceTree = "<group>"; };
 		03C43AEE2027440C00C53429 /* BuyCoinWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCoinWireframe.swift; sourceTree = "<group>"; };
+		03D605A2203643F300727396 /* ExchangeRateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateInteractor.swift; sourceTree = "<group>"; };
 		246C7DC415F5270055E67EC0 /* Pods-BitcoinWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitcoinWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitcoinWallet/Pods-BitcoinWallet.release.xcconfig"; sourceTree = "<group>"; };
 		630A8E6D74CB74CC6FC022C6 /* Pods_BitcoinWalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitcoinWalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73BF90BD25E668A6E384D359 /* Pods_BitcoinWalletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitcoinWalletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -636,6 +638,7 @@
 			isa = PBXGroup;
 			children = (
 				03C43AD22026742000C53429 /* WalletInteractor.swift */,
+				03D605A2203643F300727396 /* ExchangeRateInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -1070,6 +1073,7 @@
 				03C43AD12026741A00C53429 /* WalletPresenter.swift in Sources */,
 				03C43ACB20266C8800C53429 /* Protocols.swift in Sources */,
 				0334EDAE20325622005A06CB /* Persistence.swift in Sources */,
+				03D605A3203643F300727396 /* ExchangeRateInteractor.swift in Sources */,
 				03B46BF42027A7140049635F /* BuyCells.swift in Sources */,
 				0334EE042034CFB6005A06CB /* TransactionDisplayItem.swift in Sources */,
 				0334EE002034CA9B005A06CB /* TransactionCell.swift in Sources */,

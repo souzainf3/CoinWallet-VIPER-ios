@@ -17,6 +17,8 @@ class WalletViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
+    
+    private var currencyPrices: String?
 
     
     // MARK: - Life cycle
@@ -45,6 +47,10 @@ class WalletViewController: UITableViewController {
         return self.viewModel.title
     }
     
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return self.currencyPrices
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.items.count
     }
@@ -64,6 +70,11 @@ class WalletViewController: UITableViewController {
 // MARK: - WalletPresenterOutput
 
 extension WalletViewController: WalletPresenterOutput {
+    func showCurrencyPrices(description: String) {
+        self.currencyPrices = description
+        self.tableView.reloadData()
+    }
+    
     func reloadWallet(viewModel: WalletViewModel) {
         self.viewModel = viewModel
     }

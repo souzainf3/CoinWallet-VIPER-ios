@@ -20,7 +20,7 @@ enum Currency: String {
     }
     
     var name: String {
-        return self.rawValue
+        return self.rawValue.capitalized
     }
     
     var abbreviation: String {

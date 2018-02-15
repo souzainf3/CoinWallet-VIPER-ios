@@ -10,6 +10,7 @@ import Foundation
 
 struct ExchangeRate {
     let currency: Currency
+    let date: Date
     let rates: [(currency: Currency, value: Double)]
 }
 

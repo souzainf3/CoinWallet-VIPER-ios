@@ -56,13 +56,15 @@ class WalletWireframe: TabBarInterface, StoryboardInstanciate {
         let walletViewController = viewControllerFromStoryboard(withIdentifier: "WalletViewController") as! WalletViewController
         
         let walletDataManager = WalletDataManager(database: DatabaseManager(configuration: .standard))
-        let interactor = WalletInteractor(dataManager: walletDataManager)
+        let walletInteractor = WalletInteractor(dataManager: walletDataManager)
+        let exchangeRateInteractor = ExchangeRateInteractor(dataManager: ExchangeRateDataManager())
         
-        let presenter = WalletPresenter(interactor: interactor, wireframe: self)
+        let presenter = WalletPresenter(walletInteractor: walletInteractor, exchangeRateInteractor: exchangeRateInteractor, wireframe: self)
         presenter.output = walletViewController
 
         walletViewController.presenter = presenter
-        interactor.output = presenter
+        walletInteractor.output = presenter
+        exchangeRateInteractor.output = presenter
         
         return walletViewController
     }

@@ -69,6 +69,7 @@ class ExchangeRateDataManager: ExchangeRateDataManagerInput {
     var rates: [ExchangeRate] = [
         ExchangeRate(
             currency: .real,
+            date: Date(),
             rates: [
                 (currency: .bitcoin, value: 0.000035),
                 (currency: .britta, value: 0.3034)
@@ -76,6 +77,7 @@ class ExchangeRateDataManager: ExchangeRateDataManagerInput {
         ),
         ExchangeRate(
             currency: .bitcoin,
+            date: Date(),
             rates: [
                 (currency: .real, value: 28600.0),
                 (currency: .britta, value: 8690.4)
@@ -83,6 +85,7 @@ class ExchangeRateDataManager: ExchangeRateDataManagerInput {
         ),
         ExchangeRate(
             currency: .britta,
+            date: Date(),
             rates: [
                 (currency: .real, value: 3.2954),
                 (currency: .bitcoin, value: 0.000115)

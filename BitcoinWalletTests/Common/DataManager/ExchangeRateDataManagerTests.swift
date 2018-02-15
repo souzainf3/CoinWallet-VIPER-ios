@@ -16,6 +16,7 @@ class ExchangeRateDataManagerMock: ExchangeRateDataManagerInput {
     var rates: [ExchangeRate] = [
         ExchangeRate(
             currency: .real,
+            date: Date(),
             rates: [
                 (currency: .bitcoin, value: 0.01),
                 (currency: .britta, value: 0.5)
@@ -23,6 +24,7 @@ class ExchangeRateDataManagerMock: ExchangeRateDataManagerInput {
         ),
         ExchangeRate(
             currency: .bitcoin,
+            date: Date(),
             rates: [
                 (currency: .real, value: 100),
                 (currency: .britta, value: 50)
@@ -30,6 +32,7 @@ class ExchangeRateDataManagerMock: ExchangeRateDataManagerInput {
         ),
         ExchangeRate(
             currency: .britta,
+            date: Date(),
             rates: [
                 (currency: .real, value: 2),
                 (currency: .bitcoin, value: 0.02)
@@ -43,6 +46,7 @@ class ExchangeRateDataManagerMissingMock: ExchangeRateDataManagerInput {
     var rates: [ExchangeRate] = [
         ExchangeRate(
             currency: .real,
+            date: Date(),
             rates: [
                 (currency: .bitcoin, value: 0.01),
             ]
