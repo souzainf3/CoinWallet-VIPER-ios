@@ -38,15 +38,7 @@ class TransactionsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TransactionCell.reuseIdentifier, for: indexPath) as! TransactionCell
 
-        // TODO: - Config in cell
-        let item = self.items[indexPath.row]
-        cell.dateLabel.text = item.date
-        cell.titleLabel.text = item.title
-        cell.descriptionLabel.text = item.description
-        cell.currencyNameLabel.text = item.currency.name
-        cell.flagCurrencyLabel.text = item.currency.abbreviation
-        cell.flagCurrencyLabel.backgroundColor = item.currency.color
-        cell.titleLabel.textColor = item.titleColor
+        cell.configure(with: self.items[indexPath.row])
         
         return cell
     }

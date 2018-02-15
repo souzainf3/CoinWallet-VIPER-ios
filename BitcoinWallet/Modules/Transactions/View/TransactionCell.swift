@@ -15,3 +15,16 @@ class TransactionCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
 }
+
+extension TransactionCell {
+    
+    func configure(with item: TransactionDisplayItem) {
+        self.dateLabel.text = item.date
+        self.titleLabel.text = item.title
+        self.descriptionLabel.text = item.description
+        self.currencyNameLabel.text = item.currency.name
+        self.flagCurrencyLabel.text = item.currency.abbreviation
+        self.flagCurrencyLabel.backgroundColor = item.currency.color
+        self.titleLabel.textColor = item.titleColor
+    }
+}
