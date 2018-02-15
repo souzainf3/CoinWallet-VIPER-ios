@@ -11,21 +11,20 @@ import UIKit
 
 class AppWireframe {
     
-    // MARK: Properties
+    // MARK: - Properties
+   
     private(set) weak var window: UIWindow!
 
     let tabBarWireframe: TabBarWireframe
 
     
-    // MARK: Public
+    // MARK: - Public
     
     init(window: UIWindow) {
         self.window = window
         
         let walletWireframe = WalletWireframe(buyCoinWireframe: BuyCoinWireframe(), sellCoinWireframe: SellCoinWireframe())
-
         let transactionWireframe = TransactionsWireframe()
-        
         self.tabBarWireframe = TabBarWireframe(walletWireframe, transactionWireframe)
     }
     

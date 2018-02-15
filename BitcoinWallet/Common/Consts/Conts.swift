@@ -8,18 +8,14 @@
 
 import UIKit
 
-let myAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
 typealias BlockCompletion = ()->Void
 
 
 struct App {
     
-    /// Application Info.
-    static let name = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? ""
-    static let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
-    static let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
-    
-    
+    let delegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+
+
     // MARK: - Currency
     
     struct Currency {
@@ -30,6 +26,7 @@ struct App {
     // MARK: - Keys
 
     struct Keys {
+        static let injectedMock = "bitcoinWallet.mock.injected"
     }
     
     

@@ -14,7 +14,6 @@ struct ExchangeRate {
 }
 
 extension ExchangeRate {
-    
     func rate(from currency: Currency) -> Double? {
         return rates.first(where: { $0.currency == currency })?.value
     }

@@ -22,6 +22,7 @@ class TabBarWireframe {
     
     private(set) weak var tabBarController: UITabBarController?
 
+    // MARK: - Initializers
     
     init(_ wireFrames: TabBarInterface...) {
         self.wireFrames = wireFrames

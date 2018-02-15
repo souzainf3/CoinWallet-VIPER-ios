@@ -9,10 +9,9 @@ import Foundation
 import RealmSwift
 
 
-// MARK: - AccessDatabaseProtocol
+// MARK: - RealmDatabaseAccessible
 
 protocol RealmDatabaseAccessible {
-    
     var realm: Realm { get }
     
     /// Thread safe realm instance
@@ -20,7 +19,6 @@ protocol RealmDatabaseAccessible {
 }
 
 extension RealmDatabaseAccessible {
-    
     func safeRealm() -> Realm {
         let config = realm.configuration
         return try! Realm(configuration: config)
@@ -39,7 +37,6 @@ class DatabaseManager: RealmDatabaseAccessible, StorageContext {
 
     private var notificationToken: NotificationToken?
 
-    
     let configuration: ConfigurationType
     
     // Used to notify database changes
@@ -60,7 +57,6 @@ class DatabaseManager: RealmDatabaseAccessible, StorageContext {
     // MARK: - Helpers
     
     private func createRealmInstance() -> Realm {
-        
         var rmConfig = Realm.Configuration()
         switch configuration {
         case .standard:
@@ -71,7 +67,7 @@ class DatabaseManager: RealmDatabaseAccessible, StorageContext {
             rmConfig.inMemoryIdentifier = identifier
         }
         
-        // Migration granted
+        // Migration if needed
         do {
             return try Realm(configuration: rmConfig)
         } catch {

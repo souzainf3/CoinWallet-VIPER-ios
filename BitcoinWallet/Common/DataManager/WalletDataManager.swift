@@ -26,6 +26,9 @@ class WalletDataManager {
     }
 }
 
+
+// MARK: - WalletDataManagerInput
+
 extension WalletDataManager: WalletDataManagerInput {
     
     func fetchUserWallets() -> [Wallet] {

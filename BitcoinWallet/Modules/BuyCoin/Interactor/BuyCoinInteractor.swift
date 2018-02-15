@@ -93,7 +93,7 @@ class BuyCoinInteractor: BuyCoinInteractorInput {
     
     private func tryBuy(amount: Double, in wallet: Wallet) {
         do {
-            let valueConverted = try self.exchangeRateDataManager.converter(amount: amount, from: self.coinSelected, to: wallet.currency)
+            let valueConverted = try self.exchangeRateDataManager.convert(amount: amount, from: self.coinSelected, to: wallet.currency)
             
             print("From: \(self.coinSelected.abbreviation) - Amount: \(amount)")
             print("To: \(wallet.currency.abbreviation) - Amount: \(valueConverted)")

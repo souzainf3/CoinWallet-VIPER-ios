@@ -99,7 +99,7 @@ class SellCoinInteractor: SellCoinInteractorInput {
     
     private func trySell(amount: Double, from wallet: Wallet, creditIn currency: Currency) {
         do {
-            let valueToCredit = try self.exchangeRateDataManager.converter(amount: amount, from: wallet.currency, to: currency)
+            let valueToCredit = try self.exchangeRateDataManager.convert(amount: amount, from: wallet.currency, to: currency)
 
             print("Sell: \(wallet.currency.identifier) - Amount: \(amount)")
             print("Sell Payment: \(currency.identifier) - Amount: \(valueToCredit)")

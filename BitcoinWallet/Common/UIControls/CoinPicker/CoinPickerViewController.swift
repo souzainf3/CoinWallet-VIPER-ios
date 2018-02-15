@@ -93,10 +93,8 @@ class CoinPickerViewController<T: Hashable>: UITableViewController {
     }
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let item = self.items[indexPath.row]
         self.didSelectedItem(item)
-        
         self.dismiss(animated: true, completion: nil)
     }
     
