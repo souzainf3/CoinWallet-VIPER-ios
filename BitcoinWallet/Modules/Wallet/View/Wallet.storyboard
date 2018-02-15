@@ -22,11 +22,11 @@
                             <rect key="frame" x="0.0" y="128.5" width="375" height="132"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="nQx-JY-0uB">
-                                    <rect key="frame" x="24" y="43.5" width="327" height="45"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nQx-JY-0uB">
+                                    <rect key="frame" x="8" y="43.5" width="359" height="45"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6H-gA-DxT">
-                                            <rect key="frame" x="0.0" y="0.0" width="156.5" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="174.5" height="45"/>
                                             <color key="backgroundColor" red="0.14901960784313725" green="0.45882352941176469" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="sJT-7F-xeE"/>
@@ -44,7 +44,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0S-Pc-ohN">
-                                            <rect key="frame" x="170.5" y="0.0" width="156.5" height="45"/>
+                                            <rect key="frame" x="184.5" y="0.0" width="174.5" height="45"/>
                                             <color key="backgroundColor" red="0.35983604192733765" green="0.68068289756774902" blue="0.44415909051895142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="Vender">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,8 +67,8 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="nQx-JY-0uB" secondAttribute="trailing" constant="24" id="1pH-fx-2g4"/>
-                                <constraint firstItem="nQx-JY-0uB" firstAttribute="leading" secondItem="hdW-nK-pqM" secondAttribute="leading" constant="24" id="eJK-4o-zQA"/>
+                                <constraint firstItem="nQx-JY-0uB" firstAttribute="leading" secondItem="hdW-nK-pqM" secondAttribute="leadingMargin" id="Kbj-Zz-4ta"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="nQx-JY-0uB" secondAttribute="trailing" id="WAE-hI-dSJ"/>
                                 <constraint firstItem="nQx-JY-0uB" firstAttribute="centerY" secondItem="hdW-nK-pqM" secondAttribute="centerY" id="lMs-8v-uEV"/>
                                 <constraint firstItem="nQx-JY-0uB" firstAttribute="centerX" secondItem="hdW-nK-pqM" secondAttribute="centerX" id="nGe-0X-wfP"/>
                             </constraints>
