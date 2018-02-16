@@ -66,6 +66,10 @@
 		03C43AF32027440C00C53429 /* BuyCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AEB2027440B00C53429 /* BuyCoinViewController.swift */; };
 		03C43AF42027440C00C53429 /* BuyCoinWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AEE2027440C00C53429 /* BuyCoinWireframe.swift */; };
 		03D605A3203643F300727396 /* ExchangeRateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D605A2203643F300727396 /* ExchangeRateInteractor.swift */; };
+		03D605AE20365A2500727396 /* Api+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D605A720365A2400727396 /* Api+Protocols.swift */; };
+		03D605AF20365A2500727396 /* ApiHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D605A820365A2400727396 /* ApiHTTPRequest.swift */; };
+		03D605B020365A2500727396 /* EnumsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D605A920365A2400727396 /* EnumsApi.swift */; };
+		03D605B120365A2500727396 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D605AA20365A2400727396 /* Mapper.swift */; };
 		4CD0EA439FEADCCB19D16986 /* Pods_BitcoinWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B798D79EF3DF2142C982BDE5 /* Pods_BitcoinWallet.framework */; };
 		51A3F3DE92AF3CF30F1CA567 /* Pods_BitcoinWalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BF90BD25E668A6E384D359 /* Pods_BitcoinWalletTests.framework */; };
 		E2EB0DAB6987362CC0659F13 /* Pods_BitcoinWalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630A8E6D74CB74CC6FC022C6 /* Pods_BitcoinWalletUITests.framework */; };
@@ -154,6 +158,10 @@
 		03C43AEB2027440B00C53429 /* BuyCoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCoinViewController.swift; sourceTree = "<group>"; };
 		03C43AEE2027440C00C53429 /* BuyCoinWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCoinWireframe.swift; sourceTree = "<group>"; };
 		03D605A2203643F300727396 /* ExchangeRateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateInteractor.swift; sourceTree = "<group>"; };
+		03D605A720365A2400727396 /* Api+Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Api+Protocols.swift"; sourceTree = "<group>"; };
+		03D605A820365A2400727396 /* ApiHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiHTTPRequest.swift; sourceTree = "<group>"; };
+		03D605A920365A2400727396 /* EnumsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumsApi.swift; sourceTree = "<group>"; };
+		03D605AA20365A2400727396 /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		246C7DC415F5270055E67EC0 /* Pods-BitcoinWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitcoinWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitcoinWallet/Pods-BitcoinWallet.release.xcconfig"; sourceTree = "<group>"; };
 		630A8E6D74CB74CC6FC022C6 /* Pods_BitcoinWalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitcoinWalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73BF90BD25E668A6E384D359 /* Pods_BitcoinWalletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitcoinWalletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -598,6 +606,7 @@
 		0398C3092026570300D32808 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				03D605A420365A2400727396 /* API */,
 				0334EDA520325622005A06CB /* Database */,
 			);
 			path = Service;
@@ -728,6 +737,25 @@
 				03C43AEE2027440C00C53429 /* BuyCoinWireframe.swift */,
 			);
 			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		03D605A420365A2400727396 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				03D605A620365A2400727396 /* Core */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		03D605A620365A2400727396 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				03D605A720365A2400727396 /* Api+Protocols.swift */,
+				03D605A820365A2400727396 /* ApiHTTPRequest.swift */,
+				03D605A920365A2400727396 /* EnumsApi.swift */,
+				03D605AA20365A2400727396 /* Mapper.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		54A7CE8D344C4D8E0DB02D3A /* Frameworks */ = {
@@ -999,7 +1027,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BitcoinWallet/Pods-BitcoinWallet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RNActivityView/RNActivityView.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -1008,7 +1039,10 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNActivityView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -1070,6 +1104,7 @@
 				0334EDD920344C91005A06CB /* SellCells.swift in Sources */,
 				0398C30F2026584D00D32808 /* AppWireframe.swift in Sources */,
 				0334EDCD2033B38B005A06CB /* Transaction.swift in Sources */,
+				03D605B120365A2500727396 /* Mapper.swift in Sources */,
 				03C43AD12026741A00C53429 /* WalletPresenter.swift in Sources */,
 				03C43ACB20266C8800C53429 /* Protocols.swift in Sources */,
 				0334EDAE20325622005A06CB /* Persistence.swift in Sources */,
@@ -1079,11 +1114,14 @@
 				0334EE002034CA9B005A06CB /* TransactionCell.swift in Sources */,
 				0334EDDF2034768C005A06CB /* SellCoinPresenter.swift in Sources */,
 				0334EDE1203478EE005A06CB /* SellCoinInteractor.swift in Sources */,
+				03D605AF20365A2500727396 /* ApiHTTPRequest.swift in Sources */,
 				03C43AF32027440C00C53429 /* BuyCoinViewController.swift in Sources */,
+				03D605B020365A2500727396 /* EnumsApi.swift in Sources */,
 				0334ED862031B7E7005A06CB /* SheetPresentationController.swift in Sources */,
 				03C43AC920266C6300C53429 /* Reusable.swift in Sources */,
 				0334EE072034F822005A06CB /* CustomNavigationController.swift in Sources */,
 				0334EDAC20325622005A06CB /* Models.swift in Sources */,
+				03D605AE20365A2500727396 /* Api+Protocols.swift in Sources */,
 				0334ED8D2031F371005A06CB /* ExchangeRate.swift in Sources */,
 				03C43AD920268F2900C53429 /* Wallet.swift in Sources */,
 				03C43AD7202687F000C53429 /* Currency.swift in Sources */,

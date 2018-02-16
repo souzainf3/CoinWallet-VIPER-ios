@@ -10,6 +10,10 @@ target 'BitcoinWallet' do
   
   pod 'RxCocoa'
   pod 'RealmSwift' # 2.1.1
+  
+  pod 'Alamofire' , '~> 4.5.1'
+  pod 'ObjectMapper' , '~> 3.1.0'
+  pod 'AlamofireObjectMapper' , '~> 5.0.0'
 
 
   target 'BitcoinWalletTests' do

@@ -1,5 +1,10 @@
 PODS:
+  - Alamofire (4.5.1)
+  - AlamofireObjectMapper (5.0.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 3.0)
   - IQKeyboardManager (5.0.7)
+  - ObjectMapper (3.1.0)
   - Realm (3.1.0):
     - Realm/Headers (= 3.1.0)
   - Realm/Headers (3.1.0)
@@ -11,19 +16,25 @@ PODS:
   - RxSwift (4.1.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.5.1)
+  - AlamofireObjectMapper (~> 5.0.0)
   - IQKeyboardManager (~> 5.0.7)
+  - ObjectMapper (~> 3.1.0)
   - RealmSwift
   - RNActivityView (~> 0.0.7)
   - RxCocoa
 
 SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
   IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Realm: 09513d7c054678d65cd02ce09871f805b0d758ac
   RealmSwift: e868fee9b10e5490ad94b6b6ecd9027944da1824
   RNActivityView: d1bde2ec4956ad8f69da9650afe7898311221a8e
   RxCocoa: fd0862fd2df95fa55562ad28ffd2522c25eb4a85
   RxSwift: c6e3b1c7b325c7d121cd4327e9d98b7ed746b570
 
-PODFILE CHECKSUM: 55efec69704512e894844e6e5e65da427c9dff19
+PODFILE CHECKSUM: 725577ef39e0a773c5541c123416b0c1e44af2a0
 
 COCOAPODS: 1.4.0
