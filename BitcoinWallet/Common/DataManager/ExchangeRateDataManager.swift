@@ -20,6 +20,7 @@ protocol ExchangeRateDataManagerInput: class {
     func rate(from sourceCurrency: Currency, to targetCurrency: Currency) -> Double?
     func convert(amount: Double, from sourceCurrency: Currency, to targetCurrency: Currency) throws -> Double
     func update()
+    func update(completionHandler: ((Self)->Void)?)
 }
 
 extension ExchangeRateDataManagerInput {
@@ -61,7 +62,7 @@ extension ExchangeRateDataManagerInput {
             return self.baseExchangeRate.rates.first(where: { $0.currency == targetCurrency })?.value
         }
         
-        // OtherCurrency --> Base - inverse
+        // OtherCurrency --> Base (inverse)
         if targetCurrency == baseCurrency {
             guard let baseRate = rate(from: targetCurrency, to: sourceCurrency) else {
                 return nil
@@ -83,28 +84,38 @@ extension ExchangeRateDataManagerInput {
 
 // MARK: - ExchangeRateDataManager
 
-class ExchangeRateDataManager: ExchangeRateDataManagerInput {
+final class ExchangeRateDataManager: ExchangeRateDataManagerInput {
     
     static let shared = ExchangeRateDataManager()
-    
-    private init() {
-    }
-    
-    func update() {
-        updateBrittaRate(completionHandler: { manager in
-        })
-    }
-    
-    let baseCurrency: Currency = .real
     
     private(set) var baseExchangeRate = ExchangeRate(
         currency: App.Config.standardCurrency,
         date: Date(),
         rates: []
     )
-
+    
+    
+    // MARK: - Initializers
+    
+    private init() {}
+    
+    
+    // MARK: - Public
+    
+    func update() {
+        self.update(completionHandler: nil)
+    }
+    
+    func update(completionHandler: ((ExchangeRateDataManager)->Void)?) {
+        updateBrittaRate(completionHandler: { manager in
+            completionHandler?(self)
+            NotificationCenter.default.post(name: Notification.Name.didChangeExchangeRate, object: nil)
+        })
+    }
+    
     func updateBrittaRate(completionHandler: @escaping (ExchangeRateDataManager)->Void) {
-        FixerApi.getExchangeRates(from: baseCurrency.identifier, to: ["USD"]) { (result) in
+        let baseCurrency = self.baseExchangeRate.currency.identifier
+        FixerApi.getExchangeRates(from: baseCurrency, to: ["USD"]) { (result) in
             switch result {
             case .success(let rate):
                 if let value: Double = rate.rates["USD"] {

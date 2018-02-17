@@ -39,4 +39,8 @@ struct App {
 
 }
 
+extension Notification.Name {
+    static let didChangeExchangeRate = Notification.Name("app.manager.notification.didChangeExchangeRate")
+}
+
 

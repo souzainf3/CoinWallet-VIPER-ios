@@ -22,12 +22,14 @@ class ExchangeRateInteractor: ExchangeRateInteractorInput {
     
     init(dataManager: ExchangeRateDataManagerInput) {
         self.dataManager = dataManager
+        self.registerExchangeRateObserver()
     }
     
     
     // MARK: Input
     
     func fetchExchangeRate() {
+        // Check if all rates if fetched
         let otherCurrencies = Currency.all.filter({ $0 != self.dataManager.baseExchangeRate.currency })
         let rates = otherCurrencies.flatMap({self.dataManager.baseExchangeRate.rate(from: $0)})
         if rates.count == otherCurrencies.count {
@@ -35,10 +37,17 @@ class ExchangeRateInteractor: ExchangeRateInteractorInput {
             self.output?.didUpdateExchangeRate(self.dataManager.baseExchangeRate)
         } else {
             // Fetch rates from API
-            // TODO: - Observer update changes from Data Manager
             self.dataManager.update()
         }
-
+    }
+    
+    
+    // MARK: - Helper
+    
+    func registerExchangeRateObserver() {
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.didChangeExchangeRate, object: nil, queue: nil) { notif in
+            self.output?.didUpdateExchangeRate(self.dataManager.baseExchangeRate)
+        }
     }
 }
 
