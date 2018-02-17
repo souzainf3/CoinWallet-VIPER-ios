@@ -160,7 +160,8 @@ final class ExchangeRateDataManager: ExchangeRateDataManagerInput {
             switch result {
             case .success(let ticker):
                 if let value: Double = Double(ticker.last) {
-                    self.baseExchangeRate.setRate(Rate(currency: .bitcoin, value: value) )
+                    // The base is BTC. Transform to real rate
+                    self.baseExchangeRate.setRate(Rate(currency: .bitcoin, value: 1 / value) )
                 }
                 completionHandler(self)
 
