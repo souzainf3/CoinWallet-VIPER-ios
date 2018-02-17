@@ -15,6 +15,7 @@ enum ExchangeRateError: Error {
 }
 
 protocol ExchangeRateDataManagerInput: class {
+    var isUpdating: Bool { get }
     var baseExchangeRate: ExchangeRate { get }
 
     func rate(from sourceCurrency: Currency, to targetCurrency: Currency) -> Double?
@@ -34,7 +35,6 @@ extension ExchangeRateDataManagerInput {
      - returns: Value converted (Double)
      */
     func convert(amount: Double, from sourceCurrency: Currency, to targetCurrency: Currency) throws -> Double {
-        
         guard amount >= 0 else {
             throw ExchangeRateError.unsupportedNegativeValue
         }
@@ -94,6 +94,12 @@ final class ExchangeRateDataManager: ExchangeRateDataManagerInput {
         rates: []
     )
     
+    private(set) var isUpdating: Bool = false
+
+    private let concurrentQueue = DispatchQueue(label: "concurrentQueue", attributes: .concurrent)
+    let queue = DispatchQueue.global(qos: .userInitiated)
+    let semaphore = DispatchSemaphore(value: 1)
+
     
     // MARK: - Initializers
     
@@ -103,19 +109,39 @@ final class ExchangeRateDataManager: ExchangeRateDataManagerInput {
     // MARK: - Public
     
     func update() {
-        self.update(completionHandler: nil)
+        self.isUpdating = true
+        self.update(completionHandler: { manager in
+            self.isUpdating = false
+        })
     }
     
     func update(completionHandler: ((ExchangeRateDataManager)->Void)?) {
-        updateBrittaRate(completionHandler: { manager in
+        let queue = DispatchQueue(label: "com.exchangerate.update", attributes: .concurrent, target: .main)
+        let group = DispatchGroup()
+        
+        group.enter()
+        queue.async (group: group) {
+            self.updateBrittaRate(completionHandler: { manager in
+                NotificationCenter.default.post(name: Notification.Name.didChangeExchangeRate, object: nil)
+                group.leave()
+            })
+        }
+        
+        group.enter()
+        queue.async (group: group) {
+            self.updateBitcoinRate { manager in
+                NotificationCenter.default.post(name: Notification.Name.didChangeExchangeRate, object: nil)
+                group.leave()
+            }
+        }
+        group.notify(queue: DispatchQueue.main) {
             completionHandler?(self)
-            NotificationCenter.default.post(name: Notification.Name.didChangeExchangeRate, object: nil)
-        })
+        }
     }
     
     func updateBrittaRate(completionHandler: @escaping (ExchangeRateDataManager)->Void) {
         let baseCurrency = self.baseExchangeRate.currency.identifier
-        FixerApi.getExchangeRates(from: baseCurrency, to: ["USD"]) { (result) in
+        FixerApi.getExchangeRates(from: baseCurrency, to: ["USD"]) { result in
             switch result {
             case .success(let rate):
                 if let value: Double = rate.rates["USD"] {
@@ -123,6 +149,21 @@ final class ExchangeRateDataManager: ExchangeRateDataManagerInput {
                 }
                 completionHandler(self)
                 
+            case .failure:
+                completionHandler(self)
+            }
+        }
+    }
+    
+    func updateBitcoinRate(completionHandler: @escaping (ExchangeRateDataManager)->Void) {
+        MercadoBitcoinApi.getTicker(from: .btc) { result in
+            switch result {
+            case .success(let ticker):
+                if let value: Double = Double(ticker.last) {
+                    self.baseExchangeRate.setRate(Rate(currency: .bitcoin, value: value) )
+                }
+                completionHandler(self)
+
             case .failure:
                 completionHandler(self)
             }

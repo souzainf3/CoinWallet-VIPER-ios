@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		030C502B2037B766003EA624 /* APIProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030C502A2037B766003EA624 /* APIProtocols.swift */; };
+		030C502D2038DFFC003EA624 /* MercadoBitcoinApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030C502C2038DFFC003EA624 /* MercadoBitcoinApi.swift */; };
 		0334ED7B2031B09E005A06CB /* CoinPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334ED792031B09E005A06CB /* CoinPickerViewController.swift */; };
 		0334ED862031B7E7005A06CB /* SheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334ED842031B7E7005A06CB /* SheetPresentationController.swift */; };
 		0334ED872031B7E7005A06CB /* SheetTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334ED852031B7E7005A06CB /* SheetTransitioningDelegate.swift */; };
@@ -95,6 +96,7 @@
 
 /* Begin PBXFileReference section */
 		030C502A2037B766003EA624 /* APIProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProtocols.swift; sourceTree = "<group>"; };
+		030C502C2038DFFC003EA624 /* MercadoBitcoinApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercadoBitcoinApi.swift; sourceTree = "<group>"; };
 		0334ED792031B09E005A06CB /* CoinPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPickerViewController.swift; sourceTree = "<group>"; };
 		0334ED842031B7E7005A06CB /* SheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetPresentationController.swift; sourceTree = "<group>"; };
 		0334ED852031B7E7005A06CB /* SheetTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetTransitioningDelegate.swift; sourceTree = "<group>"; };
@@ -745,6 +747,7 @@
 			isa = PBXGroup;
 			children = (
 				03D605B5203662E900727396 /* FixerApi.swift */,
+				030C502C2038DFFC003EA624 /* MercadoBitcoinApi.swift */,
 				03D605A620365A2400727396 /* Core */,
 			);
 			path = API;
@@ -1108,6 +1111,7 @@
 				0398C30F2026584D00D32808 /* AppWireframe.swift in Sources */,
 				0334EDCD2033B38B005A06CB /* Transaction.swift in Sources */,
 				03D605B120365A2500727396 /* APISerializable.swift in Sources */,
+				030C502D2038DFFC003EA624 /* MercadoBitcoinApi.swift in Sources */,
 				03C43AD12026741A00C53429 /* WalletPresenter.swift in Sources */,
 				03C43ACB20266C8800C53429 /* Protocols.swift in Sources */,
 				0334EDAE20325622005A06CB /* Persistence.swift in Sources */,
