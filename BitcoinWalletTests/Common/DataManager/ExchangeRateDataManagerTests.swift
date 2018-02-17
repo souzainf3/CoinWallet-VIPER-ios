@@ -12,46 +12,73 @@ import XCTest
 // MARK: - Mock
 
 class ExchangeRateDataManagerMock: ExchangeRateDataManagerInput {
+    var rates: Set<ExchangeRate> = []
+    
+    func update() {
+    }
+    
+    var baseExchangeRate = ExchangeRate(
+        currency: .real,
+        date: Date(),
+        rates: [
+            Rate(currency: .britta, value: 0.5),
+            Rate(currency: .bitcoin, value: 0.01)
+        ]
+    )
+    
 
-    var rates: [ExchangeRate] = [
-        ExchangeRate(
-            currency: .real,
-            date: Date(),
-            rates: [
-                (currency: .bitcoin, value: 0.01),
-                (currency: .britta, value: 0.5)
-            ]
-        ),
-        ExchangeRate(
-            currency: .bitcoin,
-            date: Date(),
-            rates: [
-                (currency: .real, value: 100),
-                (currency: .britta, value: 50)
-            ]
-        ),
-        ExchangeRate(
-            currency: .britta,
-            date: Date(),
-            rates: [
-                (currency: .real, value: 2),
-                (currency: .bitcoin, value: 0.02)
-            ]
-        )
-    ]
+//    var rates: [ExchangeRate] = [
+//        ExchangeRate(
+//            currency: .real,
+//            date: Date(),
+//            rates: [
+//                (currency: .bitcoin, value: 0.01),
+//                (currency: .britta, value: 0.5)
+//            ]
+//        ),
+//        ExchangeRate(
+//            currency: .bitcoin,
+//            date: Date(),
+//            rates: [
+//                (currency: .real, value: 100),
+//                (currency: .britta, value: 50)
+//            ]
+//        ),
+//        ExchangeRate(
+//            currency: .britta,
+//            date: Date(),
+//            rates: [
+//                (currency: .real, value: 2),
+//                (currency: .bitcoin, value: 0.02)
+//            ]
+//        )
+//    ]
 }
 
 class ExchangeRateDataManagerMissingMock: ExchangeRateDataManagerInput {
+    var rates: Set<ExchangeRate> = []
     
-    var rates: [ExchangeRate] = [
-        ExchangeRate(
-            currency: .real,
-            date: Date(),
-            rates: [
-                (currency: .bitcoin, value: 0.01),
-            ]
-        )
-    ]
+    func update() {
+        
+    }
+    
+    var baseExchangeRate = ExchangeRate(
+        currency: .real,
+        date: Date(),
+        rates: [
+            Rate(currency: .bitcoin, value: 0.1),
+        ]
+    )
+    
+//    var rates: [ExchangeRate] = [
+//        ExchangeRate(
+//            currency: .real,
+//            date: Date(),
+//            rates: [
+//                (currency: .bitcoin, value: 0.01),
+//            ]
+//        )
+//    ]
 }
 
 
@@ -64,13 +91,6 @@ class ExchangeRateDataManagerTests: XCTestCase {
         XCTAssertThrowsError(try misssingMock.convert(amount: -100, from: .real, to: .britta), "Missing") { error in
             XCTAssertTrue(error is ExchangeRateError)
             XCTAssertEqual(error as! ExchangeRateError, ExchangeRateError.unsupportedNegativeValue)
-        }
-    }
-    
-    func testExchangeRateMissingCurrency() {
-        XCTAssertThrowsError(try misssingMock.convert(amount: 10, from: .britta, to: .real), "Missing") { error in
-            XCTAssertTrue(error is ExchangeRateError)
-            XCTAssertEqual(error as! ExchangeRateError, ExchangeRateError.missingCurrency)
         }
     }
 

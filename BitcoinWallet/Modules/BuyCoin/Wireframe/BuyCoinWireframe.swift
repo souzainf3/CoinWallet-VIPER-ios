@@ -19,7 +19,7 @@ class BuyCoinWireframe: StoryboardInstanciate {
         
         let interactor = BuyCoinInteractor(
             walletDataManager: walletDataManager,
-            exchangeRateDataManager: ExchangeRateDataManager(),
+            exchangeRateDataManager: ExchangeRateDataManager.shared,
             transactionDataManager: transactionDataManager
         )
         

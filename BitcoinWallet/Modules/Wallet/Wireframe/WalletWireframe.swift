@@ -57,7 +57,7 @@ class WalletWireframe: TabBarInterface, StoryboardInstanciate {
         
         let walletDataManager = WalletDataManager(database: DatabaseManager(configuration: .standard))
         let walletInteractor = WalletInteractor(dataManager: walletDataManager)
-        let exchangeRateInteractor = ExchangeRateInteractor(dataManager: ExchangeRateDataManager())
+        let exchangeRateInteractor = ExchangeRateInteractor(dataManager: ExchangeRateDataManager.shared)
         
         let presenter = WalletPresenter(walletInteractor: walletInteractor, exchangeRateInteractor: exchangeRateInteractor, wireframe: self)
         presenter.output = walletViewController

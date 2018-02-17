@@ -12,7 +12,8 @@ import XCTest
 class ExchangeRateTests: XCTestCase {
     
     func testExchangeRate() {
-        let exchangeRate = ExchangeRate( currency: .real, date: Date(), rates: [(currency: .bitcoin, value: 0.000035), (currency: .britta, value: 0.3034)])
+            
+        let exchangeRate = ExchangeRate( currency: .real, date: Date(), rates: [Rate(currency: .bitcoin, value: 0.000035), Rate(currency: .britta, value: 0.3034)])
 
         XCTAssertNil(exchangeRate.rate(from: .real))
 

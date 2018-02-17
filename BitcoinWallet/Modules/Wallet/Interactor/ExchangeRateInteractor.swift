@@ -17,8 +17,6 @@ class ExchangeRateInteractor: ExchangeRateInteractorInput {
     
     let dataManager: ExchangeRateDataManagerInput
     
-    let standardCurrency: Currency = .real
-    
     
     // MARK: - Initializers
     
@@ -30,11 +28,17 @@ class ExchangeRateInteractor: ExchangeRateInteractorInput {
     // MARK: Input
     
     func fetchExchangeRate() {
-        if let rate = self.dataManager.exchangeRate(from: standardCurrency) {
-            self.output?.didUpdateExchangeRate(rate)
+        let otherCurrencies = Currency.all.filter({ $0 != self.dataManager.baseExchangeRate.currency })
+        let rates = otherCurrencies.flatMap({self.dataManager.baseExchangeRate.rate(from: $0)})
+        if rates.count == otherCurrencies.count {
+            // The fetch of Exchange Rate this completed
+            self.output?.didUpdateExchangeRate(self.dataManager.baseExchangeRate)
         } else {
-            // TODO: - Request Info from API
+            // Fetch rates from API
+            // TODO: - Observer update changes from Data Manager
+            self.dataManager.update()
         }
+
     }
 }
 

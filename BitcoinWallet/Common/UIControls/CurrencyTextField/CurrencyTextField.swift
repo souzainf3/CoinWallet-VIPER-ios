@@ -10,7 +10,7 @@ import UIKit
 
 class CurrencyTextField: UITextField {
 
-    var decimalSeparator: String { return App.Currency.decimalSeparator }
+    var decimalSeparator: String { return App.Config.decimalSeparator }
     
     private let currencySymbolLabel: UILabel = UILabel()
     

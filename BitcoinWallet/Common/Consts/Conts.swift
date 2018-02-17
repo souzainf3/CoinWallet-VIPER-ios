@@ -18,8 +18,10 @@ struct App {
 
     // MARK: - Currency
     
-    struct Currency {
+    struct Config {
         static let decimalSeparator = NSLocale.current.decimalSeparator ?? ","
+        
+        static let standardCurrency: Currency = .real
     }
     
    

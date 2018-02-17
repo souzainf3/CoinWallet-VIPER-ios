@@ -10,15 +10,16 @@ import Foundation
 
 
 enum ExchangeRateError: Error {
-    case missingCurrency
     case missingRate
     case unsupportedNegativeValue
 }
 
 protocol ExchangeRateDataManagerInput: class {
-    var rates: [ExchangeRate] { get set }
+    var baseExchangeRate: ExchangeRate { get }
+
+    func rate(from sourceCurrency: Currency, to targetCurrency: Currency) -> Double?
     func convert(amount: Double, from sourceCurrency: Currency, to targetCurrency: Currency) throws -> Double
-    func exchangeRate(from currency: Currency) -> ExchangeRate?
+    func update()
 }
 
 extension ExchangeRateDataManagerInput {
@@ -37,11 +38,7 @@ extension ExchangeRateDataManagerInput {
             throw ExchangeRateError.unsupportedNegativeValue
         }
         
-        guard let exchangeRate = self.exchangeRate(from: sourceCurrency) else {
-            throw ExchangeRateError.missingCurrency
-        }
-        
-        guard let rate = exchangeRate.rate(from: targetCurrency) else {
+        guard let rate = self.rate(from: sourceCurrency, to: targetCurrency) else {
             throw ExchangeRateError.missingRate
         }
         
@@ -49,14 +46,37 @@ extension ExchangeRateDataManagerInput {
     }
     
     /**
-     *Serch exchange rate from a currency in rate list. *
+     *Exchange rate of currency to another currency *
      
-     - parameter currency: currency to found
+     - parameter sourceCurrency: source currency
+     - parameter targetCurrency: cutput currency
      
-     - returns: ExchangeRate from currency
+     - returns: Value converted (Double)
      */
-    func exchangeRate(from currency: Currency) -> ExchangeRate? {
-        return rates.first(where: { $0.currency == currency })
+    func rate(from sourceCurrency: Currency, to targetCurrency: Currency) -> Double? {
+        let baseCurrency = self.baseExchangeRate.currency
+        
+        // Base --> OtherCurrency
+        if sourceCurrency == baseCurrency {
+            return self.baseExchangeRate.rates.first(where: { $0.currency == targetCurrency })?.value
+        }
+        
+        // OtherCurrency --> Base - inverse
+        if targetCurrency == baseCurrency {
+            guard let baseRate = rate(from: targetCurrency, to: sourceCurrency) else {
+                return nil
+            }
+            return 1 / baseRate
+        }
+        
+        // Between currencies different of the base
+        guard let sourceBaseRate = rate(from: baseCurrency, to: sourceCurrency) else {
+            return nil
+        }
+        guard let outputBaseRate = rate(from: baseCurrency, to: targetCurrency) else {
+            return nil
+        }
+        return 1 / sourceBaseRate * outputBaseRate
     }
 }
 
@@ -65,33 +85,38 @@ extension ExchangeRateDataManagerInput {
 
 class ExchangeRateDataManager: ExchangeRateDataManagerInput {
     
-    // TODO: - Remover Mock
-    var rates: [ExchangeRate] = [
-        ExchangeRate(
-            currency: .real,
-            date: Date(),
-            rates: [
-                (currency: .bitcoin, value: 0.000035),
-                (currency: .britta, value: 0.3034)
-            ]
-        ),
-        ExchangeRate(
-            currency: .bitcoin,
-            date: Date(),
-            rates: [
-                (currency: .real, value: 28600.0),
-                (currency: .britta, value: 8690.4)
-            ]
-        ),
-        ExchangeRate(
-            currency: .britta,
-            date: Date(),
-            rates: [
-                (currency: .real, value: 3.2954),
-                (currency: .bitcoin, value: 0.000115)
-            ]
-        )
-    ]
+    static let shared = ExchangeRateDataManager()
+    
+    private init() {
+    }
+    
+    func update() {
+        updateBrittaRate(completionHandler: { manager in
+        })
+    }
+    
+    let baseCurrency: Currency = .real
+    
+    private(set) var baseExchangeRate = ExchangeRate(
+        currency: App.Config.standardCurrency,
+        date: Date(),
+        rates: []
+    )
+
+    func updateBrittaRate(completionHandler: @escaping (ExchangeRateDataManager)->Void) {
+        FixerApi.getExchangeRates(from: baseCurrency.identifier, to: ["USD"]) { (result) in
+            switch result {
+            case .success(let rate):
+                if let value: Double = rate.rates["USD"] {
+                    self.baseExchangeRate.setRate(Rate(currency: .britta, value: value) )
+                }
+                completionHandler(self)
+                
+            case .failure:
+                completionHandler(self)
+            }
+        }
+    }
     
 }
 

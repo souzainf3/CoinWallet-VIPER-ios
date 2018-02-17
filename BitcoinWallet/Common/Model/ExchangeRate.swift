@@ -8,10 +8,34 @@
 
 import Foundation
 
+// TODO: - Remover
+//typealias RateValue = (currency: Currency, value: Double)
+
+struct Rate {
+    let currency: Currency
+    let value: Double
+}
+
+extension Rate: Hashable {
+    var hashValue: Int { return self.currency.hashValue }
+
+    static func ==(lhs: Rate, rhs: Rate) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+}
+
 struct ExchangeRate {
     let currency: Currency
-    let date: Date
-    let rates: [(currency: Currency, value: Double)]
+    var date: Date
+    var rates: Set<Rate> = []
+    
+    mutating func update(date: Date) {
+        self.date = date
+    }
+    
+    mutating func setRate(_ newValue: Rate) {
+        rates.update(with: newValue)
+    }
 }
 
 extension ExchangeRate {
@@ -19,3 +43,14 @@ extension ExchangeRate {
         return rates.first(where: { $0.currency == currency })?.value
     }
 }
+
+extension ExchangeRate: Hashable {
+    static func ==(lhs: ExchangeRate, rhs: ExchangeRate) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+    
+    var hashValue: Int {
+        return self.currency.hashValue
+    }
+}
+
