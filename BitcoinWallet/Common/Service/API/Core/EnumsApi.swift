@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import ObjectMapper
 
-// MARK: - ApiService
+
+// MARK: - Result
 
 enum ApiResult<T> {
     case success(T)
@@ -24,8 +26,28 @@ enum ApiError: Error {
 }
 
 
-// MARK: - Requestable
+// MARK: - Base Model
 
-enum RequestableURLError: Error {
-    case malformedUrl
+class APIBaseModel: Mappable {
+    
+    // MARK: Initializers
+    
+    init() {}
+    
+    required init?(map: Map){
+        mapping(map: map)
+    }
+    
+    // MARK: Mappable Protocol
+    
+    func mapping(map: Map) {}
+    
+    // MARK: - Date Transform
+    func dateTransform() -> DateFormatterTransform {
+        return self.dateTransform(format: "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    }
+    
+    final func dateTransform(format: String) -> DateFormatterTransform {
+        return CustomDateFormatTransform(formatString: format)
+    }
 }
