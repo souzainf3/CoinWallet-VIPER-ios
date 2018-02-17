@@ -13,7 +13,7 @@ import ObjectMapper
 
 // MARK: - Client
 
-class APIRequest: ApiResultSerializable {
+class APIRequest {
     private let manager = Alamofire.SessionManager.default
     
     public typealias JSONCompletionHandler = (ApiResult<JSON>) -> Void
@@ -69,7 +69,7 @@ extension APIRequest {
 
 // MARK: - Serializable
 
-extension APIRequest {
+extension APIRequest: ApiResultSerializable {
     
     func requestObject<T: Mappable>(_ type: T.Type, url: String, method: Alamofire.HTTPMethod, parameters: [String : Any]? = nil, headers: [String : String]? = nil, completionHandler: @escaping (ApiResult<T>)->Void) {
         let task = self.request(

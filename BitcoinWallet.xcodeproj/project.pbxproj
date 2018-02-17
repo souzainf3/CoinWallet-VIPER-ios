@@ -68,9 +68,8 @@
 		03C43AF42027440C00C53429 /* BuyCoinWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C43AEE2027440C00C53429 /* BuyCoinWireframe.swift */; };
 		03D605A3203643F300727396 /* ExchangeRateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D605A2203643F300727396 /* ExchangeRateInteractor.swift */; };
 		03D605AF20365A2500727396 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D605A820365A2400727396 /* APIRequest.swift */; };
-		03D605B020365A2500727396 /* EnumsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D605A920365A2400727396 /* EnumsApi.swift */; };
+		03D605B020365A2500727396 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D605A920365A2400727396 /* Types.swift */; };
 		03D605B120365A2500727396 /* APISerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D605AA20365A2400727396 /* APISerializable.swift */; };
-		03D605B6203662E900727396 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D605B4203662E900727396 /* Router.swift */; };
 		03D605B7203662E900727396 /* FixerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D605B5203662E900727396 /* FixerApi.swift */; };
 		4CD0EA439FEADCCB19D16986 /* Pods_BitcoinWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B798D79EF3DF2142C982BDE5 /* Pods_BitcoinWallet.framework */; };
 		51A3F3DE92AF3CF30F1CA567 /* Pods_BitcoinWalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BF90BD25E668A6E384D359 /* Pods_BitcoinWalletTests.framework */; };
@@ -162,9 +161,8 @@
 		03C43AEE2027440C00C53429 /* BuyCoinWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyCoinWireframe.swift; sourceTree = "<group>"; };
 		03D605A2203643F300727396 /* ExchangeRateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateInteractor.swift; sourceTree = "<group>"; };
 		03D605A820365A2400727396 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
-		03D605A920365A2400727396 /* EnumsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumsApi.swift; sourceTree = "<group>"; };
+		03D605A920365A2400727396 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		03D605AA20365A2400727396 /* APISerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISerializable.swift; sourceTree = "<group>"; };
-		03D605B4203662E900727396 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		03D605B5203662E900727396 /* FixerApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixerApi.swift; sourceTree = "<group>"; };
 		246C7DC415F5270055E67EC0 /* Pods-BitcoinWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitcoinWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitcoinWallet/Pods-BitcoinWallet.release.xcconfig"; sourceTree = "<group>"; };
 		630A8E6D74CB74CC6FC022C6 /* Pods_BitcoinWalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitcoinWalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -747,7 +745,6 @@
 			isa = PBXGroup;
 			children = (
 				03D605B5203662E900727396 /* FixerApi.swift */,
-				03D605B4203662E900727396 /* Router.swift */,
 				03D605A620365A2400727396 /* Core */,
 			);
 			path = API;
@@ -757,7 +754,7 @@
 			isa = PBXGroup;
 			children = (
 				03D605A820365A2400727396 /* APIRequest.swift */,
-				03D605A920365A2400727396 /* EnumsApi.swift */,
+				03D605A920365A2400727396 /* Types.swift */,
 				03D605AA20365A2400727396 /* APISerializable.swift */,
 				030C502A2037B766003EA624 /* APIProtocols.swift */,
 			);
@@ -1110,7 +1107,6 @@
 				0334EDD920344C91005A06CB /* SellCells.swift in Sources */,
 				0398C30F2026584D00D32808 /* AppWireframe.swift in Sources */,
 				0334EDCD2033B38B005A06CB /* Transaction.swift in Sources */,
-				03D605B6203662E900727396 /* Router.swift in Sources */,
 				03D605B120365A2500727396 /* APISerializable.swift in Sources */,
 				03C43AD12026741A00C53429 /* WalletPresenter.swift in Sources */,
 				03C43ACB20266C8800C53429 /* Protocols.swift in Sources */,
@@ -1123,7 +1119,7 @@
 				0334EDE1203478EE005A06CB /* SellCoinInteractor.swift in Sources */,
 				03D605AF20365A2500727396 /* APIRequest.swift in Sources */,
 				03C43AF32027440C00C53429 /* BuyCoinViewController.swift in Sources */,
-				03D605B020365A2500727396 /* EnumsApi.swift in Sources */,
+				03D605B020365A2500727396 /* Types.swift in Sources */,
 				0334ED862031B7E7005A06CB /* SheetPresentationController.swift in Sources */,
 				03C43AC920266C6300C53429 /* Reusable.swift in Sources */,
 				0334EE072034F822005A06CB /* CustomNavigationController.swift in Sources */,

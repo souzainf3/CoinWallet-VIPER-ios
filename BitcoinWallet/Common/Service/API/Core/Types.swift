@@ -17,6 +17,9 @@ enum ApiResult<T> {
     case failure(ApiError)
 }
 
+
+// MARK: - ApiError
+
 enum ApiError: Error {
     case unauthorized   // 401
     case noConnection   // Timeout | offline
