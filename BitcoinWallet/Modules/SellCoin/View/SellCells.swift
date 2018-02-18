@@ -30,12 +30,14 @@ class CurrencyCell: UITableViewCell {
     
     func setEmpty(title: String) {
         self.currencyLabel.backgroundColor = .lightGray
+        self.titleLabel.textColor = .lightGray
         self.currencyLabel.text = nil
         self.titleLabel.text = title
     }
     
     func configure(with currency: Currency) {
         self.currencyLabel.backgroundColor = currency.color
+        self.titleLabel.textColor = App.Color.textColor
         self.currencyLabel.text = currency.abbreviation
         self.titleLabel.text = currency.name
     }
@@ -57,6 +59,7 @@ extension WalletDetailCell {
     func setEmpty(title: String) {
         return configure(
             currencyColor: .lightGray,
+            titleColor: .lightGray,
             currencyAbbreviation: nil,
             title: title,
             balanceTitle: nil,
@@ -74,8 +77,9 @@ extension WalletDetailCell {
         )
     }
     
-    func configure(currencyColor: UIColor?, currencyAbbreviation: String?, title: String?, balanceTitle: String?, amountValue: String?) {
+    func configure(currencyColor: UIColor?, titleColor: UIColor = App.Color.textColor, currencyAbbreviation: String?, title: String?, balanceTitle: String?, amountValue: String?) {
         currencyLabel.backgroundColor = currencyColor
+        titleLabel.textColor = titleColor
         currencyLabel.text = currencyAbbreviation
         titleLabel.text = title
         balanceLabel.text = balanceTitle

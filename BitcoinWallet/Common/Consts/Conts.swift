@@ -10,7 +10,6 @@ import UIKit
 
 typealias BlockCompletion = ()->Void
 
-
 struct App {
     
     let delegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -19,9 +18,8 @@ struct App {
     // MARK: - Currency
     
     struct Config {
-        static let decimalSeparator = NSLocale.current.decimalSeparator ?? ","
-        
         static let standardCurrency: Currency = .real
+        static let decimalSeparator = NSLocale.current.decimalSeparator ?? ","
     }
     
    
@@ -35,6 +33,7 @@ struct App {
     // MARK: - Colors
     
     struct Color {
+        static let textColor: UIColor = UIColor(red: 66/255, green: 66/255, blue: 66/255, alpha: 1)
     }
 
 }
