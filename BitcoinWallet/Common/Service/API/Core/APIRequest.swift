@@ -10,30 +10,28 @@ import Alamofire
 import ObjectMapper
 
 
-
 // MARK: - Client
 
 class APIRequest {
     private let manager = Alamofire.SessionManager.default
     
-    public typealias JSONCompletionHandler = (ApiResult<JSON>) -> Void
     public typealias JSON = Any
+    public typealias JSONCompletionHandler = (ApiResult<JSON>) -> Void
 }
 
 
 // MARK: - Generic JSON Request
 
 extension APIRequest {
-    
     /**
      Create a request using the custom manager for the specified method, URL string, parameters, parameter encoding.
      Response data serialized to JSON
      
+     - parameter url: The URL string.
      - parameter method: The HTTP method.
-     - parameter URLString: The URL string.
-     - parameter parameters: The request parameters.
+     - parameter parameters: The http request parameters.
+     - parameter headers: The http request Headers.
      - parameter encoding: The parameters encoding. `.URL` by default.
-     
      - parameter completionHandler: Completion Handler with JSON object serialized.
      
      - returns: The created request.
