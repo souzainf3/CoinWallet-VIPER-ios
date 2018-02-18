@@ -13,7 +13,6 @@ class WalletTests: XCTestCase {
     
     func testWalletAmountUpdate() {
         var realWallet = Wallet(currency: .real, amount: 100.38)
-        
         XCTAssertEqual(realWallet.amount, 100.38)
 
         realWallet.increment(value: 1)
