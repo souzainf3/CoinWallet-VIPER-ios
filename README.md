@@ -7,7 +7,7 @@
 CoinWallet is a conceptual project to manager virtual coins. Its implemented in VIPER architecture. Your use is merely didactic.
 
 
-## VIPER Arquitecture
+## VIPER Architecture
 ![](doc/viper.png)
 
 **V** — View (displays info to the user and detects user interaction)
