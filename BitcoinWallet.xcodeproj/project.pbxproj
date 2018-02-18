@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		030C502B2037B766003EA624 /* APIProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030C502A2037B766003EA624 /* APIProtocols.swift */; };
 		030C502D2038DFFC003EA624 /* MercadoBitcoinApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030C502C2038DFFC003EA624 /* MercadoBitcoinApi.swift */; };
+		030C502F2038FE66003EA624 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030C502E2038FE66003EA624 /* Rate.swift */; };
 		0334ED7B2031B09E005A06CB /* CoinPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334ED792031B09E005A06CB /* CoinPickerViewController.swift */; };
 		0334ED862031B7E7005A06CB /* SheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334ED842031B7E7005A06CB /* SheetPresentationController.swift */; };
 		0334ED872031B7E7005A06CB /* SheetTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0334ED852031B7E7005A06CB /* SheetTransitioningDelegate.swift */; };
@@ -97,6 +98,7 @@
 /* Begin PBXFileReference section */
 		030C502A2037B766003EA624 /* APIProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProtocols.swift; sourceTree = "<group>"; };
 		030C502C2038DFFC003EA624 /* MercadoBitcoinApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercadoBitcoinApi.swift; sourceTree = "<group>"; };
+		030C502E2038FE66003EA624 /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
 		0334ED792031B09E005A06CB /* CoinPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPickerViewController.swift; sourceTree = "<group>"; };
 		0334ED842031B7E7005A06CB /* SheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetPresentationController.swift; sourceTree = "<group>"; };
 		0334ED852031B7E7005A06CB /* SheetTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetTransitioningDelegate.swift; sourceTree = "<group>"; };
@@ -592,6 +594,7 @@
 				03C43AD6202687F000C53429 /* Currency.swift */,
 				03C43AD820268F2900C53429 /* Wallet.swift */,
 				0334ED8C2031F371005A06CB /* ExchangeRate.swift */,
+				030C502E2038FE66003EA624 /* Rate.swift */,
 				0334EDCC2033B38B005A06CB /* Transaction.swift */,
 			);
 			path = Model;
@@ -1126,6 +1129,7 @@
 				03D605B020365A2500727396 /* Types.swift in Sources */,
 				0334ED862031B7E7005A06CB /* SheetPresentationController.swift in Sources */,
 				03C43AC920266C6300C53429 /* Reusable.swift in Sources */,
+				030C502F2038FE66003EA624 /* Rate.swift in Sources */,
 				0334EE072034F822005A06CB /* CustomNavigationController.swift in Sources */,
 				0334EDAC20325622005A06CB /* Models.swift in Sources */,
 				0334ED8D2031F371005A06CB /* ExchangeRate.swift in Sources */,
