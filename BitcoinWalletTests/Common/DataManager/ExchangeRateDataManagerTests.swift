@@ -11,11 +11,9 @@ import XCTest
 
 // MARK: - Mock
 
-class ExchangeRateDataManagerMock: ExchangeRateDataManagerInput {
+final class ExchangeRateDataManagerMock: ExchangeRateDataManagerInput {
+    var isUpdating: Bool = false
     var rates: Set<ExchangeRate> = []
-    
-    func update() {
-    }
     
     var baseExchangeRate = ExchangeRate(
         currency: .real,
@@ -26,41 +24,17 @@ class ExchangeRateDataManagerMock: ExchangeRateDataManagerInput {
         ]
     )
     
-
-//    var rates: [ExchangeRate] = [
-//        ExchangeRate(
-//            currency: .real,
-//            date: Date(),
-//            rates: [
-//                (currency: .bitcoin, value: 0.01),
-//                (currency: .britta, value: 0.5)
-//            ]
-//        ),
-//        ExchangeRate(
-//            currency: .bitcoin,
-//            date: Date(),
-//            rates: [
-//                (currency: .real, value: 100),
-//                (currency: .britta, value: 50)
-//            ]
-//        ),
-//        ExchangeRate(
-//            currency: .britta,
-//            date: Date(),
-//            rates: [
-//                (currency: .real, value: 2),
-//                (currency: .bitcoin, value: 0.02)
-//            ]
-//        )
-//    ]
+    func update() {
+    }
+    
+    func update(completionHandler: ((ExchangeRateDataManagerMock) -> Void)?) {
+    }
 }
 
-class ExchangeRateDataManagerMissingMock: ExchangeRateDataManagerInput {
-    var rates: Set<ExchangeRate> = []
+final class ExchangeRateDataManagerMissingMock: ExchangeRateDataManagerInput {
+    var isUpdating: Bool = false
     
-    func update() {
-        
-    }
+    var rates: Set<ExchangeRate> = []
     
     var baseExchangeRate = ExchangeRate(
         currency: .real,
@@ -70,15 +44,11 @@ class ExchangeRateDataManagerMissingMock: ExchangeRateDataManagerInput {
         ]
     )
     
-//    var rates: [ExchangeRate] = [
-//        ExchangeRate(
-//            currency: .real,
-//            date: Date(),
-//            rates: [
-//                (currency: .bitcoin, value: 0.01),
-//            ]
-//        )
-//    ]
+    func update() {
+    }
+    
+    func update(completionHandler: ((ExchangeRateDataManagerMissingMock) -> Void)?) {
+    }
 }
 
 
