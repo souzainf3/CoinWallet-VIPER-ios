@@ -8,7 +8,7 @@ CoinWallet is a conceptual project to manager virtual coins. Its implemented in 
 
 
 ## VIPER Arquitecture
-![](https://cdn-images-1.medium.com/max/1600/1*XovYPHm53nQ5H8tSeBx_IQ.png)
+![](doc/viper.png)
 
 **V** — View (displays info to the user and detects user interaction)
 
@@ -62,14 +62,8 @@ Icons provided by [Icons8](https://icons8.com/). Thanks! :-D
 
 
 ## App flow chart
+![](doc/app_flow.png)
 
-```mermaid
-graph LR
-root[App] --> wallet(Wallet)
-wallet --> buy_coin(Buy Coin)
-wallet --> sell_coin(Sell Coin)
-root --> historic(Transactions)
-```
 
 ## Author
 
