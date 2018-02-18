@@ -97,9 +97,16 @@ extension Date {
 // MARK: - Double
 
 extension Double {
-    func toString() -> String {
-        let number: NSDecimalNumber = NSDecimalNumber(value: self)
-        return number.stringValue
+    func toCurrencyFormatedString(maximumFractionDigits: Int = 9, minimumFractionDigits: Int? = nil) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.decimalSeparator = App.Config.decimalSeparator
+        formatter.roundingMode = .halfDown
+        formatter.maximumFractionDigits = maximumFractionDigits
+        if let min = minimumFractionDigits {
+            formatter.minimumFractionDigits = min
+        }
+        return formatter.string(from: NSDecimalNumber(value: self)) ?? ""
     }
 }
 

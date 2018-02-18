@@ -80,7 +80,7 @@ extension WalletPresenter: ExchangeRateInteractorOutput {
     func didUpdateExchangeRate(_ exchangeRate: ExchangeRate) {
         let title = "Cotação em \(exchangeRate.date.toString(format: "dd/MM/yyyy")):"
         let currency = "1 \(exchangeRate.currency.abbreviation)"
-        let description = exchangeRate.rates.reduce(title, {$0 + "\n\(currency) = \($1.value.toString()) \($1.currency.abbreviation)"})
+        let description = exchangeRate.rates.reduce(title, {$0 + "\n\(currency) = \($1.value.toCurrencyFormatedString()) \($1.currency.abbreviation)"})
         self.output?.showCurrencyPrices(description: description)
     }
     

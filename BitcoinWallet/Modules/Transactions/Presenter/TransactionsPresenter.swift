@@ -39,10 +39,11 @@ class TransactionsPresenter: TransactionsPresenterInput {
 // MARK: - TransactionsInteractorOutput
 
 extension TransactionsPresenter: TransactionsInteractorOutput {
+   
     func fetchedTransactions(items: [Transaction]) {
         let displayItems = items.flatMap({
             TransactionDisplayItem(
-                title: "\($0.operation == .debit ? "-" : "")\($0.currency.symbol) \($0.amount)",
+                title: "\($0.operation == .debit ? "-" : "")\($0.currency.formattedValue($0.amount))",
                 titleColor: $0.operation.color,
                 description: $0.operation == .credit ? "Crédito de venda/troca de valores" : "Pagamento de valores",
                 date: $0.date.toString(format: "dd/MM/yyyy").uppercased(),

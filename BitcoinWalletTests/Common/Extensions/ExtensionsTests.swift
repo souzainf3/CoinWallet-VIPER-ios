@@ -60,13 +60,28 @@ class ExtensionsTests: XCTestCase {
     
     // MARK: - Double
     
-    func testDoubleStringConversion() {
+    func testDoubleToCurrencyFormatedString() {
         let num: Double = 0.000035
-        XCTAssertEqual(num.toString(), "0.000035")
+        XCTAssertEqual(num.toCurrencyFormatedString(), "0.000035".localizedDecimalSeparator)
         
         let num2: Double = -0.000035
-        XCTAssertEqual(num2.toString(), "-0.000035")
-
+        XCTAssertEqual(num2.toCurrencyFormatedString(), "-0.000035".localizedDecimalSeparator)
+        
+        let num3: Double = 10.353536
+        XCTAssertEqual(num3.toCurrencyFormatedString(), "10.353536".localizedDecimalSeparator)
+        XCTAssertEqual(num3.toCurrencyFormatedString(maximumFractionDigits: 4), "10.3535".localizedDecimalSeparator)
+        XCTAssertEqual(num3.toCurrencyFormatedString(maximumFractionDigits: 1), "10.4".localizedDecimalSeparator)
+       
+        let num4: Double = 10
+        XCTAssertEqual(num4.toCurrencyFormatedString(minimumFractionDigits: 2), "10.00".localizedDecimalSeparator)
     }
 
 }
+
+extension String {
+    var localizedDecimalSeparator: String {
+        return self.replacingOccurrences(of: ".", with: App.Config.decimalSeparator)
+    }
+}
+
+

@@ -26,17 +26,8 @@ struct Wallet {
 }
 
 extension Wallet {
-    
     var amountFormatted: String {
-        if currency == .real {
-            return "\(currency.symbol) \(realFormat(amount))"
-        }
-        // coins
-        return "\(currency.symbol) \(amount)"
-    }
-    
-    private func realFormat(_ amount: Double) -> String {
-        return String(format: "%.02f", amount)
+        return currency.formattedValue(amount)
     }
 }
 

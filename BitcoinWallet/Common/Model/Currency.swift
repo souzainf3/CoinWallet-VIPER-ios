@@ -60,7 +60,16 @@ enum Currency: String {
             return nil
         }
     }
+}
 
+extension Currency {
+    func formattedValue(_ value: Double) -> String {
+        let amountString = value.toCurrencyFormatedString(
+            maximumFractionDigits: self == .real ? 2 : 9,
+            minimumFractionDigits: self == .real ? 2 : nil
+        )
+        return "\(self.symbol) \(amountString)"
+    }
 }
 
 extension Currency: Hashable {

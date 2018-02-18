@@ -26,8 +26,8 @@ class WalletTests: XCTestCase {
         let realWallet = Wallet(currency: .real, amount: 100.3811)
         let bitcoinWallet = Wallet(currency: .bitcoin, amount: 0.0001)
 
-        XCTAssertEqual(realWallet.amountFormatted, "R$ 100.38")
-        XCTAssertEqual(bitcoinWallet.amountFormatted, "฿ 0.0001")
+        XCTAssertEqual(realWallet.amountFormatted, "R$ 100.38".localizedDecimalSeparator)
+        XCTAssertEqual(bitcoinWallet.amountFormatted, "฿ 0.0001".localizedDecimalSeparator)
     }
     
     func testWalletEquatable() {
