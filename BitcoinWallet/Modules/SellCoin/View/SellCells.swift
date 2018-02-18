@@ -56,11 +56,11 @@ extension WalletDetailCell {
     
     func setEmpty(title: String) {
         return configure(
-            currencyColor: .clear,
+            currencyColor: .lightGray,
             currencyAbbreviation: nil,
-            title: nil,
+            title: title,
             balanceTitle: nil,
-            amountValue: title
+            amountValue: nil
         )
     }
     

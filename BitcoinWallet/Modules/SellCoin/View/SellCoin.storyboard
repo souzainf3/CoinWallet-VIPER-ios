@@ -94,7 +94,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDX-y9-4Hs">
                                                     <rect key="frame" x="64" y="11" width="69" height="33"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="69" id="GBS-76-hjq"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="69" id="GBS-76-hjq"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                     <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
