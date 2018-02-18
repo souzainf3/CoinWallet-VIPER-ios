@@ -36,7 +36,7 @@ class CurrencyCell: UITableViewCell {
     
     func configure(with currency: Currency) {
         self.currencyLabel.backgroundColor = currency.color
-        self.currencyLabel.text = currency.symbol
+        self.currencyLabel.text = currency.abbreviation
         self.titleLabel.text = currency.name
     }
 }
