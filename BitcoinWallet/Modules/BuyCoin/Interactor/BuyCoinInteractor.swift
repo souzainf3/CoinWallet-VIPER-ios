@@ -108,8 +108,7 @@ class BuyCoinInteractor: BuyCoinInteractorInput {
             
             self.output?.buyed()
             
-        } catch let error {
-            print(error)
+        } catch _ {
             self.output?.buyFailed(with: .exchangeRateUnavailable)
         }
     }

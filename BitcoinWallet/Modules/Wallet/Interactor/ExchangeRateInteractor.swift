@@ -29,11 +29,11 @@ class ExchangeRateInteractor: ExchangeRateInteractorInput {
     // MARK: Input
     
     func fetchExchangeRate() {
-        // Check if all rates if fetched
+        // Check if all rates is fetched
         let otherCurrencies = Currency.all.filter({ $0 != self.dataManager.baseExchangeRate.currency })
         let rates = otherCurrencies.flatMap({self.dataManager.baseExchangeRate.rate(from: $0)})
         if rates.count == otherCurrencies.count {
-            // The fetch of Exchange Rate this completed
+            // The fetch of exchange Rate this completed
             self.output?.didUpdateExchangeRate(self.dataManager.baseExchangeRate)
         } else {
             // Fetch rates from API
