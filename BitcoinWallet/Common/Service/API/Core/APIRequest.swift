@@ -14,9 +14,6 @@ import ObjectMapper
 
 class APIRequest {
     private let manager = Alamofire.SessionManager.default
-    
-    public typealias JSON = Any
-    public typealias JSONCompletionHandler = (ApiResult<JSON>) -> Void
 }
 
 

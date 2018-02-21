@@ -10,20 +10,20 @@ import Foundation
 import ObjectMapper
 
 protocol ApiResultSerializable {
-    func mapObject<T: Mappable>(_: T.Type, from json: Any?) -> ApiResult<T>
-    func mapObjects<T: Mappable>(_: T.Type, from json: Any?) -> ApiResult<[T]>
+    func mapObject<T: Mappable>(_: T.Type, from json: JSON?) -> ApiResult<T>
+    func mapObjects<T: Mappable>(_: T.Type, from json: JSON?) -> ApiResult<[T]>
 }
 
 extension ApiResultSerializable {
     
-    func mapObject<T: Mappable>(_: T.Type, from json: Any?) -> ApiResult<T> {
+    func mapObject<T: Mappable>(_: T.Type, from json: JSON?) -> ApiResult<T> {
         guard let result = Mapper<T>().map(JSONObject: json) else {
             return .failure(ApiError.typeMismatch)
         }
         return .success(result)
     }
 
-    func mapObjects<T: Mappable>(_: T.Type, from json: Any?) -> ApiResult<[T]> {
+    func mapObjects<T: Mappable>(_: T.Type, from json: JSON?) -> ApiResult<[T]> {
         guard let result = Mapper<T>().mapArray(JSONObject: json) else {
             return .failure(ApiError.typeMismatch)
         }

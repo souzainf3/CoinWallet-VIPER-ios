@@ -9,6 +9,8 @@
 import Foundation
 import ObjectMapper
 
+typealias JSON = Any
+typealias JSONCompletionHandler = (ApiResult<JSON>) -> Void
 
 // MARK: - Result
 
