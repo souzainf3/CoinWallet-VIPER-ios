@@ -60,7 +60,7 @@ extension TransactionDataManager: TransactionDataManagerInput {
         )
         
         do {
-            try self.database.salve(object: dbTransaction, update: false)
+            try self.database.save(object: dbTransaction, update: false)
         } catch {
             print(error)
         }

@@ -38,7 +38,7 @@ protocol StorageContext {
     
     init(configuration: ConfigurationType)
     
-    func salve(object: Storable, update: Bool) throws
+    func save(object: Storable, update: Bool) throws
     func save(objects: [Storable], update: Bool) throws
     func delete(object: Storable) throws
     func delete(objects: [Storable]) throws

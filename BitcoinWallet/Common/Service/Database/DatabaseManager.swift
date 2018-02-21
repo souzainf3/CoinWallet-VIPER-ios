@@ -80,7 +80,7 @@ class DatabaseManager: RealmDatabaseAccessible, StorageContext {
 
     // MARK: - StorageContext
 
-    func salve(object: Storable, update: Bool) throws {
+    func save(object: Storable, update: Bool) throws {
         let aRealm = self.safeRealm()
         aRealm.beginWrite()
         aRealm.add(object as! Object, update: update)

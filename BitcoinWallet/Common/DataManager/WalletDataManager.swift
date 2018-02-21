@@ -82,7 +82,7 @@ extension WalletDataManager: WalletDataManagerInput {
         dbWallet.amount = wallet.amount
 
         do {
-         try self.database.salve(object: dbWallet, update: true)
+         try self.database.save(object: dbWallet, update: true)
         } catch {
             print(error)
         }
